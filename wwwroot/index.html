@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description"
+        content="Explore Penang wedding venues, compare Chinese banquet planning estimates and calculate your wedding angpao.">
+    <title>Wheredding — A beautiful beginning in Penang</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="/app.js" defer></script>
+</head>
+
+<body><a class="skip" href="#main">Skip to content</a>
+    <header><a class="brand" href="#home">wheredding<span>囍</span></a>
+        <nav aria-label="Main navigation"><a href="#venues">Find a venue</a><a href="#compare">Compare banquets <span
+                    id="count">0</span></a><a href="#map">Venue map</a><a href="#calculator">Angpao calculator ↗</a>
+        </nav>
+    </header>
+    <main id="main">
+        <section id="home" class="hero">
+            <div>
+                <p class="eyebrow">PENANG WEDDINGS, THOUGHTFULLY PLANNED</p>
+                <h1>Your story.<br>Your people.<br><em>Your perfect place.</em></h1>
+                <p>From island heritage to mainland celebrations, find a setting for your next chapter — and a banquet
+                    that fits your plans.</p><a class="button" href="#venues">Discover the venues <span>↓</span></a>
+                <p class="small">Penang Island & mainland · No sign-up needed</p>
+            </div>
+            <div class="hero-art" role="img"
+                aria-label="Decorative illustration of a wedding banquet table under an arch">
+                <div class="arch"><span>囍</span>
+                    <div class="flowers">✻ ✿ ✻</div>
+                    <div class="table"><i></i><i></i><i></i></div>
+                </div>
+                <div class="art-caption">A beautiful beginning<br><em>starts here.</em></div>
+            </div>
+        </section>
+        <div class="trust"><span>01 &nbsp; Discover your venue</span><span>02 &nbsp; Compare with clarity</span><span>03
+                &nbsp; Celebrate your way</span></div>
+        <section id="venues">
+            <div class="section-head">
+                <div>
+                    <p class="eyebrow">A PLACE FOR EVERY LOVE STORY</p>
+                    <h2>Find your setting</h2>
+                </div>
+                <p>Island charm or mainland convenience.<br>Make room for what matters to you.</p>
+            </div>
+            <div class="notice">Any numeric ranges and sample menus below are <strong>illustrative planning estimates,
+                    not hotel offers</strong>. Verified labels apply only to the cited venue facts. Checked 12 October
+                2026.</div>
+            <p id="coverage" aria-live="polite"></p>
+            <form id="filters" class="filters"><label>Search hotels<input id="search" type="search"
+                        placeholder="Hotel, town or style…"></label><label>Location<select id="area">
+                        <option value="">All of Penang</option>
+                        <option value="Island">Penang Island</option>
+                        <option value="Mainland">Mainland</option>
+                        <option value="Butterworth">Butterworth only</option>
+                    </select></label><label>Table budget<select id="budget">
+                        <option value="0">Any planning budget</option>
+                        <option value="1500">Up to RM 1,500</option>
+                        <option value="2000">Up to RM 2,000</option>
+                        <option value="2500">Up to RM 2,500</option>
+                    </select></label><label>Sort by<select id="sort">
+                        <option value="name">Hotel name</option>
+                        <option value="price">Lowest estimate</option>
+                    </select></label><button type="reset" class="quiet">Reset</button></form>
+            <p id="results" aria-live="polite"></p>
+            <div id="cards" class="cards"></div>
+        </section>
+        <section id="compare" class="tinted">
+            <div class="section-head">
+                <div>
+                    <p class="eyebrow">SIDE BY SIDE, WITH CONFIDENCE</p>
+                    <h2>A banquet worth comparing</h2>
+                </div><button id="clear" class="quiet">Clear selection</button>
+            </div>
+            <p>Select up to three hotels above. Estimates assume 10 people per table and exclude service charge, tax,
+                drinks and extras. Sample dishes are editorial examples, not the hotel's menu. Hotels without verified
+                pricing show “Request a quotation”.</p>
+            <div id="comparison" aria-live="polite"></div>
+        </section>
+        <section id="map">
+            <p class="eyebrow">TWO SHORES. SO MANY POSSIBILITIES.</p>
+            <h2>Get your bearings</h2>
+            <p>Use a venue's map link for a searchable street map and directions. The local overview is schematic, not a
+                navigation map.</p>
+            <div class="map-layout">
+                <div class="local-map">
+                    <div class="island">PENANG<br>ISLAND<span>George Town ●</span><span>Bayan Lepas ●</span></div>
+                    <div class="strait">PENANG STRAIT</div>
+                    <div class="mainland">MAINLAND<span>● Butterworth</span><span>● Seberang Jaya</span><span>● Bukit
+                            Mertajam</span></div>
+                    <div class="bridge">Penang Bridge</div>
+                </div>
+                <div id="maplinks"></div>
+            </div>
+        </section>
+        <section id="calculator" class="tinted">
+            <div class="section-head">
+                <div>
+                    <p class="eyebrow">GIVE WITH A LITTLE MORE CLARITY</p>
+                    <h2>Wedding angpao calculator</h2>
+                </div>
+            </div>
+            <p>A meal-cost reference, never an obligation. Your relationship, traditions and personal budget matter more
+                than a number.</p>
+            <div class="calc-layout">
+                <form id="giftform">
+ <label>Which hotel is the wedding at?<select id="giftvenue" required><option value="">Choose the wedding hotel…</option></select></label>
+ <div id="giftcontext" class="guest-estimate" aria-live="polite">Choose your hotel to see an automatic table estimate. No quotation needed.</div>
+ <div class="field-grid">
+  <label>How many guests does your angpao cover?<input name="guests" type="number" min="1" max="100" value="1" required></label>
+  <label>Extra gift, total (RM)<input name="extra" type="number" min="0" max="100000" step="0.01" value="0" required></label>
+  <label>Your total budget (RM; 0 = unset)<input name="budget" type="number" min="0" max="100000" step="0.01" value="0" required></label>
+ </div>
+ <details id="giftadjustments" class="gift-adjustments"><summary>Optional: adjust the table estimate or charges</summary>
+ <p class="small">You do not need the couple’s quotation. These fields are filled automatically when you choose a hotel. Change them only if you have better information.</p>
+ <div class="field-grid">
+  <label>Reference table price (RM)<input name="tablePrice" type="number" min="1" max="100000" step="0.01" placeholder="Choose a hotel above" required></label>
+  <label>Seats per table<input name="seats" type="number" min="1" max="30" value="10" required></label>
+  <label>Service charge (%)<input name="servicePercent" type="number" min="0" max="30" step="0.01" value="0" required></label>
+  <label>Tax (%)<input name="taxPercent" type="number" min="0" max="30" step="0.01" value="0" required></label>
+ </div><p class="small">0% means no extra charge is included in the estimate. For a nett price, leave both at 0%. Tax is applied after service charge in this model.</p>
+ </details>
+ <button class="button" type="submit">Update my angpao reference →</button>
+</form>
+                <div id="giftresult" class="gift-result" aria-live="polite"><span>囍</span>
+                    <h3>A thoughtful gift,<br>on your terms.</h3>
+                    <p>Choose the wedding hotel to see your estimated table cost and angpao reference.</p>
+                </div>
+            </div>
+        </section>
+        <section class="method">
+            <p class="eyebrow">HONEST INFORMATION, BETTER DECISIONS</p>
+            <h2>Know what you’re comparing.</h2>
+            <div class="method-grid">
+                <div>
+                    <h3>Verified venue facts</h3>
+                    <p>Checked against linked official hotel pages. This does not verify current wedding prices, dates,
+                        dietary suitability or availability.</p>
+                </div>
+                <div>
+                    <h3>Planning estimates</h3>
+                    <p>Editorial budget ranges and example eight-course Chinese menus. These are not quotations, market
+                        averages or promises of a hotel's dishes.</p>
+                </div>
+                <div>
+                    <h3>Before you book</h3>
+                    <p>Ask for a dated Chinese banquet menu, minimum tables, nett total, corkage, vegetarian options,
+                        allergens, deposits and cancellation terms.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer><a class="brand" href="#home">wheredding<span>囍</span></a>
+        <p>Made for meaningful celebrations in Penang.</p>
+        <p>Local guide · No accounts · No tracking</p>
+    </footer>
+    <dialog id="detail"><button class="close" aria-label="Close hotel details">×</button>
+        <div id="detailbody"></div>
+    </dialog>
+</body>
+
+</html>

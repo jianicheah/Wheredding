@@ -1,0 +1,20 @@
+bin/
+obj/
+.dotnet/
+.vs/
+*.user
+
+# Local validation output and downloaded research-page snapshots
+.validation-build/
+scripts/*.html
+scripts/photo-review.jpg
+
+# Local secrets and certificates
+.env
+.env.*
+!.env.example
+*.pfx
+*.p12
+*.pem
+*.key
+*.log

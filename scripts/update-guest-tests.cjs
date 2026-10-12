@@ -1,0 +1,21 @@
+const fs=require('node:fs');let t=fs.readFileSync('tests/Frontend.cjs','utf8');
+t=t.replace("showModal(){this.open=true;}","checkValidity(){return true;}showModal(){this.open=true;}");
+t=t.replace("get('#giftform').elements={tablePrice:new Element()};",`get('#giftform').elements=Object.fromEntries(['tablePrice','seats','guests','servicePercent','taxPercent','extra','budget'].map(k=>[k,new Element()]));
+for(const [k,v] of Object.entries({tablePrice:'',seats:'10',guests:'1',servicePercent:'0',taxPercent:'0',extra:'0',budget:'0'}))get('#giftform').elements[k].value=v;`);
+t=t.replace("fetch:async()=>({ok:true,json:async()=>data})",`fetch:async(url,options)=>({ok:true,json:async()=>url==='/api/venues'?data:{tableTotal:Number(JSON.parse(options.body).tablePrice),mealShare:Number(JSON.parse(options.body).tablePrice)/10*Number(JSON.parse(options.body).guests),suggested:Math.ceil(Number(JSON.parse(options.body).tablePrice)/10*Number(JSON.parse(options.body).guests)/10)*10,withinBudget:true}})`);
+t=t.replace("length,25);\n console.log('PASS: All 25", "length,26);\n console.log('PASS: All 25");
+const s=t.indexOf(" get('#giftvenue').value='gurney'"),e=t.indexOf(" get('#clear').onclick()",s);
+t=t.slice(0,s)+` const html=fs.readFileSync('wwwroot/index.html','utf8');assert.doesNotMatch(html,/id="giftsearch"|id="giftmatches"/);
+ console.log('PASS: Redundant calculator search removed');
+ get('#giftvenue').value='gurney';get('#giftform').elements.tablePrice.value='1600';get('#giftvenue').onchange();await new Promise(resolve=>setImmediate(resolve));
+ assert.equal(get('#giftform').elements.tablePrice.value,2000);assert.match(get('#giftcontext').innerHTML,/GENERAL FALLBACK/);assert.match(get('#giftresult').innerHTML,/YOUR TOTAL ANGPAO/);assert.equal(get('#giftadjustments').open,false);
+ console.log('PASS: Hotel without a verified price automatically gets an explicitly labelled fallback and angpao result');
+ get('#giftvenue').value='eo';get('#giftvenue').onchange();await new Promise(resolve=>setImmediate(resolve));assert.equal(get('#giftform').elements.tablePrice.value,2700);assert.match(get('#giftcontext').innerHTML,/ILLUSTRATIVE HOTEL/);assert.doesNotMatch(get('#giftcontext').innerHTML,/GENERAL FALLBACK/);
+ console.log('PASS: Existing hotel estimate uses its own range midpoint');
+ get('#giftform').elements.guests.value='2';get('#giftform').oninput({target:{id:''}});await new Promise(resolve=>setImmediate(resolve));assert.match(get('#giftresult').innerHTML,/For 2 guests/);assert.match(get('#giftresult').innerHTML,/540/);
+ console.log('PASS: Changing guest count automatically recalculates');
+ get('#giftvenue').value='manual';get('#giftvenue').onchange();assert.equal(get('#giftadjustments').open,true);assert.equal(get('#giftform').elements.tablePrice.value,'');
+ console.log('PASS: Manual table pricing remains an optional override');
+ for(const v of data){assert.ok(v.guestEstimate.reference>0);assert.ok(v.guestEstimate.low<=v.guestEstimate.reference&&v.guestEstimate.reference<=v.guestEstimate.high);}
+ console.log('PASS: All 25 hotels have transparent, bounded guest estimate assumptions');
+`+t.slice(e);fs.writeFileSync('tests/Frontend.cjs',t);

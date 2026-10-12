@@ -1,0 +1,1 @@
+const fs=require('fs');const h=fs.readFileSync('scripts/gurney-extra.html','utf8');console.log([...h.matchAll(/["']([^"'<> ]+\.(?:jpg|png|webp))(?=["'])/gi)].map(m=>m[1]).filter(x=>/facade|exterior|lobby|ballroom|masthead|banner|slider/i.test(x)).slice(0,20));
