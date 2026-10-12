@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: wheredding
+    runtime: docker
+    plan: free
+    region: singapore
+    repo: https://github.com/jianicheah/Wheredding.git
+    branch: main
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /health

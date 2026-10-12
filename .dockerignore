@@ -1,0 +1,14 @@
+**/bin
+**/obj
+.git
+.dotnet
+.validation-build
+.vs
+.env*
+scripts
+tests
+**/*.pfx
+**/*.p12
+**/*.pem
+**/*.key
+**/*.log
