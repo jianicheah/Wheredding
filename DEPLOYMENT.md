@@ -25,8 +25,9 @@ arbitrary forwarded headers to bypass this; configure verified proxy trust if
 individual visitor rate limiting becomes necessary.
 
 Before public promotion, confirm rights to reuse the hotel photographs and
-keep the existing estimate labels: an illustrative calculator price is not a
-verified hotel's wedding quotation.
+keep the pricing evidence labels and source links described in PRICING.md.
+Published, historical and other-hotel comparison references must not be
+presented as the couple's actual quotation. There is no live hotel pricing feed.
 
 Local publish verification:
 

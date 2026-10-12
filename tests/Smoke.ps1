@@ -8,7 +8,8 @@ Assert ($v.Count -eq 25) 'Full 25-hotel catalogue loaded'
 Assert (($v | Where-Object area -eq Island).Count -ge 8) 'Island coverage'
 Assert (($v | Where-Object district -eq Butterworth).Count -ge 3) 'Butterworth coverage'
 Assert (($v | Where-Object area -eq Mainland).Count -ge 8) 'Mainland coverage'
-Assert (($v | Where-Object { $_.courses.Count -ne 8 -and $_.courses.Count -ne 0 }).Count -eq 0) 'Menus are either eight illustrative courses or explicitly unavailable'
+Assert (($v | Where-Object { $_.PSObject.Properties.Name -contains 'guestEstimate' -or $_.PSObject.Properties.Name -contains 'courses' }).Count -eq 0) 'Invented hotel ranges and dishes removed'
+Assert (($v | Where-Object { $_.packages.Count -gt 0 }).Count -eq 8) 'Eight hotels have traceable published package records'
 $body = @{tablePrice=1600;seats=10;guests=2;servicePercent=10;taxPercent=6;extra=20;budget=300} | ConvertTo-Json
 $r = Invoke-RestMethod "$BaseUrl/api/calculator" -Method Post -ContentType application/json -Body $body
 Assert ($r.tableTotal -eq 1865.6 -and $r.mealShare -eq 373.12 -and $r.suggested -eq 400) 'Calculator charges, guest share and rounding'

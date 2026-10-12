@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description"
-        content="Explore Penang wedding venues, compare Chinese banquet planning estimates and calculate your wedding angpao.">
+        content="Explore Penang wedding venues, compare sourced banquet package prices and calculate a transparent wedding angpao reference.">
     <title>Wheredding — A beautiful beginning in Penang</title>
     <link rel="stylesheet" href="/style.css">
     <script src="/app.js" defer></script>
@@ -45,9 +45,9 @@
                 </div>
                 <p>Island charm or mainland convenience.<br>Make room for what matters to you.</p>
             </div>
-            <div class="notice">Any numeric ranges and sample menus below are <strong>illustrative planning estimates,
-                    not hotel offers</strong>. Verified labels apply only to the cited venue facts. Checked 12 October
-                2026.</div>
+            <div class="notice"><strong>Know where the price comes from.</strong> Published references link to the hotel’s
+                own package. Expired packages and unknown charges are marked. A published price is not a booking quote
+                or the couple’s actual bill. Price sources checked 12 October 2026.</div>
             <p id="coverage" aria-live="polite"></p>
             <form id="filters" class="filters"><label>Search hotels<input id="search" type="search"
                         placeholder="Hotel, town or style…"></label><label>Location<select id="area">
@@ -62,7 +62,7 @@
                         <option value="2500">Up to RM 2,500</option>
                     </select></label><label>Sort by<select id="sort">
                         <option value="name">Hotel name</option>
-                        <option value="price">Lowest estimate</option>
+                        <option value="price">Lowest published reference</option>
                     </select></label><button type="reset" class="quiet">Reset</button></form>
             <p id="results" aria-live="polite"></p>
             <div id="cards" class="cards"></div>
@@ -74,9 +74,9 @@
                     <h2>A banquet worth comparing</h2>
                 </div><button id="clear" class="quiet">Clear selection</button>
             </div>
-            <p>Select up to three hotels above. Estimates assume 10 people per table and exclude service charge, tax,
-                drinks and extras. Sample dishes are editorial examples, not the hotel's menu. Hotels without verified
-                pricing show “Request a quotation”.</p>
+            <p>Select up to three hotels. Compare each package’s source, dates, menu summary and charges. References
+                are shown for 10 guests; assumptions and missing charges are marked. View the original package for
+                detailed dishes.</p>
             <div id="comparison" aria-live="polite"></div>
         </section>
         <section id="map">
@@ -106,27 +106,28 @@
                 than a number.</p>
             <div class="calc-layout">
                 <form id="giftform">
- <label>Which hotel is the wedding at?<select id="giftvenue" required><option value="">Choose the wedding hotel…</option></select></label>
- <div id="giftcontext" class="guest-estimate" aria-live="polite">Choose your hotel to see an automatic table estimate. No quotation needed.</div>
+ <label for="giftvenue">Which hotel is the wedding at?</label><select id="giftvenue" required><option value="">Choose the wedding hotel…</option></select>
+ <div id="packagechoice" hidden><label for="giftpackage">Know the package? (Optional)</label><select id="giftpackage"><option value="">I’m not sure — use the available price range</option></select><p class="small">You do not need to know the couple’s package. Leave “I’m not sure” selected to compare the published options.</p></div>
+ <div id="giftcontext" class="guest-estimate" aria-live="polite">Choose your hotel. We’ll show a published price or explain the comparison reference.</div>
  <div class="field-grid">
   <label>How many guests does your angpao cover?<input name="guests" type="number" min="1" max="100" value="1" required></label>
   <label>Extra gift, total (RM)<input name="extra" type="number" min="0" max="100000" step="0.01" value="0" required></label>
   <label>Your total budget (RM; 0 = unset)<input name="budget" type="number" min="0" max="100000" step="0.01" value="0" required></label>
  </div>
- <details id="giftadjustments" class="gift-adjustments"><summary>Optional: adjust the table estimate or charges</summary>
- <p class="small">You do not need the couple’s quotation. These fields are filled automatically when you choose a hotel. Change them only if you have better information.</p>
+ <details id="giftadjustments" class="gift-adjustments"><summary>Optional: use your own amount or charges</summary>
+ <p class="small">Changing these switches to “Your own amount”. Published references include charges when stated; do not add them twice. Reselect the hotel or package to restore the sourced reference.</p>
  <div class="field-grid">
   <label>Reference table price (RM)<input name="tablePrice" type="number" min="1" max="100000" step="0.01" placeholder="Choose a hotel above" required></label>
   <label>Seats per table<input name="seats" type="number" min="1" max="30" value="10" required></label>
   <label>Service charge (%)<input name="servicePercent" type="number" min="0" max="30" step="0.01" value="0" required></label>
   <label>Tax (%)<input name="taxPercent" type="number" min="0" max="30" step="0.01" value="0" required></label>
- </div><p class="small">0% means no extra charge is included in the estimate. For a nett price, leave both at 0%. Tax is applied after service charge in this model.</p>
+ </div><p class="small">For your own calculation, 0% adds no extra charge. For a nett amount, leave both at 0%. Tax is applied after service charge in this model.</p>
  </details>
  <button class="button" type="submit">Update my angpao reference →</button>
 </form>
                 <div id="giftresult" class="gift-result" aria-live="polite"><span>囍</span>
                     <h3>A thoughtful gift,<br>on your terms.</h3>
-                    <p>Choose the wedding hotel to see your estimated table cost and angpao reference.</p>
+                    <p>Select a hotel to see a meal-cost reference. Your gift is always your choice.</p>
                 </div>
             </div>
         </section>
@@ -136,13 +137,14 @@
             <div class="method-grid">
                 <div>
                     <h3>Verified venue facts</h3>
-                    <p>Checked against linked official hotel pages. This does not verify current wedding prices, dates,
-                        dietary suitability or availability.</p>
+                    <p>Checked against official hotel pages. The venue badge verifies venue facts, not availability,
+                        the latest price or the couple’s booking.</p>
                 </div>
                 <div>
-                    <h3>Planning estimates</h3>
-                    <p>Editorial budget ranges and example eight-course Chinese menus. These are not quotations, market
-                        averages or promises of a hotel's dishes.</p>
+                    <h3>Prices you can trace</h3>
+                    <p>Published prices link to official packages, with check dates and validity. Historical prices are
+                        labelled. Where a hotel has no price, the calculator explains its comparison with other hotels,
+                        without presenting it as the selected hotel’s rate.</p>
                 </div>
                 <div>
                     <h3>Before you book</h3>

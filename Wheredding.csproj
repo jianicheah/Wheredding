@@ -9,6 +9,7 @@
   <ItemGroup>
     <Content Update="Data/venues.json" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
     <Content Remove="scripts/**;tests/**" />
+    <Compile Remove="tests/**" />
   </ItemGroup>
 </Project>
 

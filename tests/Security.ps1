@@ -10,7 +10,11 @@ Assert ($page.Headers['X-Frame-Options'] -eq 'DENY') 'Framing disabled'
 Assert ($page.Headers['Referrer-Policy'] -eq 'no-referrer') 'Referrer disclosure disabled'
 $body=@{venueId='eo';priceMode='hotel';tablePrice=1;seats=10;guests=2;servicePercent=0;taxPercent=0;extra=0;budget=0}
 $r=Post $body
-Assert ($r.appliedTablePrice -eq 2700 -and $r.suggested -eq 540 -and $r.priceMode -eq 'hotel') 'Tampered hotel price ignored; server catalogue controls calculation'
+Assert ($r.appliedTablePrice -eq 2188 -and $r.suggestedLow -eq 440 -and $r.suggestedHigh -eq 580 -and $r.estimateKind -eq 'benchmark') 'Tampered hotel price ignored; sourced benchmark range returned honestly'
+ $body.venueId='amari';$body.packageId='blissful';$body.seats=1;$body.servicePercent=30;$body.taxPercent=30;$r=Post $body
+Assert ($r.tableTotal -eq 2188 -and $r.seats -eq 10 -and $r.suggestedLow -eq 440) 'Hotel seating and nett charges cannot be forged in browser'
+$body.packageId='forged';Reject $body 400 'Forged package ID rejected'
+$body.Remove('packageId');$body.seats=10;$body.servicePercent=0;$body.taxPercent=0
 $body.priceMode='manual';$body.tablePrice=1000;$r=Post $body
 Assert ($r.appliedTablePrice -eq 1000 -and $r.estimateKind -eq 'user-entered') 'Custom pricing explicitly identified as user-entered'
 $body.venueId='made-up-hotel';Reject $body 400 'Forged hotel ID rejected'

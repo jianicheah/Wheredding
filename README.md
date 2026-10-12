@@ -1,83 +1,84 @@
 # Wheredding
 
-Local ASP.NET Core 9 / C# wedding venue guide. No login, database, API keys, remote fonts, CDN assets or cloud hosting.
+ASP.NET Core 9 / C# wedding venue guide for Penang Island, Butterworth and the
+mainland. Source stays in this repository and C:\Wheredding. The deployed site
+is https://wheredding.onrender.com on Render Free.
 
-## Run
+No login, database, API keys, remote fonts or CDN scripts are needed.
+Hotel photos are local files with source credits. Confirm reuse rights before
+public promotion; a source credit is not a photograph licence.
 
-Install the .NET 9 SDK, then in PowerShell:
+## Run locally
+
+Install the .NET 9 SDK, then run from C:\Wheredding:
 
 ```powershell
-cd C:\Wheredding
+$env:DOTNET_CLI_HOME='C:\Wheredding\.dotnet'
 dotnet build
-dotnet run --no-launch-profile --urls http://localhost:5080
+dotnet run --no-launch-profile --urls http://127.0.0.1:5299
 ```
 
-Open http://localhost:5080. Stop with Ctrl+C.
-
-## Test
-
-With the server running:
-
-```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File tests\Smoke.ps1
-```
-
-The smoke suite checks page/assets, island/mainland/Butterworth coverage, menu data, calculator arithmetic, charges, rounding, budget handling and invalid inputs. No third-party test packages are required.
+Open http://127.0.0.1:5299 and stop with Ctrl+C.
 
 ## Features
 
-- Search, area and planning-budget filters; name or price sorting.
-- 25 hotel listings across Penang Island, Butterworth, Seberang Jaya and Bukit Mertajam.
-- Accessible detail dialogs, official source links and contact routes.
-- Up to three hotels compared with eight-course illustrative menus; printable comparison.
-- Offline schematic location overview plus external Google Maps search/directions links.
-- Server-validated angpao cost model with nett/charge inputs, guest counts, extra gift and budget.
-- Responsive layout with locally stored hotel and event-space photographs and source credits.
+- 25 hotel listings: 17 island and 8 mainland, including 3 in Butterworth.
+- Search, location and published-price filters; photos, contacts and map links.
+- Compare up to three hotels, including price basis, source and menu summaries.
+- Automatic guest angpao reference with optional package selection.
+- Source-backed hotel prices, clearly labelled historical prices, or an
+  explicitly identified other-hotel comparison when no hotel price is verified.
+- Optional manual amounts, guests, extra gift and budget.
 
-## Data integrity
+## Pricing integrity
 
-Edit `Data/venues.json` to maintain listings. All numeric price ranges and sample dishes are editorial examples, not hotel quotations or verified menus. Wedding verification applies only to `fact`, supported by `source`; it does not endorse a current Chinese banquet package. Sunway and De Garden require wedding enquiries. The Iconic brochure is historical and no current rate is claimed. Capacity is null unless directly verified in guests; Olive Tree's table capacity is described only in its source fact.
+The former invented ranges and sample dishes have been removed. The catalogue
+now contains 18 published package records for 8 hotels, each tied to an official
+page or brochure with a check date, seating, charge basis and validity notes.
+Some packages are expired or undated; the UI distinguishes those cases.
 
-Sources were checked on 12 October 2026. The map overview is schematic; precise entrances and locations should be checked using external map searches. Where a phone or email is unavailable, the official hotel website is the contact route. Refresh source checks and the displayed date together when updating facts.
+These are manually checked records, **not a live hotel pricing API**. No
+integration exposes what a couple actually booked. Hotel prices and availability
+must still be confirmed before booking. See [PRICING.md](PRICING.md) for evidence,
+limitations, maintenance rules and the requirement-to-test mapping.
 
-Calculator: table price × (1 + service/100) × (1 + tax/100) ÷ seats × guests + extra, rounded up to RM10. Confirm quotation tax basis; enter zero charges for nett pricing. A gift is voluntary and personal, not a duty to cover meal cost.
+The server calculates from these records. It returns the observed price range
+rather than an invented midpoint. Missing charges remain unknown. Sources expire
+automatically, and older check dates are flagged. An angpao is a voluntary gift,
+not a requirement to cover a bill.
 
-## Structure
+## Tests
 
-- `Program.cs`: static hosting, venue data endpoint, validated calculator and health endpoint.
-- `wwwroot/`: HTML, CSS and browser interactions.
-- `Data/venues.json`: local venue catalogue and provenance.
-- `tests/Smoke.ps1`: reproducible integration checks.
+With the local server running:
 
-External sites open only when their links are clicked. No source is uploaded or published. Browser comparison choices are held in memory and reset on refresh.
+```powershell
+./tests/Smoke.ps1 -BaseUrl http://127.0.0.1:5299
+$env:BASE_URL='http://127.0.0.1:5299'
+node tests/Frontend.cjs
+dotnet run --project tests/Pricing/PricingChecks.csproj
+python tests/HtmlOptions.py
+./tests/Security.ps1 -BaseUrl http://127.0.0.1:5299
+```
 
-## Expanded catalogue and photographs
+Security tests intentionally consume the local calculator's minute rate-limit
+bucket; wait for reset before further calculator checks. Do not run that
+rate-limit exhaustion check against the public service.
 
-The guide now contains 25 hotels (17 island, 8 mainland), including De Garden, Aroma and Chariton in Butterworth itself. The remaining mainland hotels are in Perai, Seberang Jaya and Bukit Mertajam; these are not labelled as Butterworth addresses. This is a sourced catalogue, not a claim of every hotel or available wedding date in Penang.
+Tests cover arithmetic, ranges, package selection, expiry, missing data,
+unknown charges, seating assumptions, manual override, filtering, comparison
+limits, source metadata, invalid input and tampered hotel-mode values.
+No third-party .NET test packages are required.
 
-All hotels appear in the searchable calculator selector. Newly researched hotels have null prices and empty menus where current data is not verified. Selecting them clears the previous table amount and requires the user's quotation. The original six editorial estimates remain labelled as illustrative. Comparison remains limited to three selected hotels, chosen from the entire catalogue.
+## Deployment and security
 
-Real hotel/property/event-space photographs are stored under `wwwroot/images/hotels`. Each record preserves its original image URL, source page and credit. Angsana and Bayview photos come through Penang Global Tourism, with the hotels credited there. The other images come from official hotel pages. These are local reference copies, not a declaration that the photographs are openly licensed; obtain reuse permission before any future public launch. No images are hotlinked, and no website is published.
+See [DEPLOYMENT.md](DEPLOYMENT.md) for Docker / Render Free configuration.
+The container includes source-backed catalogue data and local images.
+Catalogue edits require a restart or redeploy.
 
-`node tests/Frontend.cjs` checks catalogue-to-calculator coverage, filtering, comparison selection limits and safe handling of missing quotes with a lightweight DOM test harness. This is not a real-browser visual test.
-
-
-## Guest-first calculator
-
-The calculator now starts with the wedding hotel, automatically displays a table range and midpoint, and calculates an angpao reference without asking guests for a quotation. The duplicate calculator search has been removed. Guests, extra gift and budget are primary inputs; table pricing, seats, service and tax are optional adjustments.
-
-Each venue's `guestEstimate` records the range, midpoint and evidence kind. The original six hotel-specific editorial ranges are still illustrative. Hotels without a price use the SAME shared RM1,500–2,500 per-table scenario (midpoint RM2,000), prominently labelled GENERAL FALLBACK / HOTEL RATE UNKNOWN. This scenario is an editorial assumption, not a researched hotel price, a market average, or the couple's bill. It intentionally does not invent different prices for unverified hotels. Service and tax default to zero and are excluded unless entered. Hotel selection resets the price basis, seats and charges; changing guest count or other amounts automatically recalculates. Verified venue facts remain separate from unverified price estimates.
-
-This supersedes the earlier quotation-required calculator workflow described above. Browsing and comparison continue to show quotation gaps instead of presenting the calculator's generic fallback as a hotel rate.
-
-## Security boundaries and hardening
-
-Browser tools can always edit a visitor's own page or requests. The server's files and other visitors' pages are not modified by Inspect. The application provides no public catalogue-write endpoint; Data and C# source are outside the static web root. Protect the local project folder with normal OS permissions; anyone with write access to the host can still change files.
-
-Hotel-mode calculator requests send `venueId` and `priceMode: hotel`. C# takes the reference price from a server-owned catalogue snapshot and ignores browser-supplied table prices. Manual prices remain intentionally allowed, but responses mark them `user-entered`. All guest/seat/charge/amount bounds are checked on the server. Restart the server after editing catalogue data so the served catalogue and calculator use the same snapshot.
-
-The app uses a restrictive self-only Content Security Policy, frame blocking, MIME-sniffing protection, no-referrer policy and disabled camera/microphone/geolocation permissions. These are defense in depth, not a guarantee against XSS or browser extensions. Request bodies are capped at 16 KiB; unexpected JSON properties are rejected; calculator calls are limited to 120/minute per remote IP without a waiting queue. Rate limits reset on process restart and are per-process; they are not DDoS protection. Client validation remains for usability only. Generic server errors avoid returning internal exception details.
-
-Run `tests/Security.ps1` against a fresh local test server after Smoke.ps1. It tests price tampering, invalid IDs/modes, invalid inputs, unexpected JSON, blocked writes, headers, oversized bodies, and rate limiting. The rate-limit test intentionally consumes its window; do not run it against a server people are actively using.
-
-The requested local HTTP loopback workflow remains available. Before any future Internet hosting, configure HTTPS/HSTS, supported patched .NET, trusted proxy settings and restricted file permissions. Public venue information is not a secret, and obfuscating HTML or disabling right-click would not secure it. No authentication is needed for this read-only public guide; any future administrative write features would require authorization.
+Calculator inputs are validated on the server; hotel price, seats and charges
+are resolved there. JSON rejects unknown properties; bodies are limited to
+16 KiB; calculation requests are rate-limited. CSP restricts scripts and assets
+to the site, and response headers restrict framing and MIME sniffing.
+These measures do not guarantee immunity to attacks or validate hotel facts.
+Behind Render's proxy, multiple visitors may share a connection-IP rate bucket;
+do not trust arbitrary forwarded headers as a workaround.
