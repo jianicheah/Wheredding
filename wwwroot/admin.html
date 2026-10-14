@@ -7,8 +7,8 @@
     <meta name="robots" content="noindex,nofollow">
     <title>Wheredding · Admin</title>
     <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="/admin.css">
-    <script src="/admin.js" defer></script>
+    <link rel="stylesheet" href="/admin.css?v=editor-tabs-2">
+    <script src="/admin.js?v=editor-tabs-2" defer></script>
 </head>
 
 <body class="admin-page">
@@ -55,14 +55,25 @@
                 <section id="hotel-editor" class="hotel-editor" hidden aria-labelledby="hotel-title">
                     <form id="hotel-form">
                         <div class="hotel-editor-heading"><h2 id="hotel-title" tabindex="-1">Select a hotel</h2><button type="button" id="close-editor">Close editor</button></div>
-                        <div id="hotel-fields" class="admin-fields"></div>
+                        <div class="editor-tabs" role="tablist" aria-label="Hotel editor sections">
+                            <button type="button" id="editor-tab-general" role="tab" aria-controls="editor-panel-general" aria-selected="true">General information</button>
+                            <button type="button" id="editor-tab-packages" role="tab" aria-controls="editor-panel-packages" aria-selected="false" tabindex="-1">Banquet packages</button>
+                            <button type="button" id="editor-tab-preview" role="tab" aria-controls="editor-panel-preview" aria-selected="false" tabindex="-1">Draft preview</button>
+                        </div>
+                        <div id="editor-panel-general" role="tabpanel" aria-labelledby="editor-tab-general" data-editor-panel="general" tabindex="0">
+                            <div id="hotel-fields" class="admin-fields"></div>
+                        </div>
                         <div id="hotel-actions" hidden>
+                            <div id="editor-panel-packages" role="tabpanel" aria-labelledby="editor-tab-packages" data-editor-panel="packages" tabindex="0" hidden>
                             <h2>Banquet packages</h2>
                             <p>Published records require a source and checked date. Unknown charges and seating must
                                 remain labelled. Expired dates are automatically shown as historical references.</p>
                             <div id="package-list"></div><button type="button" id="new-package">+ Add package</button>
+                            </div>
+                            <div id="editor-panel-preview" role="tabpanel" aria-labelledby="editor-tab-preview" data-editor-panel="preview" tabindex="0" hidden>
                             <h2>Draft preview</h2>
                             <div id="preview"></div>
+                            </div>
                         </div>
                     </form>
                 </section>

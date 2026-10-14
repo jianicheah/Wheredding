@@ -19,7 +19,30 @@ function renderList(){
  $('#hotel-list').querySelectorAll('[data-edit]').forEach(b=>b.onclick=()=>editHotel(Number(b.dataset.edit)));
  $('#hotel-list').querySelectorAll('[data-archive]').forEach(b=>b.onclick=()=>{const v=doc.venues[Number(b.dataset.archive)];v.archived=!v.archived;changed();renderList();if(v===current)preview();status(v.name+(v.archived?' archived in your draft.':' restored in your draft.')+' Click Save & publish changes to update the public guide.');});
 }
-function editHotel(i){current=doc.venues[i];$('#hotel-editor').hidden=false;$('#hotel-title').textContent=current.name;$('#hotel-actions').hidden=false;fillFields($('#hotel-fields'),hotelFields,current,'hotel');renderPackages();renderList();preview();$('#hotel-title').focus();}
+const editorTabs=['general','packages','preview'];
+function selectEditorTab(name,focus=false){
+ editorTabs.forEach(tab=>{
+  const selected=tab===name,button=$('#editor-tab-'+tab);
+  button.setAttribute('aria-selected',String(selected));button.tabIndex=selected?0:-1;
+  $('#editor-panel-'+tab).hidden=!selected;
+ });
+ if(name==='preview')preview();
+ if(focus)$('#editor-tab-'+name).focus();
+}
+editorTabs.forEach((name,index)=>{
+ const button=$('#editor-tab-'+name);
+ button.onclick=()=>selectEditorTab(name);
+ button.onkeydown=e=>{
+  let next;
+  if(e.key==='ArrowRight')next=(index+1)%editorTabs.length;
+  else if(e.key==='ArrowLeft')next=(index+editorTabs.length-1)%editorTabs.length;
+  else if(e.key==='Home')next=0;
+  else if(e.key==='End')next=editorTabs.length-1;
+  else return;
+  e.preventDefault();selectEditorTab(editorTabs[next],true);
+ };
+});
+function editHotel(i){current=doc.venues[i];$('#hotel-editor').hidden=false;$('#hotel-title').textContent=current.name;$('#hotel-actions').hidden=false;fillFields($('#hotel-fields'),hotelFields,current,'hotel');renderPackages();renderList();selectEditorTab('general');preview();$('#hotel-title').focus();}
 function renderPackages(){$('#package-list').innerHTML=current.packages.map((p,i)=>'<details class="package-editor" open><summary>'+esc(p.name)+'</summary><div class="admin-fields" id="pkg-'+i+'"></div><button type="button" data-remove="'+i+'">Delete this package</button></details>').join('');current.packages.forEach((p,i)=>fillFields($('#pkg-'+i),packageFields,p,'pkg'+i));$('#package-list').querySelectorAll('[data-remove]').forEach(b=>b.onclick=()=>{if(confirm('Remove this package from the draft? It is removed publicly only when you save.')){current.packages.splice(Number(b.dataset.remove),1);changed();renderPackages();preview();}});}
 function preview(){if(!current)return;$('#preview').innerHTML='<p><strong>Unsaved draft · '+(current.archived?'Archived':'Visible in guide')+'</strong></p>'+((current.photo.startsWith('/images/hotels/')&&!current.photo.includes('..'))||/^https:\/\//.test(current.photo)?'<img src="'+esc(current.photo)+'" alt="'+esc(current.photoAlt)+'">':'')+'<h3>'+esc(current.name)+'</h3><p>'+esc(current.address)+'</p><p>'+esc(current.phone)+' · '+esc(current.email)+'</p>'+current.packages.map(p=>'<p><strong>'+esc(p.name)+': RM '+esc(p.amount)+' '+esc(p.chargeLabel)+'</strong> / '+esc(p.seats)+' guests'+(!p.seatsConfirmed?' (assumed)':'')+'<br>'+esc(p.menuSummary)+'<br>'+(p.validUntil&&p.validUntil<today()?'Historical · expired '+esc(p.validUntil):p.validUntil?'Valid until '+esc(p.validUntil):'Validity unconfirmed')+(!p.chargesComplete?' · extra charges unconfirmed':'')+'</p>').join('');}
 async function load(){doc=await api('/api/admin/content');current=null;dirty=hotelsDirty=contactDirty=false;$('#workspace').hidden=false;$('#login-panel').hidden=true;$('#logout').hidden=false;updateRevision();contactStatus('No unsaved contact changes.');$('#hotel-fields').innerHTML='';$('#hotel-actions').hidden=true;$('#hotel-editor').hidden=true;$('#hotel-title').textContent='Select a hotel';renderList();fillFields($('#contact-form'),contactFields,doc.contact,'contact');status('Saved content loaded. Use Edit in the hotel table or add a hotel.');}
@@ -33,7 +56,14 @@ $('#new-package').onclick=()=>{current.packages.push({id:'package-'+Date.now(),n
 $('#hotel-form').onsubmit=e=>e.preventDefault();$('#contact-form').onsubmit=e=>e.preventDefault();
 $('#publish').onclick=async()=>{
  if(busy)return;if(!hotelsDirty){status('No unsaved hotel or package changes. Use Save Contact Us for contact details.');return;}
- if(!$('#hotel-form').checkValidity()){$('#hotel-editor').hidden=false;$('#hotel-form').reportValidity();return;}
+ if(!$('#hotel-form').checkValidity()){
+  $('#hotel-editor').hidden=false;
+  const invalid=$('#hotel-form').querySelector('input:invalid,select:invalid,textarea:invalid');
+  const panel=invalid?.closest('[role="tabpanel"]');
+  if(panel)selectEditorTab(panel.dataset.editorPanel);
+  const details=invalid?.closest('details');if(details)details.open=true;
+  $('#hotel-form').reportValidity();return;
+ }
  const snapshot=JSON.stringify(doc.venues);setBusy(true);
  try{const r=await api('/api/admin/hotels',{method:'PUT',body:JSON.stringify({venues:JSON.parse(snapshot),expectedRevision:doc.revision})});doc.revision=r.revision;hotelsDirty=JSON.stringify(doc.venues)!==snapshot;updateRevision();status('Hotels and packages published.'+(hotelsDirty?' New hotel edits are still unsaved.':'')+(contactDirty?' Contact Us changes are still unsaved; use Save Contact Us.':''));}
  catch(e){status(e.message,true);}finally{setBusy(false);}

@@ -1,7 +1,7 @@
 const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
 class Element {
  constructor(){this.value='';this.textContent='';this.innerHTML='';this.className='';this.hidden=false;this.disabled=false;this.valid=true;}
- querySelectorAll(){return [];} checkValidity(){return this.valid;} reportValidity(){return this.valid;} focus(){} reset(){}
+ setAttribute(name,value){this[name]=value;} querySelector(){return this.invalidElement||null;} querySelectorAll(){return [];} checkValidity(){return this.valid;} reportValidity(){return this.valid;} focus(){this.focused=true;} reset(){}
 }
 (async()=>{
  const elements=new Map(),get=s=>{if(s==='#reload')return null;if(!elements.has(s))elements.set(s,new Element());return elements.get(s);};
@@ -34,6 +34,47 @@ class Element {
  get('#hotel-search').value='';vm.runInContext('renderList()',context);
  assert.match(get('#hotel-list').innerHTML,/<tr/);assert.match(get('#hotel-list').innerHTML,/data-edit="0"/);assert.match(get('#hotel-list').innerHTML,/data-archive="0"/);
  console.log('PASS: Hotel table renders edit/archive actions and empty search state');
+ vm.runInContext("doc.venues[0].photo='';doc.venues[0].photoAlt='';editHotel(0);",context);
+ assert.equal(get('#editor-panel-general').hidden,false);
+ assert.equal(get('#editor-panel-packages').hidden,true);
+ assert.equal(get('#editor-panel-preview').hidden,true);
+ assert.equal(get('#editor-tab-general')['aria-selected'],'true');
+ assert.equal(get('#editor-tab-general').tabIndex,0);
+ vm.runInContext("current.name='Hotel draft kept across tabs';changed();",context);
+ const draftBefore=vm.runInContext('JSON.stringify(doc)',context);
+ get('#editor-tab-packages').onclick();
+ assert.equal(get('#editor-panel-general').hidden,true);
+ assert.equal(get('#editor-panel-packages').hidden,false);
+ get('#editor-tab-preview').onclick();
+ assert.match(get('#preview').innerHTML,/Hotel draft kept across tabs/);
+ assert.equal(get('#editor-panel-packages').hidden,true);
+ assert.equal(get('#editor-panel-preview').hidden,false);
+ assert.equal(vm.runInContext('JSON.stringify(doc)',context),draftBefore);
+ assert.equal(vm.runInContext('hotelsDirty && contactDirty',context),true);
+ console.log('PASS: Editor tabs show one panel, refresh preview and preserve unsaved drafts');
+ let prevented=false;
+ get('#editor-tab-preview').onkeydown({key:'ArrowRight',preventDefault(){prevented=true;}});
+ assert.equal(prevented,true);
+ assert.equal(get('#editor-panel-general').hidden,false);
+ assert.equal(get('#editor-tab-general').focused,true);
+ get('#editor-tab-general').onkeydown({key:'End',preventDefault(){}});
+ assert.equal(get('#editor-panel-preview').hidden,false);
+ get('#editor-tab-preview').onkeydown({key:'Home',preventDefault(){}});
+ assert.equal(get('#editor-panel-general').hidden,false);
+ get('#editor-tab-general').onkeydown({key:'ArrowLeft',preventDefault(){}});
+ assert.equal(get('#editor-panel-preview').hidden,false);
+ console.log('PASS: Keyboard arrows wrap tabs; Home and End select first and last');
+ const details={open:false};
+ get('#hotel-form').valid=false;
+ get('#hotel-form').invalidElement={closest(selector){return selector==='details'?details:{dataset:{editorPanel:'packages'}};}};
+ const requestCount=submitted.length;
+ await get('#publish').onclick();
+ assert.equal(get('#editor-panel-packages').hidden,false);
+ assert.equal(details.open,true);
+ assert.equal(submitted.length,requestCount);
+ get('#hotel-form').valid=true;
+ get('#hotel-form').invalidElement=null;
+ console.log('PASS: Saving reveals the hidden invalid package field without submitting');
  missingRoute=true;get('#contact-form').valid=true;
  await get('#save-contact').onclick();
  assert.match(get('#contact-save-status').textContent,/restart Wheredding/);

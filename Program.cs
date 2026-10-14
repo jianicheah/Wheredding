@@ -64,6 +64,7 @@ app.Use(async (context, next) => {
     context.Response.Headers["Permissions-Policy"] = "camera=(), microphone=(), geolocation=()";
     if (context.Request.Path.StartsWithSegments("/api")) context.Response.Headers.CacheControl = "no-store";
     if(context.Request.Path.StartsWithSegments("/admin") || context.Request.Path.StartsWithSegments("/api/admin")) {context.Response.Headers.CacheControl="no-store";context.Response.Headers["X-Robots-Tag"]="noindex, nofollow";}
+    if(context.Request.Path=="/admin.js" || context.Request.Path=="/admin.css") context.Response.Headers.CacheControl="no-cache";
     if(context.Request.Path=="/api/calculator" && context.Request.ContentLength>16*1024){context.Response.StatusCode=413;return;}
     await next();
 });
