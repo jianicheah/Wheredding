@@ -1,4 +1,4 @@
-param([string]$Dll='C:\Wheredding\.validation-build\admin-build\Wheredding.dll',[int]$Port=5310,[switch]$SqlServer)
+param([string]$Dll='C:\Wheredding\.validation-build\admin-build\Wheredding.dll',[int]$Port=5310,[switch]$Postgres)
 $ErrorActionPreference='Stop'
 $base="http://127.0.0.1:$Port";$root=Split-Path $PSScriptRoot
 $unique=[Guid]::NewGuid().ToString('N');$localDir=".validation-build/admin-test-$unique"
@@ -8,11 +8,11 @@ $hash='600000:'+ [Convert]::ToBase64String($salt)+':'+[Convert]::ToBase64String(
 $names=@('ASPNETCORE_ENVIRONMENT','Content__LocalDevelopment','Content__LocalDirectory','Admin__Username','Admin__PasswordHash','ConnectionStrings__Content')
 $old=@{};foreach($n in $names){$old[$n]=[Environment]::GetEnvironmentVariable($n)}
 $env:ASPNETCORE_ENVIRONMENT='Development';$env:Content__LocalDevelopment='true';$env:Content__LocalDirectory=$localDir;$env:Admin__Username='test-admin';$env:Admin__PasswordHash=$hash;$env:ConnectionStrings__Content=''
-if($SqlServer){
-    $database='WhereddingTest'+$unique
-    sqlcmd -S '(localdb)\MSSQLLocalDB' -E -Q "CREATE DATABASE [$database]" -b
-    if($LASTEXITCODE -ne 0){throw 'Could not create isolated LocalDB test database.'}
-    $env:ConnectionStrings__Content="Server=(localdb)\MSSQLLocalDB;Database=$database;Integrated Security=True;Encrypt=True;TrustServerCertificate=True"
+if($Postgres){
+    if([string]::IsNullOrWhiteSpace($old['ConnectionStrings__Content'])){throw 'Set ConnectionStrings__Content to an isolated PostgreSQL test database first.'}
+    $testConnection=$old['ConnectionStrings__Content']
+    if($testConnection -notmatch '(?i)(?:^|;)\s*Database=whereddingtest_[a-z0-9]+(?:;|$)'){throw 'Use a NEW isolated whereddingtest_ database, not your application database.'}
+    $env:ConnectionStrings__Content=$testConnection
 }
 function Assert($condition,$message){if(-not $condition){throw $message};Write-Host "PASS: $message"}
 function Start-App {
@@ -100,7 +100,7 @@ try {
     Assert ((Call '/api/admin/content').StatusCode -eq 401) 'Signed-out session cannot read admin content'
     Stop-Process -Id $process.Id;$process.WaitForExit();$env:ASPNETCORE_ENVIRONMENT='Production';$env:ConnectionStrings__Content='';Start-App
     Assert (-not (((Call '/api/admin/session').Content|ConvertFrom-Json).enabled)) 'Production refuses ephemeral local admin storage'
-    Write-Host "All admin integration checks passed. SQL Server mode: $SqlServer"
+    Write-Host "All admin integration checks passed. PostgreSQL mode: $Postgres"
 } finally {
     if($process -and -not $process.HasExited){Stop-Process -Id $process.Id}
     foreach($n in $names){[Environment]::SetEnvironmentVariable($n,$old[$n])}

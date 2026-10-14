@@ -40,7 +40,7 @@ class Element {
  assert.equal(vm.runInContext('contactDirty && dirty',context),true);
  assert.equal(get('#save-contact').disabled,false);
  console.log('PASS: An outdated server gives restart instructions and keeps the unsaved draft');
- sessionReply={enabled:true,authenticated:false,csrfToken:'test-token',storage:'SQL Server'};
+ sessionReply={enabled:true,authenticated:false,csrfToken:'test-token',storage:'PostgreSQL'};
  await assert.rejects(vm.runInContext('session(true)',context),/sign-in cookie was not accepted/);
  console.log('PASS: A rejected sign-in session reports an error instead of silently returning to login');
 })().catch(e=>{console.error(e);process.exitCode=1;});

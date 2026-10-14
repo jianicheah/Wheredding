@@ -74,11 +74,12 @@ No third-party .NET test packages are required.
 See [DEPLOYMENT.md](DEPLOYMENT.md) for Docker / Render Free configuration.
 The container includes source-backed catalogue data and local images.
 Optional protected administration is available at `/admin`; see [ADMIN.md](ADMIN.md)
-for SQL Server configuration, local setup and tests. With a configured database,
+for PostgreSQL / pgAdmin configuration, local setup and tests. With a configured database,
 hotel/package/contact edits publish immediately without restart or redeployment.
-SQL Server stores Hotels and Packages as individual rows linked by HotelId,
-with SiteContact, ContentState and AuditHistory tables. Existing document-based
-databases migrate automatically while retaining their old tables as backups.
+PostgreSQL stores Hotels and Packages as individual rows linked by HotelId,
+with SiteContact, ContentState and AuditHistory tables. Existing SQL Server
+databases can be exported and imported into an empty PostgreSQL database,
+preserving saved content and revision history.
 Without database/admin configuration the public site uses the project catalogue
 and administrative editing remains disabled.
 

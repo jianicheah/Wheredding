@@ -1,11 +1,14 @@
 using System.Data;
 using System.Text.Json;
 using System.Text.Json.Nodes;
-using Microsoft.Data.SqlClient;
+using Npgsql;
+using NpgsqlTypes;
 
 sealed record SiteContact(string Heading = "Contact Wheredding", string Message = "Have a correction or a venue suggestion? Contact details will be published here when available.", string Email = "", string Phone = "");
 sealed record ContentDocument(JsonArray Venues, SiteContact Contact, long Revision = 1);
 sealed record ContentRevision(long Revision, DateTime SavedAt, string Actor);
+sealed record TransferredRevision(long Revision, DateTime SavedAt, string Actor, ContentDocument Document);
+sealed record ContentTransfer(ContentDocument Current, TransferredRevision[] History);
 
 // One transaction protects catalogue, contact information and revision history together.
 sealed class ContentStore(IConfiguration config, IWebHostEnvironment environment)
@@ -15,19 +18,20 @@ sealed class ContentStore(IConfiguration config, IWebHostEnvironment environment
     readonly bool local = environment.IsDevelopment() && config.GetValue<bool>("Content:LocalDevelopment");
     string LocalPath => Path.Combine(environment.ContentRootPath,config["Content:LocalDirectory"]??".local-content","content.json");
     public bool Writable => !string.IsNullOrWhiteSpace(connection) || local;
-    public string Mode => !string.IsNullOrWhiteSpace(connection) ? "SQL Server" : local ? "Local development file (not for Render)" : "Read-only project catalogue";
+    public string Mode => !string.IsNullOrWhiteSpace(connection) ? "PostgreSQL" : local ? "Local development file (not for Render)" : "Read-only project catalogue";
     static readonly JsonSerializerOptions Json = new(JsonSerializerDefaults.Web);
     ContentDocument Seed() => new(JsonNode.Parse(File.ReadAllText(Path.Combine(environment.ContentRootPath,"Data","venues.json")))!.AsArray(),new());
-    async Task<SqlConnection> Open()
+    async Task<NpgsqlConnection> Open()
     {
-        var c = new SqlConnection(connection);
+        var c = new NpgsqlConnection(connection);
         try {await c.OpenAsync(); return c;}catch{await c.DisposeAsync();throw;}
     }
-    public async Task Initialize()
+    public async Task Initialize(string? importPath=null)
     {
-        if(string.IsNullOrWhiteSpace(connection)) return;
+        if(string.IsNullOrWhiteSpace(connection)) {if(importPath is not null)throw new InvalidOperationException("Configure PostgreSQL before importing.");return;}
         await using var c = await Open();
-        await RelationalContent.Initialize(c,Seed());
+        var transfer=importPath is null?null:JsonSerializer.Deserialize<ContentTransfer>(await File.ReadAllTextAsync(importPath),Json)??throw new InvalidOperationException("Invalid transfer file.");
+        await RelationalContent.Initialize(c,Seed(),transfer);
     }
     public async Task<ContentDocument> Read()
     {
@@ -62,7 +66,7 @@ sealed class ContentStore(IConfiguration config, IWebHostEnvironment environment
     {
         if(string.IsNullOrWhiteSpace(connection)) return local && Directory.Exists(Path.Combine(Path.GetDirectoryName(LocalPath)!,"history")) ? Directory.GetFiles(Path.Combine(Path.GetDirectoryName(LocalPath)!,"history"),"*.json").Select(p=>new ContentRevision(long.Parse(Path.GetFileNameWithoutExtension(p)),File.GetLastWriteTimeUtc(p),"Local administrator")).OrderByDescending(x=>x.Revision).Take(50).ToArray() : [];
         await using var c=await Open(); await using var cmd=c.CreateCommand();
-        cmd.CommandText="SELECT TOP(50) Revision,SavedAt,Actor FROM dbo.AuditHistory ORDER BY Revision DESC";
+        cmd.CommandText="SELECT Revision,SavedAt,Actor FROM public.AuditHistory ORDER BY Revision DESC LIMIT 50";
         var result=new List<ContentRevision>(); await using var r=await cmd.ExecuteReaderAsync();
         while(await r.ReadAsync())result.Add(new(r.GetInt64(0),r.GetDateTime(1),r.GetString(2)));return result;
     }
@@ -74,8 +78,8 @@ sealed class ContentStore(IConfiguration config, IWebHostEnvironment environment
             return local && File.Exists(p)?JsonSerializer.Deserialize<ContentDocument>(await File.ReadAllTextAsync(p),Json):null;
         }
         await using var c=await Open(); await using var cmd=c.CreateCommand();
-        cmd.CommandText="SELECT Document FROM dbo.AuditHistory WHERE Revision=@revision";
-        cmd.Parameters.Add("@revision",SqlDbType.BigInt).Value=revision;
+        cmd.CommandText="SELECT Document FROM public.AuditHistory WHERE Revision=@revision";
+        cmd.Parameters.Add("@revision",NpgsqlDbType.Bigint).Value=revision;
         var value=await cmd.ExecuteScalarAsync();return value is string json?JsonSerializer.Deserialize<ContentDocument>(json,Json):null;
     }
 }

@@ -10,7 +10,7 @@ it creates only Wheredding on the Free instance before deploying.
 The container binds to Render's `PORT` on all interfaces, runs as a non-root
 user, and includes the hotel catalogue and local photographs. Render provides
 the public HTTPS endpoint. The read-only guide needs no database or secrets.
-To enable `/admin`, configure a persistent reachable SQL Server database and
+To enable `/admin`, configure a persistent reachable PostgreSQL database (such as Neon) and
 administrator credentials using [ADMIN.md](ADMIN.md). Database-backed content
 changes do not require redeployment. Runtime filesystem changes are temporary
 on Render; development-file administration is disabled in Production. Do not

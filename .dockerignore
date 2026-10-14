@@ -12,3 +12,5 @@ tests
 **/*.pem
 **/*.key
 **/*.log
+.local-content
+tools

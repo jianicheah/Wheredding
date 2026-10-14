@@ -21,8 +21,10 @@ $plain=$null
 if($VisualStudio){
     $connection=$env:ConnectionStrings__Content
     if([string]::IsNullOrWhiteSpace($connection)){
-        $connection='Server=(localdb)\MSSQLLocalDB;Database=wheredding;Integrated Security=True;Encrypt=True;TrustServerCertificate=True'
-        Write-Host 'Using your local wheredding database with Windows Authentication.'
+        $secureConnection=Read-Host 'PostgreSQL connection string (Host=localhost;Port=5432;Database=wheredding;Username=...;Password=...)' -AsSecureString
+        $connection=[System.Net.NetworkCredential]::new('', $secureConnection).Password
+        if([string]::IsNullOrWhiteSpace($connection) -or $connection -notmatch '(?i)Host='){throw 'Enter an Npgsql PostgreSQL connection string.'}
+        Write-Host 'Using PostgreSQL for local development.'
     }
     $project=Join-Path (Split-Path $PSScriptRoot) 'Wheredding.csproj'
     @{'Admin:Username'=$username;'Admin:PasswordHash'=$hash;'ConnectionStrings:Content'=$connection} |

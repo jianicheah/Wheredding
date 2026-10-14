@@ -46,8 +46,9 @@ builder.Services.AddRateLimiter(options => {
 });
 var app = builder.Build();
 var store=app.Services.GetRequiredService<ContentStore>();
-await store.Initialize();
-if(args.Contains("--migrate-content"))
+var importPath=builder.Configuration["import-content"];
+await store.Initialize(importPath);
+if(args.Contains("--migrate-content") || importPath is not null)
 {
     var migrated=await store.Read();
     var packageCount=migrated.Venues.Sum(v=>v!["packages"]!.AsArray().Count);

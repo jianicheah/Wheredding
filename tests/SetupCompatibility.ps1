@@ -17,9 +17,9 @@ try {
         $global:capturedSecrets=($input|Out-String)|ConvertFrom-Json
         $global:LASTEXITCODE=0
     }
-    $env:ConnectionStrings__Content=''
+    $env:ConnectionStrings__Content='Host=localhost;Database=wheredding;Username=setup-test;Password=test-only'
     & (Join-Path $PSScriptRoot '../scripts/Configure-Admin.ps1') -VisualStudio
-    if($capturedSecrets.'Admin:Username' -ne 'compatibility-test' -or $capturedSecrets.'Admin:PasswordHash' -ne $env:Admin__PasswordHash -or $capturedSecrets.'ConnectionStrings:Content' -notmatch 'Database=wheredding;Integrated Security=True'){throw 'Incorrect Visual Studio settings.'}
+    if($capturedSecrets.'Admin:Username' -ne 'compatibility-test' -or $capturedSecrets.'Admin:PasswordHash' -ne $env:Admin__PasswordHash -or $capturedSecrets.'ConnectionStrings:Content' -notmatch 'Host=localhost;Database=wheredding;Username=setup-test'){throw 'Incorrect Visual Studio settings.'}
     if(($secretArguments -join ' ') -notmatch 'user-secrets set --project'){throw 'Unexpected secrets command.'}
     Write-Host 'PASS: Visual Studio setup reuses credentials and sends database settings through stdin (secret writer mocked).'
     Remove-Item Function:\dotnet
