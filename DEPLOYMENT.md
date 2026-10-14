@@ -9,9 +9,12 @@ it creates only Wheredding on the Free instance before deploying.
 
 The container binds to Render's `PORT` on all interfaces, runs as a non-root
 user, and includes the hotel catalogue and local photographs. Render provides
-the public HTTPS endpoint. No database, disk or secrets are required.
-Catalogue changes must be committed and redeployed. Runtime filesystem changes
-are temporary on Render. Do not place credentials in the repository.
+the public HTTPS endpoint. The read-only guide needs no database or secrets.
+To enable `/admin`, configure a persistent reachable SQL Server database and
+administrator credentials using [ADMIN.md](ADMIN.md). Database-backed content
+changes do not require redeployment. Runtime filesystem changes are temporary
+on Render; development-file administration is disabled in Production. Do not
+place credentials in the repository.
 
 Free services sleep after 15 minutes idle and can take approximately one
 minute to wake. The workspace shares 750 free instance hours each month across

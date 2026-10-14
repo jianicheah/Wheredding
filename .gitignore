@@ -18,3 +18,4 @@ scripts/photo-review.jpg
 *.pem
 *.key
 *.log
+.local-content/

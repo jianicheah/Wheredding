@@ -1,15 +1,21 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
-    <DefaultItemExcludes>$(DefaultItemExcludes);.validation-build/**</DefaultItemExcludes><Nullable>enable</Nullable>
+    <DefaultItemExcludes>$(DefaultItemExcludes);.validation-build/**;.local-content/**</DefaultItemExcludes><Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>925f880a-291e-4a90-a2a3-6b3acaf8cdc5</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
     <Content Update="Data/venues.json" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
     <Content Remove="scripts/**;tests/**" />
     <Compile Remove="tests/**" />
+    <EmbeddedResource Include="Data/Sql/*.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="6.1.3" />
   </ItemGroup>
 </Project>
 

@@ -73,12 +73,20 @@ No third-party .NET test packages are required.
 
 See [DEPLOYMENT.md](DEPLOYMENT.md) for Docker / Render Free configuration.
 The container includes source-backed catalogue data and local images.
-Catalogue edits require a restart or redeploy.
+Optional protected administration is available at `/admin`; see [ADMIN.md](ADMIN.md)
+for SQL Server configuration, local setup and tests. With a configured database,
+hotel/package/contact edits publish immediately without restart or redeployment.
+SQL Server stores Hotels and Packages as individual rows linked by HotelId,
+with SiteContact, ContentState and AuditHistory tables. Existing document-based
+databases migrate automatically while retaining their old tables as backups.
+Without database/admin configuration the public site uses the project catalogue
+and administrative editing remains disabled.
 
 Calculator inputs are validated on the server; hotel price, seats and charges
 are resolved there. JSON rejects unknown properties; bodies are limited to
-16 KiB; calculation requests are rate-limited. CSP restricts scripts and assets
-to the site, and response headers restrict framing and MIME sniffing.
+16 KiB for the calculator and 2 MiB for content editing; calculation and admin
+login requests are rate-limited. CSP restricts scripts and styles to the site,
+allows HTTPS hotel images, and response headers restrict framing and MIME sniffing.
 These measures do not guarantee immunity to attacks or validate hotel facts.
 Behind Render's proxy, multiple visitors may share a connection-IP rate bucket;
 do not trust arbitrary forwarded headers as a workaround.

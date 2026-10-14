@@ -55,7 +55,9 @@ Open each hotel's official link, confirm the exact venue, cuisine, price unit,
 seats, charges, minimums and validity. Update `Data/venues.json` with the new
 check date and evidence. Leave missing facts unknown. Do not scrape prices from
 search snippets or infer current validity from a file's upload year. Restart
-locally and redeploy for catalogue edits. The one-time import script records the
+locally and redeploy for seed catalogue edits. With SQL Server administration,
+update package evidence in `/admin` and publish; no redeployment is required.
+See ADMIN.md. The one-time import script records the
 original research transcription; do not rerun it over newer catalogue edits.
 
 ## Requirement checks

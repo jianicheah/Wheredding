@@ -8,9 +8,10 @@ sealed class PricingCatalog
     readonly JsonArray venues;
     readonly Dictionary<string, PublishedPackage[]> packages;
     static readonly JsonSerializerOptions Json = new(JsonSerializerDefaults.Web);
-    public PricingCatalog(string path)
+    public PricingCatalog(string path) : this(JsonNode.Parse(File.ReadAllText(path))!.AsArray()) { }
+    public PricingCatalog(JsonArray data)
     {
-        venues = JsonNode.Parse(File.ReadAllText(path))!.AsArray();
+        venues = new JsonArray(data.Where(v=>v?["archived"]?.GetValue<bool>()!=true).Select(v=>v!.DeepClone()).ToArray());
         packages = venues.ToDictionary(v => v!["id"]!.GetValue<string>(),
             v => v!["packages"]!.Deserialize<PublishedPackage[]>(Json)!, StringComparer.Ordinal);
     }
