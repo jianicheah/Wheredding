@@ -657,11 +657,47 @@ dd {
 
 footer {
     border-top: 1px solid var(--line);
-    padding: 30px 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding: 36px 5%;
     font-size: 12px
+}
+
+.footer-signature {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    align-items: center;
+    min-height: 144px;
+    width: fit-content;
+    max-width: 100%;
+    margin-left: auto;
+    text-align: right
+}
+
+.footer-watermark {
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 144px;
+    height: 144px;
+    object-fit: contain;
+    opacity: .1;
+    pointer-events: none;
+    user-select: none
+}
+
+.footer-copy {
+    position: relative
+}
+
+.footer-copy p {
+    margin: 0
+}
+
+.footer-copy p + p {
+    margin-top: 6px;
+    color: var(--muted)
 }
 
 dialog {
@@ -801,10 +837,6 @@ dialog::backdrop {
 
     .field-grid {
         gap: 12px
-    }
-
-    footer {
-        display: block
     }
 
     .gift-result {
