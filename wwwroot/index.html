@@ -109,13 +109,13 @@
                 <form id="giftform">
  <label for="giftvenue">Which venue is the wedding at?</label><select id="giftvenue" required><option value="">Choose the wedding venue…</option></select>
  <div id="packagechoice" hidden><label for="giftpackage">Know the package? (Optional)</label><select id="giftpackage"><option value="">I’m not sure — use the available price range</option></select><p class="small">You do not need to know the couple’s package. Leave “I’m not sure” selected to compare the published options.</p></div>
- <div id="giftcontext" class="guest-estimate" aria-live="polite">Choose your venue. We’ll show a published price or explain the comparison reference.</div>
+ <div id="giftcontext" class="guest-estimate" aria-live="polite">Choose your venue. We’ll show its published price, or ask you to enter an amount manually.</div>
  <div class="field-grid">
   <label>How many guests does your angpao cover?<input name="guests" type="number" min="1" max="100" value="1" required></label>
   <label>Extra gift, total (RM)<input name="extra" type="number" min="0" max="100000" step="0.01" value="0" required></label>
   <label>Your total budget (RM; 0 = unset)<input name="budget" type="number" min="0" max="100000" step="0.01" value="0" required></label>
  </div>
- <details id="giftadjustments" class="gift-adjustments"><summary>Optional: use your own amount or charges</summary>
+ <details id="giftadjustments" class="gift-adjustments"><summary>Options: enter your table price and charges</summary>
  <p class="small">Changing these switches to “Your own amount”. Published references include charges when stated; do not add them twice. Reselect the venue or package to restore the sourced reference.</p>
  <div class="field-grid">
   <label>Reference table price (RM)<input name="tablePrice" type="number" min="1" max="100000" step="0.01" placeholder="Choose a venue above" required></label>
@@ -145,7 +145,7 @@
                     <h3>Prices you can trace</h3>
                     <p>Calculator prices link to official packages, with check dates and validity. Directory package
                         references appear separately in venue details. Ceremony, rental and buyout costs are not meal
-                        prices. Missing banquet prices use a clearly labelled comparison with other hotels.</p>
+                        prices. If the banquet price is unverified, enter your own amount under Options.</p>
                 </div>
                 <div>
                     <h3>Before you book</h3>

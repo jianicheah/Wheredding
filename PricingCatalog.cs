@@ -29,11 +29,8 @@ sealed class PricingCatalog
         var active = own.Where(p => !Expired(p,today)).ToArray();
         if (active.Length > 0) return Profile(active,"published",today);
         if (own.Length > 0) return Profile(own,"historical",today);
-        // Deliberately small observed sample: dated, unexpired Chinese packages,
-        // known charges and confirmed seating only. No inferred hotel-specific price.
-        var sample = packages.Values.SelectMany(p => p).Where(p => p.Chinese && p.SeatsConfirmed &&
-            p.ChargesComplete && p.ValidUntil is not null && !Expired(p,today) && !Stale(p,today)).ToArray();
-        return sample.Length == 0 ? null : Profile(sample,"benchmark",today);
+        // A missing venue price requires manual input, never another venue's rate.
+        return null;
     }
     static PriceProfile Profile(PublishedPackage[] list, string kind, DateOnly today)
     {

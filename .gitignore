@@ -12,6 +12,8 @@ output/venue-research/*.html
 output/venue-research/*.html.txt
 output/venue-research/rasa-reception*.pdf
 output/venue-research/rasa-reception*.png
+output/venue-research/photo-*.bin
+output/venue-research/contact-sheet-*.jpg
 
 # Local secrets and certificates
 .env

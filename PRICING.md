@@ -23,6 +23,14 @@ File upload dates are provenance clues, not asserted package validity dates.
 
 ## Calculator policy
 
+Update 15 October 2026: the other-hotel fallback described in the original
+policy below has been removed. Venues with no recorded package return no price;
+their table-price field stays blank and manual Options opens automatically.
+Users see: "Banquet package price not verified/confirmed. Please fill in the
+table price manually under Options below." No calculation runs until they enter
+their own amount. Existing sourced venue packages retain their expiry and charge
+labels. The original fallback discussion below is historical documentation.
+
 Hotel mode uses source records on the server. With no known package, it returns
 the lowest and highest observed package references for that hotel. Selecting a
 package returns that package's reference. It never invents a midpoint. Nett

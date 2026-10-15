@@ -100,7 +100,7 @@ app.MapPost("/api/calculator", async (GiftInput i) =>
         return Results.BadRequest(new { error = "Unknown hotel." });
     var estimate = i.VenueId is null ? null : catalogue.Resolve(i.VenueId, i.PackageId, DateOnly.FromDateTime(DateTime.UtcNow.AddHours(8)));
     if (i.PriceMode == "hotel" && estimate is null)
-        return Results.BadRequest(new { error = "No usable source is available for this selection. Refresh the page or enter your own amount." });
+        return Results.BadRequest(new { error = "Banquet package price not verified/confirmed. Please fill in the table price manually under Options." });
     // Never trust a browser-supplied price in hotel mode. Manual prices are intentionally user-controlled.
     var price = i.PriceMode == "hotel" ? estimate!.Low : i.TablePrice;
     if (price <= 0 || price > 100000 || i.Seats < 1 || i.Seats > 30 || i.Guests < 1 || i.Guests > 100 || i.ServicePercent < 0 || i.ServicePercent > 30 || i.TaxPercent < 0 || i.TaxPercent > 30 || i.Extra < 0 || i.Extra > 100000 || i.Budget < 0 || i.Budget > 100000)

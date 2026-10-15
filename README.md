@@ -33,7 +33,7 @@ Open http://127.0.0.1:5299 and stop with Ctrl+C.
 - Compare up to three hotels, including price basis, source and menu summaries.
 - Automatic guest angpao reference with optional package selection.
 - Source-backed hotel prices, clearly labelled historical prices, or an
-  explicitly identified other-hotel comparison when no hotel price is verified.
+  manual input when no venue-specific banquet price is verified.
 - Optional manual amounts, guests, extra gift and budget.
 
 ## Pricing integrity

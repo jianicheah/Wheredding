@@ -898,13 +898,14 @@
     "weddingVerified": false,
     "capacity": null,
     "checkedAt": "2026-10-15",
-    "photo": "/images/hotels/venue-placeholder.svg",
-    "photoPage": "https://theweddingnotebook.com/catalog/venues/doubletree-penang",
-    "photoCredit": "Venue information source · photo pending",
-    "photoAlt": "DoubleTree Resort by Hilton Penang — venue photograph not yet added",
+    "photo": "/images/hotels/doubletree.jpg",
+    "photoPage": "https://hiltoncontenthub.com/property/doubletree-resort-by-hilton-penang",
+    "photoCredit": "Official venue / operator website · resized",
+    "photoAlt": "DoubleTree Resort by Hilton Penang — resort exterior",
     "fact": "Esplanade Ballroom receptions; directory states a minimum of 15 tables of 10.\nThe Wedding Notebook directory reference (checked 15 October 2026): Classic Wedding Package RM1,488 /table; Deluxe Wedding Package RM1,688 /table; Premium Wedding Package RM2,188 /table These are third-party references; confirm price basis, charges, minimums and dates with the venue. Ceremony, rental and buyout totals are separate from banquet meal costs. Directory references are not used in the calculator.",
     "packages": [],
-    "weddingSource": "https://theweddingnotebook.com/catalog/venues/doubletree-penang"
+    "weddingSource": "https://theweddingnotebook.com/catalog/venues/doubletree-penang",
+    "photoUrl": "https://hiltoncontenthub.com/uploads/2025/08/PENMBDI_Facade_2-2.jpg"
   },
   {
     "id": "lonepine",
@@ -919,13 +920,14 @@
     "weddingVerified": false,
     "capacity": null,
     "checkedAt": "2026-10-15",
-    "photo": "/images/hotels/venue-placeholder.svg",
-    "photoPage": "https://theweddingnotebook.com/catalog/venues/lone-pine-penang-a-tribute-portfolio-resort-msy4rrrm",
-    "photoCredit": "Venue information source · photo pending",
-    "photoAlt": "Lone Pine, Penang, a Tribute Portfolio Resort — venue photograph not yet added",
+    "photo": "/images/hotels/lonepine.jpg",
+    "photoPage": "https://www.marriott.com/en-us/hotels/penlp-lone-pine-penang-a-tribute-portfolio-resort/photos/",
+    "photoCredit": "Official venue / operator website · resized",
+    "photoAlt": "Lone Pine, Penang, a Tribute Portfolio Resort — pool and garden overlooking the sea",
     "fact": "Directory lists an intimate resort ceremony package; the lump sum is not a banquet table price.\nThe Wedding Notebook directory reference (checked 15 October 2026): Package 1 RM12,088 flat These are third-party references; confirm price basis, charges, minimums and dates with the venue. Ceremony, rental and buyout totals are separate from banquet meal costs. Directory references are not used in the calculator.",
     "packages": [],
-    "weddingSource": "https://theweddingnotebook.com/catalog/venues/lone-pine-penang-a-tribute-portfolio-resort-msy4rrrm"
+    "weddingSource": "https://theweddingnotebook.com/catalog/venues/lone-pine-penang-a-tribute-portfolio-resort-msy4rrrm",
+    "photoUrl": "https://cache.marriott.com/is/image/marriotts7prod/tx-penlp-seafacing-view-32300:Wide-Hor?wid=1336&fit=constrain"
   },
   {
     "id": "prestige",
@@ -940,13 +942,14 @@
     "weddingVerified": false,
     "capacity": null,
     "checkedAt": "2026-10-15",
-    "photo": "/images/hotels/venue-placeholder.svg",
-    "photoPage": "https://theweddingnotebook.com/catalog/venues/prestige-hotel-penang",
-    "photoCredit": "Venue information source · photo pending",
-    "photoAlt": "The Prestige Hotel Penang — venue photograph not yet added",
+    "photo": "/images/hotels/prestige.jpg",
+    "photoPage": "https://www.theprestige.my/gallery/",
+    "photoCredit": "Official venue / operator website · resized",
+    "photoAlt": "The Prestige Hotel Penang — hotel exterior",
     "fact": "Directory lists a 50-72 guest ballroom, poolside solemnisation and a buffet option. Listed totals and FAQ base prices differ; confirm charges.\nThe Wedding Notebook directory reference (checked 15 October 2026): International Buffet (Lunch or Dinner) RM289.44 /person; ROM Package (Registration of Marriage / Solemnisation) RM9,599 flat These are third-party references; confirm price basis, charges, minimums and dates with the venue. Ceremony, rental and buyout totals are separate from banquet meal costs. Directory references are not used in the calculator.",
     "packages": [],
-    "weddingSource": "https://theweddingnotebook.com/catalog/venues/prestige-hotel-penang"
+    "weddingSource": "https://theweddingnotebook.com/catalog/venues/prestige-hotel-penang",
+    "photoUrl": "https://www.theprestige.my/wp-content/uploads/2026/02/facade-min.jpg.webp"
   },
   {
     "id": "granite",
@@ -961,13 +964,14 @@
     "weddingVerified": false,
     "capacity": null,
     "checkedAt": "2026-10-15",
-    "photo": "/images/hotels/venue-placeholder.svg",
-    "photoPage": "https://theweddingnotebook.com/catalog/venues/granite-hotel-penang",
-    "photoCredit": "Venue information source · photo pending",
-    "photoAlt": "The Granite Luxury Hotel Penang — venue photograph not yet added",
+    "photo": "/images/hotels/granite.jpg",
+    "photoPage": "https://www.thegranitehotel.com/",
+    "photoCredit": "Official venue / operator website · resized",
+    "photoAlt": "The Granite Luxury Hotel Penang — hotel exterior",
     "fact": "The Skye event space is listed for 50-180 guests. Essential and Ultimate are event packages, not table prices.\nThe Wedding Notebook directory reference (checked 15 October 2026): Skye Essential 1 (Essential Package - Half Hall) RM12,888 flat; Skye Essential 2 (Essential Package - Half Hall) RM13,888 flat; Skye Ultimate (Ultimate Package) RM15,888 flat These are third-party references; confirm price basis, charges, minimums and dates with the venue. Ceremony, rental and buyout totals are separate from banquet meal costs. Directory references are not used in the calculator.",
     "packages": [],
-    "weddingSource": "https://theweddingnotebook.com/catalog/venues/granite-hotel-penang"
+    "weddingSource": "https://theweddingnotebook.com/catalog/venues/granite-hotel-penang",
+    "photoUrl": "https://static.wixstatic.com/media/82b1e7_4392e5fa1e384a3e9460330dfaf844c2~mv2.jpg/v1/fit/w_1920,h_1055,q_90,enc_avif,quality_auto/82b1e7_4392e5fa1e384a3e9460330dfaf844c2~mv2.jpg"
   },
   {
     "id": "kelawai",
@@ -982,13 +986,14 @@
     "weddingVerified": false,
     "capacity": null,
     "checkedAt": "2026-10-15",
-    "photo": "/images/hotels/venue-placeholder.svg",
-    "photoPage": "https://theweddingnotebook.com/catalog/venues/g-hotel-kelawai",
-    "photoCredit": "Venue information source · photo pending",
-    "photoAlt": "G Hotel Kelawai — venue photograph not yet added",
+    "photo": "/images/hotels/kelawai.jpg",
+    "photoPage": "https://ghotel.com.my/hotels/g-hotel-kelawai/",
+    "photoCredit": "Official venue / operator website · resized",
+    "photoAlt": "G Hotel Kelawai — hotel exterior at dusk",
     "fact": "Directory lists Chinese banquet options and a separate rooftop ceremony.\nThe Wedding Notebook directory reference (checked 15 October 2026): Happiness Wedding Package RM2,588 /table; Love Wedding Package RM2,588 /table; Weddings On The Horizon (Beyond Gravity Level 25 Rooftop Ceremony) RM7,000 flat; Happiness / Love 8-Course Chinese Set Menu · set menu RM2,588 /table These are third-party references; confirm price basis, charges, minimums and dates with the venue. Ceremony, rental and buyout totals are separate from banquet meal costs. Directory references are not used in the calculator.",
     "packages": [],
-    "weddingSource": "https://theweddingnotebook.com/catalog/venues/g-hotel-kelawai"
+    "weddingSource": "https://theweddingnotebook.com/catalog/venues/g-hotel-kelawai",
+    "photoUrl": "https://ghotel.com.my/hotels/g-hotel-kelawai/wp-content/uploads/2026/08/G-Hotel-Kelawai-Night.jpg"
   },
   {
     "id": "seventerraces",
@@ -1003,13 +1008,14 @@
     "weddingVerified": false,
     "capacity": null,
     "checkedAt": "2026-10-15",
-    "photo": "/images/hotels/venue-placeholder.svg",
-    "photoPage": "https://theweddingnotebook.com/catalog/venues/seven-terraces",
-    "photoCredit": "Venue information source · photo pending",
-    "photoAlt": "Seven Terraces — venue photograph not yet added",
+    "photo": "/images/hotels/seventerraces.jpg",
+    "photoPage": "https://www.georgetownheritage.com/seven-terraces-hotel/",
+    "photoCredit": "Official venue / operator website · resized",
+    "photoAlt": "Seven Terraces — heritage courtyard",
     "fact": "Kebaya restaurant buyouts are listed for 50-100 guests; full hotel buyouts and Library tea ceremonies are separate. FAQ states RM400++ per adult minimum spend.\nThe Wedding Notebook directory reference (checked 15 October 2026): Wedding Option #1 — Kebaya Buyout RM400 /person; Wedding Option #2 — Full Hotel Buyout RM33,508 – RM38,744 flat These are third-party references; confirm price basis, charges, minimums and dates with the venue. Ceremony, rental and buyout totals are separate from banquet meal costs. Directory references are not used in the calculator.",
     "packages": [],
-    "weddingSource": "https://theweddingnotebook.com/catalog/venues/seven-terraces"
+    "weddingSource": "https://theweddingnotebook.com/catalog/venues/seven-terraces",
+    "photoUrl": "https://www.georgetownheritage.com/wp-content/uploads/2017/10/seven_terraces_1.png"
   },
   {
     "id": "fourhands",
@@ -1024,13 +1030,14 @@
     "weddingVerified": false,
     "capacity": null,
     "checkedAt": "2026-10-15",
-    "photo": "/images/hotels/venue-placeholder.svg",
-    "photoPage": "https://theweddingnotebook.com/catalog/venues/four-hands-penang",
-    "photoCredit": "Venue information source · photo pending",
-    "photoAlt": "Four Hands — venue photograph not yet added",
+    "photo": "/images/hotels/fourhands.jpg",
+    "photoPage": "https://www.facebook.com/fourhandspenang/",
+    "photoCredit": "Official business profile · brand logo",
+    "photoAlt": "Four Hands — official brand logo (venue photograph unavailable)",
     "fact": "Glasshouse ceremonies and Chinese banquet dining are listed separately. The 20-person figure refers to the glasshouse, not a confirmed whole-restaurant maximum.\nThe Wedding Notebook directory reference (checked 15 October 2026): ROM at Glasshouse Four Hands RM3,888 flat; Eternal Menu · 8-course Chinese wedding banquet RM2,388 /table These are third-party references; confirm price basis, charges, minimums and dates with the venue. Ceremony, rental and buyout totals are separate from banquet meal costs. Directory references are not used in the calculator.",
     "packages": [],
-    "weddingSource": "https://theweddingnotebook.com/catalog/venues/four-hands-penang"
+    "weddingSource": "https://theweddingnotebook.com/catalog/venues/four-hands-penang",
+    "photoUrl": "https://scontent.fpen3-1.fna.fbcdn.net/v/t39.30808-1/482084803_659932696550031_4207886691456634447_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1080&ctp=s720x720&_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=3ab345&_nc_ohc=0GN-z7JhmCcQ7kNvwEZWuXL&_nc_oc=Ado85s-Swa6qfkbb74R_yOp1_KtLwvDy3SlRvhOD54us_ybtlonlNkCz7uE31JyS5ls&_nc_zt=24&_nc_ht=scontent.fpen3-1.fna&_nc_gid=F14ltBSNVb_5Avy7ROgzmg&_nc_ss=7c20f&oh=00_AQNa1nNqqwkWwxxMG4BI-gwaYhW1hkoVbcaU0S8IdLhnAw&oe=6AD65794"
   },
   {
     "id": "jazz",
@@ -1045,13 +1052,14 @@
     "weddingVerified": false,
     "capacity": null,
     "checkedAt": "2026-10-15",
-    "photo": "/images/hotels/venue-placeholder.svg",
-    "photoPage": "https://theweddingnotebook.com/catalog/venues/jazz-hotel-penang",
-    "photoCredit": "Venue information source · photo pending",
-    "photoAlt": "Jazz Hotel Penang — venue photograph not yet added",
+    "photo": "/images/hotels/jazz.jpg",
+    "photoPage": "https://www.jazzhotel.com.my/gallery.html",
+    "photoCredit": "Official venue / operator website · resized",
+    "photoAlt": "Jazz Hotel Penang — hotel entrance",
     "fact": "Directory lists wedding events for up to 130 guests; package prices are on request.\nThe Wedding Notebook directory reference (checked 15 October 2026): Package prices on request. These are third-party references; confirm price basis, charges, minimums and dates with the venue. Ceremony, rental and buyout totals are separate from banquet meal costs. Directory references are not used in the calculator.",
     "packages": [],
-    "weddingSource": "https://theweddingnotebook.com/catalog/venues/jazz-hotel-penang"
+    "weddingSource": "https://theweddingnotebook.com/catalog/venues/jazz-hotel-penang",
+    "photoUrl": "https://homesweb.staah.net/imagelibrary/big_13977_1773721241180.jpeg"
   },
   {
     "id": "eastin",
@@ -1066,13 +1074,14 @@
     "weddingVerified": false,
     "capacity": null,
     "checkedAt": "2026-10-15",
-    "photo": "/images/hotels/venue-placeholder.svg",
-    "photoPage": "https://theweddingnotebook.com/catalog/venues/eastin-penang",
-    "photoCredit": "Venue information source · photo pending",
-    "photoAlt": "Eastin Hotel Penang — venue photograph not yet added",
+    "photo": "/images/hotels/eastin.jpg",
+    "photoPage": "https://eastin.com/gallery/",
+    "photoCredit": "Official venue / operator website · resized",
+    "photoAlt": "Eastin Hotel Penang — hotel exterior",
     "fact": "Directory lists receptions for 200-550 guests; package prices are on request.\nThe Wedding Notebook directory reference (checked 15 October 2026): Package prices on request. These are third-party references; confirm price basis, charges, minimums and dates with the venue. Ceremony, rental and buyout totals are separate from banquet meal costs. Directory references are not used in the calculator.",
     "packages": [],
-    "weddingSource": "https://theweddingnotebook.com/catalog/venues/eastin-penang"
+    "weddingSource": "https://theweddingnotebook.com/catalog/venues/eastin-penang",
+    "photoUrl": "https://eastin.com/wp-content/uploads/2026/08/Group-807-2-1200x630-1.jpg"
   },
   {
     "id": "mercure",
@@ -1087,13 +1096,14 @@
     "weddingVerified": false,
     "capacity": null,
     "checkedAt": "2026-10-15",
-    "photo": "/images/hotels/venue-placeholder.svg",
-    "photoPage": "https://theweddingnotebook.com/catalog/venues/mercure-penang",
-    "photoCredit": "Venue information source · photo pending",
-    "photoAlt": "Hotel Mercure Penang Beach — venue photograph not yet added",
+    "photo": "/images/hotels/mercure.jpg",
+    "photoPage": "https://all.accor.com/hotel/B4R7/index.en.shtml",
+    "photoCredit": "Official venue / operator website · resized",
+    "photoAlt": "Hotel Mercure Penang Beach — beachfront hotel exterior",
     "fact": "Directory lists Chinese banquet tiers, Malay and Indian dining, and a separate solemnisation package.\nThe Wedding Notebook directory reference (checked 15 October 2026): Silver Wedding Package (Chinese) RM1,588 /table; Gold Wedding Package (Chinese) RM1,988 /table; Platinum Wedding Package (Chinese) RM2,588 /table; Malay Wedding Package RM148.80 /person; Indian Wedding Package RM148.80 /person; ROM / Solemnisation Ceremony Package RM10,888 flat; Silver Chinese Set Dinner · 8-course Chinese set dinner RM1,588 /table; Gold Chinese Set Dinner · 8-course Chinese set dinner RM1,988 /table; Platinum Chinese Set Dinner · 8-course Chinese set dinner RM2,588 /table; Malay Wedding Menu · Buffet or dome set menu RM148.80 /person; Indian Wedding Menu · Buffet or dome set menu RM148.80 /person These are third-party references; confirm price basis, charges, minimums and dates with the venue. Ceremony, rental and buyout totals are separate from banquet meal costs. Directory references are not used in the calculator.",
     "packages": [],
-    "weddingSource": "https://theweddingnotebook.com/catalog/venues/mercure-penang"
+    "weddingSource": "https://theweddingnotebook.com/catalog/venues/mercure-penang",
+    "photoUrl": "https://www.ahstatic.com/photos/b4r7_ho_00_p_1024x768.jpg"
   },
   {
     "id": "suffolk",
@@ -1108,13 +1118,14 @@
     "weddingVerified": false,
     "capacity": null,
     "checkedAt": "2026-10-15",
-    "photo": "/images/hotels/venue-placeholder.svg",
-    "photoPage": "https://theweddingnotebook.com/catalog/venues/suffolk-house",
-    "photoCredit": "Venue information source · photo pending",
-    "photoAlt": "Suffolk House — venue photograph not yet added",
+    "photo": "/images/hotels/suffolk.jpg",
+    "photoPage": "https://www.suffolkhouse.com.my/",
+    "photoCredit": "Official venue / operator website · resized",
+    "photoAlt": "Suffolk House — garden ceremony setting",
     "fact": "Directory separates the 90-seat ballroom, 70-seat Marble Hall and 300-seat West Lawn. Rental, food and exclusive use have separate costs.\nThe Wedding Notebook directory reference (checked 15 October 2026): Ballroom — venue hire RM3,000 – RM4,000 flat; Marble Hall — venue hire RM4,000 – RM5,000 flat; Garden View Rooms — venue hire RM600 – RM700 flat; North Garden — venue hire RM3,000 flat; West Garden — venue hire RM4,000 flat; Entire Garden — venue hire RM6,000 flat; Exclusive Closure — Whole House RM18,000 – RM28,000 flat; Exclusive Closure — Ground Floor RM14,000 – RM20,000 flat; Exclusive Closure — Marble Hall Only RM10,000 – RM12,000 flat; Exclusive Closure — First Floor RM14,000 – RM20,000 flat; Exclusive Closure — Ballroom Only RM10,000 – RM12,000 flat; ROM All-in-One Package (50 guests) RM6,800 flat; Set Meal A · Individual Plates RM130 – RM165 /person; Set Meal B · Individual Plates RM155 – RM200 /person; Set Meal C · Individual Plates RM205 – RM240 /person; Buffet · Buffet dinner RM140 – RM165 /person These are third-party references; confirm price basis, charges, minimums and dates with the venue. Ceremony, rental and buyout totals are separate from banquet meal costs. Directory references are not used in the calculator.",
     "packages": [],
-    "weddingSource": "https://theweddingnotebook.com/catalog/venues/suffolk-house"
+    "weddingSource": "https://theweddingnotebook.com/catalog/venues/suffolk-house",
+    "photoUrl": "https://irp.cdn-website.com/f58de0fc/import/clib/suffolkhouse_com_my/dms3rep/multi/opt/20160925_172846-5312x2988-1920w.jpg"
   },
   {
     "id": "bluemansion",
@@ -1129,13 +1140,14 @@
     "weddingVerified": false,
     "capacity": null,
     "checkedAt": "2026-10-15",
-    "photo": "/images/hotels/venue-placeholder.svg",
-    "photoPage": "https://theweddingnotebook.com/catalog/venues/blue-mansion",
-    "photoCredit": "Venue information source · photo pending",
-    "photoAlt": "Cheong Fatt Tze - The Blue Mansion — venue photograph not yet added",
+    "photo": "/images/hotels/bluemansion.jpg",
+    "photoPage": "https://www.cheongfatttzemansion.com/thebluemansion/discover/gallery/",
+    "photoCredit": "Official venue / operator website · resized",
+    "photoAlt": "Cheong Fatt Tze - The Blue Mansion — heritage courtyard",
     "fact": "Directory lists 45-100 guest celebrations, mansion buyouts and separately priced dining. Confirm which spaces and nights are included.\nThe Wedding Notebook directory reference (checked 15 October 2026): Full Mansion Buyout — 3 days / 2 nights RM116,000 – RM123,000 flat; Full Mansion Buyout — 2 days / 1 night RM83,000 – RM94,000 flat; Half Mansion Buyout — 2 days / 1 night RM48,000 – RM50,000 flat; Celebration Aesthetic & Enhancement RM22,800 flat; Western Degustation · Degustation set menu RM325 /person; Peranakan Degustation · Degustation set menu RM325 /person; Vegetarian Degustation · Degustation set menu RM325 /person These are third-party references; confirm price basis, charges, minimums and dates with the venue. Ceremony, rental and buyout totals are separate from banquet meal costs. Directory references are not used in the calculator.",
     "packages": [],
-    "weddingSource": "https://theweddingnotebook.com/catalog/venues/blue-mansion"
+    "weddingSource": "https://theweddingnotebook.com/catalog/venues/blue-mansion",
+    "photoUrl": "https://www.cheongfatttzemansion.com/wp-content/uploads/2017/06/boutique-hotel-penang-island-blue-mansion-architecture-03-1_tpforg-1024x683.jpg"
   },
   {
     "id": "macalister",
@@ -1150,12 +1162,13 @@
     "weddingVerified": false,
     "capacity": null,
     "checkedAt": "2026-10-15",
-    "photo": "/images/hotels/venue-placeholder.svg",
-    "photoPage": "https://theweddingnotebook.com/inspire/ideas-and-advice/stunning-and-intimate-wedding-venues-in-penang",
-    "photoCredit": "Venue information source · photo pending",
-    "photoAlt": "Macalister Mansion — venue photograph not yet added",
+    "photo": "/images/hotels/macalister.jpg",
+    "photoPage": "https://www.marriott.com/en-us/hotels/pengt-macalister-mansion-george-town-a-member-of-design-hotels/photos/",
+    "photoCredit": "Official venue / operator website · resized",
+    "photoAlt": "Macalister Mansion — mansion exterior",
     "fact": "The Wedding Notebook guide, updated 24 September 2026, lists this venue. Colonial boutique hotel with eight rooms; the guide describes ceremony, meal and cocktail events. Current capacity, pricing and availability have not been independently confirmed. No banquet price is imported into the calculator.",
-    "packages": []
+    "packages": [],
+    "photoUrl": "https://cache.marriott.com/content/dam/marriott-renditions/PENGT/pengt-hotel-view-8879-hor-wide.jpg?output-quality=70&interpolation=progressive-bilinear&downsize=375px:*"
   },
   {
     "id": "soori",
@@ -1170,12 +1183,13 @@
     "weddingVerified": false,
     "capacity": null,
     "checkedAt": "2026-10-15",
-    "photo": "/images/hotels/venue-placeholder.svg",
-    "photoPage": "https://theweddingnotebook.com/inspire/ideas-and-advice/stunning-and-intimate-wedding-venues-in-penang",
-    "photoCredit": "Venue information source · photo pending",
-    "photoAlt": "Soori Penang — venue photograph not yet added",
+    "photo": "/images/hotels/soori.jpg",
+    "photoPage": "https://sooripenang.com/press",
+    "photoCredit": "Official venue / operator website · resized",
+    "photoAlt": "Soori Penang — heritage hotel exterior",
     "fact": "The Wedding Notebook guide, updated 24 September 2026, lists this venue. Restored shophouse hotel beside Khoo Kongsi; courtyard ceremonies and private suite receptions are described. Current capacity, pricing and availability have not been independently confirmed. No banquet price is imported into the calculator.",
-    "packages": []
+    "packages": [],
+    "photoUrl": "https://cdn.prod.website-files.com/67a61f3b852b14355a6265d1/68b701c233be5147d933b42b_banner%201_DSC00465%20edited.webp"
   },
   {
     "id": "stjos",
@@ -1190,12 +1204,13 @@
     "weddingVerified": false,
     "capacity": null,
     "checkedAt": "2026-10-15",
-    "photo": "/images/hotels/venue-placeholder.svg",
-    "photoPage": "https://theweddingnotebook.com/inspire/ideas-and-advice/stunning-and-intimate-wedding-venues-in-penang",
-    "photoCredit": "Venue information source · photo pending",
-    "photoAlt": "St Jo’s at Gurney Paragon — venue photograph not yet added",
+    "photo": "/images/hotels/stjos.jpg",
+    "photoPage": "https://www.hunzagroup.com/property/st--jo---s---gurney-paragon-mall",
+    "photoCredit": "Official venue / operator website · resized",
+    "photoAlt": "St Jo’s at Gurney Paragon — heritage building exterior",
     "fact": "The Wedding Notebook guide, updated 24 September 2026, lists this venue. Heritage chapel at Gurney Paragon; check permitted ceremonies, catering and current event arrangements. Current capacity, pricing and availability have not been independently confirmed. No banquet price is imported into the calculator.",
-    "packages": []
+    "packages": [],
+    "photoUrl": "https://www.hunzagroup.com/media/gallery/property/original/25_property_gallery_1710927097.jpeg"
   },
   {
     "id": "peninsula",
@@ -1210,12 +1225,13 @@
     "weddingVerified": false,
     "capacity": null,
     "checkedAt": "2026-10-15",
-    "photo": "/images/hotels/venue-placeholder.svg",
-    "photoPage": "https://theweddingnotebook.com/inspire/ideas-and-advice/stunning-and-intimate-wedding-venues-in-penang",
-    "photoCredit": "Venue information source · photo pending",
-    "photoAlt": "Peninsula House — venue photograph not yet added",
+    "photo": "/images/hotels/peninsula.jpg",
+    "photoPage": "https://www.peninsula.house/",
+    "photoCredit": "Official venue / operator website · resized",
+    "photoAlt": "Peninsula House — restaurant bar interior",
     "fact": "The Wedding Notebook guide, updated 24 September 2026, lists this venue. Restaurant reception venue on the first floor of India House, Beach Street. Current capacity, pricing and availability have not been independently confirmed. No banquet price is imported into the calculator.",
-    "packages": []
+    "packages": [],
+    "photoUrl": "https://images.squarespace-cdn.com/content/v1/68a48c54f733054f565d6bde/eae99017-3351-4aaa-a20e-712fa3650dae/Peninsula_Space_55+%281%29.jpeg"
   },
   {
     "id": "seaqueen",
@@ -1230,12 +1246,13 @@
     "weddingVerified": false,
     "capacity": null,
     "checkedAt": "2026-10-15",
-    "photo": "/images/hotels/venue-placeholder.svg",
-    "photoPage": "https://theweddingnotebook.com/inspire/ideas-and-advice/chinese-wedding-banquet-restaurants-in-penang",
-    "photoCredit": "Venue information source · photo pending",
-    "photoAlt": "Sea Queen Restaurant — venue photograph not yet added",
+    "photo": "/images/hotels/seaqueen.jpg",
+    "photoPage": "https://www.straitsquay.com/shops/sea-queen-restaurant/",
+    "photoCredit": "Official venue / operator website · resized",
+    "photoAlt": "Sea Queen Restaurant — banquet room",
     "fact": "The Wedding Notebook guide, updated 24 September 2026, lists this venue. Straits Quay restaurant; guide reports up to 1,000 across indoor and outdoor spaces, subject to layout. Current capacity, pricing and availability have not been independently confirmed. No banquet price is imported into the calculator.",
-    "packages": []
+    "packages": [],
+    "photoUrl": "https://www.straitsquay.com/wp-content/uploads/2024/08/sea-queen-3-1030x773.jpg"
   },
   {
     "id": "maplepalace",
@@ -1250,12 +1267,13 @@
     "weddingVerified": false,
     "capacity": null,
     "checkedAt": "2026-10-15",
-    "photo": "/images/hotels/venue-placeholder.svg",
-    "photoPage": "https://theweddingnotebook.com/inspire/ideas-and-advice/chinese-wedding-banquet-restaurants-in-penang",
-    "photoCredit": "Venue information source · photo pending",
-    "photoAlt": "Maple Palace — venue photograph not yet added",
+    "photo": "/images/hotels/maplepalace.jpg",
+    "photoPage": "https://www.maplepalace.com/",
+    "photoCredit": "Official venue / operator website · resized",
+    "photoAlt": "Maple Palace — wedding dining room",
     "fact": "The Wedding Notebook guide, updated 24 September 2026, lists this venue. Jalan Sultan Ahmad Shah; guide reports 250 seats, private rooms and a wedding menu. Current capacity, pricing and availability have not been independently confirmed. No banquet price is imported into the calculator.",
-    "packages": []
+    "packages": [],
+    "photoUrl": "https://i1.wp.com/www.maplepalace.com/wp-content/uploads/2019/10/Home-2-2.jpg?fit=848%2C646&ssl=1"
   },
   {
     "id": "starview",
@@ -1270,12 +1288,13 @@
     "weddingVerified": false,
     "capacity": null,
     "checkedAt": "2026-10-15",
-    "photo": "/images/hotels/venue-placeholder.svg",
-    "photoPage": "https://theweddingnotebook.com/inspire/ideas-and-advice/chinese-wedding-banquet-restaurants-in-penang",
-    "photoCredit": "Venue information source · photo pending",
-    "photoAlt": "Starview Restaurant (仙景樓) — venue photograph not yet added",
+    "photo": "/images/hotels/starview.jpg",
+    "photoPage": "https://www.facebook.com/starviewrestaurant/",
+    "photoCredit": "Official business profile · brand logo",
+    "photoAlt": "Starview Restaurant (仙景樓) — official brand logo (venue photograph unavailable)",
     "fact": "The Wedding Notebook guide, updated 24 September 2026, lists this venue. Jalan Dato Keramat; guide references 2026 wedding packages. Request current prices and capacity. Current capacity, pricing and availability have not been independently confirmed. No banquet price is imported into the calculator.",
-    "packages": []
+    "packages": [],
+    "photoUrl": "https://scontent.fpen3-1.fna.fbcdn.net/v/t39.30808-1/308096098_512603320872973_4259020567073606716_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x2048&ctp=s720x720&_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=3ab345&_nc_ohc=AW1scdGW4bcQ7kNvwGki5eu&_nc_oc=AdrDhnyEQMmcZ0TNkufCAaJ8HK1S3OjuOwMPk3ksjeLy8OUkRK00a8teVx2YxBLV84g&_nc_zt=24&_nc_ht=scontent.fpen3-1.fna&_nc_gid=Tb15uMsmAoJI0wOkvZS3Fw&_nc_ss=7c20f&oh=00_AQPL7Xn0ZD38_YBZwl1LYyJUuLYc0SXQoXmhWWW-qclphw&oe=6AD649DC"
   },
   {
     "id": "elitehouse",
@@ -1290,12 +1309,13 @@
     "weddingVerified": false,
     "capacity": null,
     "checkedAt": "2026-10-15",
-    "photo": "/images/hotels/venue-placeholder.svg",
-    "photoPage": "https://theweddingnotebook.com/inspire/ideas-and-advice/chinese-wedding-banquet-restaurants-in-penang",
-    "photoCredit": "Venue information source · photo pending",
-    "photoAlt": "Elite House Restaurant (貴賓樓大酒家) — venue photograph not yet added",
+    "photo": "/images/hotels/elitehouse.jpg",
+    "photoPage": "https://www.facebook.com/EliteHouseRestaurant/",
+    "photoCredit": "Official business profile · brand logo",
+    "photoAlt": "Elite House Restaurant (貴賓樓大酒家) — official brand logo (venue photograph unavailable)",
     "fact": "The Wedding Notebook guide, updated 24 September 2026, lists this venue. Fortune Park, Jalan Perusahaan Jelutong 2; guide references wedding packages and private dining. Current capacity, pricing and availability have not been independently confirmed. No banquet price is imported into the calculator.",
-    "packages": []
+    "packages": [],
+    "photoUrl": "https://scontent.fpen3-1.fna.fbcdn.net/v/t39.30808-1/305215981_479493047520404_5324600468207541938_n.jpg?stp=dst-jpg_tt6&cstp=mx421x421&ctp=s421x421&_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=3ab345&_nc_ohc=GCNTI0lDuhsQ7kNvwFv5mLq&_nc_oc=AdraJJXspJewbdFEFWQroasEVFjgVTTxq-31CClE5E56IPr4tysF6lboy1RHht55WRQ&_nc_zt=24&_nc_ht=scontent.fpen3-1.fna&_nc_gid=rdTeabU9_RrB07KMBIA-iw&_nc_ss=7c20f&oh=00_AQMYGZIgU3r6UUYNKRP7FTjHJoXLEM5JHqcu-Uw6Xn4mgg&oe=6AD65D3E"
   },
   {
     "id": "zhonghua",
@@ -1310,12 +1330,13 @@
     "weddingVerified": false,
     "capacity": null,
     "checkedAt": "2026-10-15",
-    "photo": "/images/hotels/venue-placeholder.svg",
-    "photoPage": "https://theweddingnotebook.com/inspire/ideas-and-advice/chinese-wedding-banquet-restaurants-in-penang",
-    "photoCredit": "Venue information source · photo pending",
-    "photoAlt": "Zhonghua Gourmet — venue photograph not yet added",
+    "photo": "/images/hotels/zhonghua.jpg",
+    "photoPage": "https://www.cititelpenang.com/dining/zhonghua-gourmet-restaurant",
+    "photoCredit": "Official venue / operator website · resized",
+    "photoAlt": "Zhonghua Gourmet — restaurant dining service",
     "fact": "The Wedding Notebook guide, updated 24 September 2026, lists this venue. Cititel Penang, Penang Road; guide describes a wedding menu and partitionable private rooms. Current capacity, pricing and availability have not been independently confirmed. No banquet price is imported into the calculator.",
-    "packages": []
+    "packages": [],
+    "photoUrl": "https://image-tc.galaxy.tf/wijpeg-8bpz125ymtrqw2yep2weqvtho/zhonghua-gourmet_standard.jpg?crop=121%2C0%2C524%2C393"
   },
   {
     "id": "wworld",
@@ -1330,12 +1351,13 @@
     "weddingVerified": false,
     "capacity": null,
     "checkedAt": "2026-10-15",
-    "photo": "/images/hotels/venue-placeholder.svg",
-    "photoPage": "https://theweddingnotebook.com/inspire/ideas-and-advice/chinese-wedding-banquet-restaurants-in-penang",
-    "photoCredit": "Venue information source · photo pending",
-    "photoAlt": "W World — venue photograph not yet added",
+    "photo": "/images/hotels/wworld.jpg",
+    "photoPage": "https://wworld.com.my/private-dining-wedding/",
+    "photoCredit": "Official venue / operator website · resized",
+    "photoAlt": "W World — wedding banquet hall",
     "fact": "The Wedding Notebook guide, updated 24 September 2026, lists this venue. Drury Lane; guide describes separate 500- and 100-person halls, VIP rooms and audiovisual facilities. Current capacity, pricing and availability have not been independently confirmed. No banquet price is imported into the calculator.",
-    "packages": []
+    "packages": [],
+    "photoUrl": "https://wworld.com.my/wp-content/uploads/2025/05/7cbec637-1124-457a-9fc6-e028b68d8da2-300x300.jpg"
   },
   {
     "id": "xipalace",
@@ -1350,12 +1372,13 @@
     "weddingVerified": false,
     "capacity": null,
     "checkedAt": "2026-10-15",
-    "photo": "/images/hotels/venue-placeholder.svg",
-    "photoPage": "https://theweddingnotebook.com/inspire/ideas-and-advice/chinese-wedding-banquet-restaurants-in-penang",
-    "photoCredit": "Venue information source · photo pending",
-    "photoAlt": "Xi Palace Restaurant (金喜大酒家) — venue photograph not yet added",
+    "photo": "/images/hotels/xipalace.jpg",
+    "photoPage": "https://www.facebook.com/kimheebm.restaurant/",
+    "photoCredit": "Official business profile · brand logo",
+    "photoAlt": "Xi Palace Restaurant (金喜大酒家) — official brand logo (venue photograph unavailable)",
     "fact": "The Wedding Notebook guide, updated 24 September 2026, lists this venue. Alma; formerly Kim Hee. Guide identifies wedding banquet dining; confirm capacity and package terms. Current capacity, pricing and availability have not been independently confirmed. No banquet price is imported into the calculator.",
-    "packages": []
+    "packages": [],
+    "photoUrl": "https://scontent.fpen3-1.fna.fbcdn.net/v/t39.30808-1/461281600_963624732447128_5562946481498758028_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x2048&ctp=s720x720&_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=3ab345&_nc_ohc=HemZQ0K46ckQ7kNvwHpaIss&_nc_oc=AdpP422fnSvQkBBTGANt8koz6PELPuTBbDDl471btaVYUfDb4FzDh-6Dri11Rrkm7-8&_nc_zt=24&_nc_ht=scontent.fpen3-1.fna&_nc_gid=SSqgUKnstl038x8fejvNPw&_nc_ss=7c20f&oh=00_AQPqoyqRHyO7c9xds8FyYiGvkbCquCHY-FL-BJNd9hd3fw&oe=6AD65E89"
   },
   {
     "id": "fuhouse",
@@ -1370,11 +1393,12 @@
     "weddingVerified": false,
     "capacity": null,
     "checkedAt": "2026-10-15",
-    "photo": "/images/hotels/venue-placeholder.svg",
-    "photoPage": "https://theweddingnotebook.com/inspire/ideas-and-advice/chinese-wedding-banquet-restaurants-in-penang",
-    "photoCredit": "Venue information source · photo pending",
-    "photoAlt": "FuHouse Restaurant (福臨門大酒樓) — venue photograph not yet added",
+    "photo": "/images/hotels/fuhouse.jpg",
+    "photoPage": "https://www.facebook.com/FuHouseRestaurant/",
+    "photoCredit": "Official business profile · brand logo",
+    "photoAlt": "FuHouse Restaurant (福臨門大酒樓) — official brand logo (venue photograph unavailable)",
     "fact": "The Wedding Notebook guide, updated 24 September 2026, lists this venue. Setia Sentral; guide identifies wedding banquets. Confirm room capacity, current menu and package terms. Current capacity, pricing and availability have not been independently confirmed. No banquet price is imported into the calculator.",
-    "packages": []
+    "packages": [],
+    "photoUrl": "https://scontent.fpen3-1.fna.fbcdn.net/v/t39.30808-1/298380510_436400521867737_5859685066765152435_n.jpg?stp=dst-jpg_tt6&cstp=mx1079x1079&ctp=s720x720&_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=3ab345&_nc_ohc=v6XdycHx3AsQ7kNvwF9rMsG&_nc_oc=AdpWqpz1p7iP6DOtkYDbAQJO5LMs_MY0KWwCfEYUWUZ16NDee77-NL3IXjAP_TACFEs&_nc_zt=24&_nc_ht=scontent.fpen3-1.fna&_nc_gid=z-BBcGeY3SVFj9EI9qwzNw&_nc_ss=7c20f&oh=00_AQOUTxKIvOvKAvXaC9SA86PDUnqyg_xm_VZWlyVa0fN3bg&oe=6AD65AC4"
   }
 ]

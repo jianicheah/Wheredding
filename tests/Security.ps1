@@ -9,8 +9,7 @@ Assert ($page.Headers['X-Content-Type-Options'] -eq 'nosniff') 'MIME sniffing di
 Assert ($page.Headers['X-Frame-Options'] -eq 'DENY') 'Framing disabled'
 Assert ($page.Headers['Referrer-Policy'] -eq 'no-referrer') 'Referrer disclosure disabled'
 $body=@{venueId='eo';priceMode='hotel';tablePrice=1;seats=10;guests=2;servicePercent=0;taxPercent=0;extra=0;budget=0}
-$r=Post $body
-Assert ($r.appliedTablePrice -eq 2188 -and $r.suggestedLow -eq 440 -and $r.suggestedHigh -eq 580 -and $r.estimateKind -eq 'benchmark') 'Tampered hotel price ignored; sourced benchmark range returned honestly'
+Reject $body 400 'Venue without a published price cannot use a forged price or another hotel range'
  $body.venueId='amari';$body.packageId='blissful';$body.seats=1;$body.servicePercent=30;$body.taxPercent=30;$r=Post $body
 Assert ($r.tableTotal -eq 2188 -and $r.seats -eq 10 -and $r.suggestedLow -eq 440) 'Hotel seating and nett charges cannot be forged in browser'
 $body.packageId='forged';Reject $body 400 'Forged package ID rejected'
@@ -19,7 +18,7 @@ $body.priceMode='manual';$body.tablePrice=1000;$r=Post $body
 Assert ($r.appliedTablePrice -eq 1000 -and $r.estimateKind -eq 'user-entered') 'Custom pricing explicitly identified as user-entered'
 $body.venueId='made-up-hotel';Reject $body 400 'Forged hotel ID rejected'
 $body.venueId='eo';$body.priceMode='admin';Reject $body 400 'Invalid pricing mode rejected'
-$body.priceMode='hotel';$body.guests=0;Reject $body 400 'Browser-bypassed guest validation rejected'
+$body.venueId='amari';$body.priceMode='hotel';$body.guests=0;Reject $body 400 'Browser-bypassed guest validation rejected'
 $body.guests=1;$body['suggested']=1;Reject $body 400 'Injected unexpected JSON fields rejected';$body.Remove('suggested')
 try{$source=Invoke-WebRequest "$BaseUrl/Program.cs" -UseBasicParsing;Assert (-not $source.Content.Contains('var builder = WebApplication.CreateBuilder')) 'Server source is not served as a static file'}catch{Assert ([int]$_.Exception.Response.StatusCode -eq 404) 'Server source is inaccessible (404)'}
 try{Invoke-WebRequest "$BaseUrl/api/venues" -UseBasicParsing -Method Post -ContentType application/json -Body '{}';throw 'Unexpected write acceptance'}catch{Assert ([int]$_.Exception.Response.StatusCode -eq 405) 'Catalogue write requests rejected'}

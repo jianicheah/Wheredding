@@ -1,0 +1,688 @@
+[
+  {
+    "id": "doubletree",
+    "index": 0,
+    "source": "https://hiltoncontenthub.com/property/doubletree-resort-by-hilton-penang",
+    "url": "https://hiltoncontenthub-editor.com/wp-content/uploads/2025/08/PENMBDI_Facade_2-2.jpg?w=500",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-doubletree-0.bin"
+  },
+  {
+    "id": "doubletree",
+    "index": 1,
+    "source": "https://hiltoncontenthub.com/property/doubletree-resort-by-hilton-penang",
+    "url": "https://hiltoncontenthub.com/uploads/2025/08/PENMBDI_Facade_2-2.jpg",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-doubletree-1.bin"
+  },
+  {
+    "id": "doubletree",
+    "index": 2,
+    "source": "https://hiltoncontenthub.com/property/doubletree-resort-by-hilton-penang",
+    "url": "https://hiltoncontenthub-editor.com/wp-content/uploads/2025/08/PENMBDI_Pool-Day2-2.jpg?w=500",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-doubletree-2.bin"
+  },
+  {
+    "id": "lonepine",
+    "index": 0,
+    "source": "https://www.marriott.com/en-us/hotels/penlp-lone-pine-penang-a-tribute-portfolio-resort/photos/",
+    "url": "https://cache.marriott.com/is/image/marriotts7prod/tx-penlp-seafacing-view-32300:Wide-Hor?wid=1336&fit=constrain",
+    "alt": "Page preview",
+    "file": "output/venue-research/photo-lonepine-0.bin"
+  },
+  {
+    "id": "prestige",
+    "index": 0,
+    "source": "https://www.theprestige.my/gallery/",
+    "url": "https://www.theprestige.my/wp-content/uploads/2026/02/facade-min.jpg.webp",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-prestige-0.bin"
+  },
+  {
+    "id": "prestige",
+    "index": 1,
+    "source": "https://www.theprestige.my/gallery/",
+    "url": "https://www.theprestige.my/wp-content/uploads/2025/10/27_Prestige_PREMIER-DELUXE-1.jpg.webp",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-prestige-1.bin"
+  },
+  {
+    "id": "prestige",
+    "index": 2,
+    "source": "https://www.theprestige.my/gallery/",
+    "url": "https://www.theprestige.my/wp-content/uploads/2025/10/27_Prestige_PREMIER-DELUXE-1-1025x1536.jpg.webp",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-prestige-2.bin"
+  },
+  {
+    "id": "granite",
+    "index": 0,
+    "source": "https://www.thegranitehotel.com/",
+    "url": "https://static.wixstatic.com/media/82b1e7_796b8cbdd5a047868d59fd0de2a0597d%7Emv2.jpg/v1/fit/w_2500,h_1330,al_c/82b1e7_796b8cbdd5a047868d59fd0de2a0597d%7Emv2.jpg",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-granite-0.bin"
+  },
+  {
+    "id": "granite",
+    "index": 1,
+    "source": "https://www.thegranitehotel.com/",
+    "url": "https://static.wixstatic.com/media/82b1e7_4392e5fa1e384a3e9460330dfaf844c2~mv2.jpg/v1/fit/w_1920,h_1055,q_90,enc_avif,quality_auto/82b1e7_4392e5fa1e384a3e9460330dfaf844c2~mv2.jpg",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-granite-1.bin"
+  },
+  {
+    "id": "granite",
+    "index": 2,
+    "source": "https://www.thegranitehotel.com/",
+    "url": "https://static.wixstatic.com/media/82b1e7_7c692f2ea41e4ab6a50202e4c8094a39~mv2.jpg/v1/fit/w_1920,h_1055,q_90,enc_avif,quality_auto/82b1e7_7c692f2ea41e4ab6a50202e4c8094a39~mv2.jpg",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-granite-2.bin"
+  },
+  {
+    "id": "kelawai",
+    "index": 0,
+    "source": "https://ghotel.com.my/hotels/g-hotel-kelawai/",
+    "url": "https://ghotel.com.my/hotels/g-hotel-kelawai/wp-content/uploads/2026/08/G-Hotel-Kelawai-Night.jpg",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-kelawai-0.bin"
+  },
+  {
+    "id": "kelawai",
+    "index": 1,
+    "source": "https://ghotel.com.my/hotels/g-hotel-kelawai/",
+    "url": "https://ghotel.com.my/hotels/g-hotel-kelawai/wp-content/uploads/2026/04/wine-img.png",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-kelawai-1.bin"
+  },
+  {
+    "id": "kelawai",
+    "index": 2,
+    "source": "https://ghotel.com.my/hotels/g-hotel-kelawai/",
+    "url": "https://ghotel.com.my/hotels/g-hotel-kelawai/wp-content/uploads/2026/08/Takeaway-250-scaled.jpg",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-kelawai-2.bin"
+  },
+  {
+    "id": "seventerraces",
+    "index": 0,
+    "source": "https://www.georgetownheritage.com/seven-terraces-hotel/",
+    "url": "https://www.georgetownheritage.com/wp-content/uploads/2017/10/seven_terraces_1.png",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-seventerraces-0.bin"
+  },
+  {
+    "id": "seventerraces",
+    "index": 1,
+    "source": "https://www.georgetownheritage.com/seven-terraces-hotel/",
+    "url": "https://www.georgetownheritage.com/wp-content/uploads/2025/05/argus22-img.jpg",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-seventerraces-1.bin"
+  },
+  {
+    "id": "seventerraces",
+    "index": 2,
+    "source": "https://www.georgetownheritage.com/seven-terraces-hotel/",
+    "url": "https://www.georgetownheritage.com/wp-content/uploads/2025/05/argus18-img.jpg",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-seventerraces-2.bin"
+  },
+  {
+    "id": "fourhands",
+    "index": 0,
+    "source": "https://www.facebook.com/fourhandspenang/",
+    "url": "https://scontent.fpen3-1.fna.fbcdn.net/v/t39.30808-1/482084803_659932696550031_4207886691456634447_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1080&ctp=s720x720&_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=3ab345&_nc_ohc=0GN-z7JhmCcQ7kNvwEZWuXL&_nc_oc=Ado85s-Swa6qfkbb74R_yOp1_KtLwvDy3SlRvhOD54us_ybtlonlNkCz7uE31JyS5ls&_nc_zt=24&_nc_ht=scontent.fpen3-1.fna&_nc_gid=F14ltBSNVb_5Avy7ROgzmg&_nc_ss=7c20f&oh=00_AQNa1nNqqwkWwxxMG4BI-gwaYhW1hkoVbcaU0S8IdLhnAw&oe=6AD65794",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-fourhands-0.bin"
+  },
+  {
+    "id": "jazz",
+    "index": 0,
+    "source": "https://www.jazzhotel.com.my/gallery.html",
+    "url": "https://homesweb.staah.net/imagelibrary/big_13977_1775557158171.png",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-jazz-0.bin"
+  },
+  {
+    "id": "jazz",
+    "index": 1,
+    "source": "https://www.jazzhotel.com.my/gallery.html",
+    "url": "https://homesweb.staah.net/imagelibrary/big_13977_1773721241260.jpeg",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-jazz-1.bin"
+  },
+  {
+    "id": "jazz",
+    "index": 2,
+    "source": "https://www.jazzhotel.com.my/gallery.html",
+    "url": "https://homesweb.staah.net/imagelibrary/big_13977_1773721241180.jpeg",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-jazz-2.bin"
+  },
+  {
+    "id": "eastin",
+    "index": 0,
+    "source": "https://eastin.com/gallery/",
+    "url": "https://eastin.com/wp-content/uploads/2026/08/Group-807-2-1200x630-1.jpg",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-eastin-0.bin"
+  },
+  {
+    "id": "eastin",
+    "index": 1,
+    "source": "https://eastin.com/gallery/",
+    "url": "https://eastin.com/wp-content/uploads/2023/09/Group-688.png",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-eastin-1.bin"
+  },
+  {
+    "id": "eastin",
+    "index": 2,
+    "source": "https://eastin.com/gallery/",
+    "url": "https://eastin.com/wp-content/uploads/2023/09/Group-690.png",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-eastin-2.bin"
+  },
+  {
+    "id": "mercure",
+    "index": 0,
+    "source": "https://all.accor.com/hotel/B4R7/index.en.shtml",
+    "url": "https://www.ahstatic.com/photos/b4r7_ho_00_p_1024x768.jpg",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-mercure-0.bin"
+  },
+  {
+    "id": "mercure",
+    "index": 1,
+    "source": "https://all.accor.com/hotel/B4R7/index.en.shtml",
+    "url": "https://www.ahstatic.com/photos/b4r7_ho_01_p_1024x768.jpg",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-mercure-1.bin"
+  },
+  {
+    "id": "mercure",
+    "index": 2,
+    "source": "https://all.accor.com/hotel/B4R7/index.en.shtml",
+    "url": "https://www.ahstatic.com/photos/b4r7_ho_02_p_1024x768.jpg",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-mercure-2.bin"
+  },
+  {
+    "id": "suffolk",
+    "index": 0,
+    "source": "https://www.suffolkhouse.com.my/",
+    "url": "https://irp.cdn-website.com/f58de0fc/import/clib/suffolkhouse_com_my/dms3rep/multi/opt/c2-776x555-640x458-168w.jpg",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-suffolk-0.bin"
+  },
+  {
+    "id": "suffolk",
+    "index": 1,
+    "source": "https://www.suffolkhouse.com.my/",
+    "url": "https://irp.cdn-website.com//4edfda80/dms3rep/multi/opt/Screenshot%2B2020-09-11%2Bat%2B6.39.33%2BAM-526w.png",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-suffolk-1.bin"
+  },
+  {
+    "id": "suffolk",
+    "index": 2,
+    "source": "https://www.suffolkhouse.com.my/",
+    "url": "https://irp.cdn-website.com//4edfda80/dms3rep/multi/opt/sh-stream-2018-2-558w.jpg",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-suffolk-2.bin"
+  },
+  {
+    "id": "bluemansion",
+    "index": 0,
+    "source": "https://www.cheongfatttzemansion.com/thebluemansion/discover/gallery/",
+    "url": "https://www.cheongfatttzemansion.com/wp-content/uploads/2017/06/gallery-bg_tg0s6a.jpg?id=726",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-bluemansion-0.bin"
+  },
+  {
+    "id": "bluemansion",
+    "index": 1,
+    "source": "https://www.cheongfatttzemansion.com/thebluemansion/discover/gallery/",
+    "url": "https://www.cheongfatttzemansion.com/wp-content/plugins/revslider/public/assets/assets/dummy.png",
+    "alt": "",
+    "file": "output/venue-research/photo-bluemansion-1.bin"
+  },
+  {
+    "id": "bluemansion",
+    "index": 2,
+    "source": "https://www.cheongfatttzemansion.com/thebluemansion/discover/gallery/",
+    "url": "https://www.cheongfatttzemansion.com/wp-content/uploads/2017/06/boutique-hotel-penang-island-blue-mansion-architecture-01_g4we0c-1-600x600.jpg",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-bluemansion-2.bin"
+  },
+  {
+    "id": "macalister",
+    "index": 0,
+    "source": "https://www.marriott.com/en-us/hotels/pengt-macalister-mansion-george-town-a-member-of-design-hotels/photos/",
+    "url": "https://cache.marriott.com/content/dam/marriott-renditions/PENGT/pengt-hotel-view-8879-hor-wide.jpg?output-quality=70&interpolation=progressive-bilinear&downsize=375px:*",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-macalister-0.bin"
+  },
+  {
+    "id": "macalister",
+    "index": 1,
+    "source": "https://www.marriott.com/en-us/hotels/pengt-macalister-mansion-george-town-a-member-of-design-hotels/photos/",
+    "url": "https://cache.marriott.com/content/dam/marriott-renditions/PENGT/pengt-statue-8880-hor-wide.jpg?output-quality=70&interpolation=progressive-bilinear&downsize=375px:*",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-macalister-1.bin"
+  },
+  {
+    "id": "macalister",
+    "index": 2,
+    "source": "https://www.marriott.com/en-us/hotels/pengt-macalister-mansion-george-town-a-member-of-design-hotels/photos/",
+    "url": "https://cache.marriott.com/content/dam/marriott-renditions/PENGT/pengt-entrance-8577-hor-wide.jpg?output-quality=70&interpolation=progressive-bilinear&downsize=375px:*",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-macalister-2.bin"
+  },
+  {
+    "id": "soori",
+    "index": 0,
+    "source": "https://sooripenang.com/press",
+    "url": "https://cdn.prod.website-files.com/67a61f3b852b14355a6265d1/68b701c233be5147d933b42b_banner%201_DSC00465%20edited.webp",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-soori-0.bin"
+  },
+  {
+    "id": "soori",
+    "index": 1,
+    "source": "https://sooripenang.com/press",
+    "url": "https://cdn.prod.website-files.com/67a61f3b852b14355a6265d1/67a61f3b852b14355a626601_bg-acc-card.webp",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-soori-1.bin"
+  },
+  {
+    "id": "soori",
+    "index": 2,
+    "source": "https://sooripenang.com/press",
+    "url": "https://cdn.prod.website-files.com/67a61f3b852b14355a6265d1/6ab58cafa9aca923e2d21fc8_penang__michelin%201.png",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-soori-2.bin"
+  },
+  {
+    "id": "stjos",
+    "index": 0,
+    "source": "https://www.hunzagroup.com/property/st--jo---s---gurney-paragon-mall",
+    "url": "https://www.hunzagroup.com/media/gallery/property/original/25_property_gallery_1710927097.jpeg",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-stjos-0.bin"
+  },
+  {
+    "id": "stjos",
+    "index": 1,
+    "source": "https://www.hunzagroup.com/property/st--jo---s---gurney-paragon-mall",
+    "url": "https://www.hunzagroup.com/media/gallery/property/thumbnail/25_property_gallery_1710927097.jpeg",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-stjos-1.bin"
+  },
+  {
+    "id": "stjos",
+    "index": 2,
+    "source": "https://www.hunzagroup.com/property/st--jo---s---gurney-paragon-mall",
+    "url": "https://www.hunzagroup.com/media/gallery/property/original/25_property_gallery_1710927047.jpeg",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-stjos-2.bin"
+  },
+  {
+    "id": "peninsula",
+    "index": 0,
+    "source": "https://www.peninsula.house/our-house",
+    "url": "https://images.squarespace-cdn.com/content/v1/68a48c54f733054f565d6bde/0d0d4baf-7dbb-40a2-a4e4-4591e6aed2df/DSCF4247%281%29%281%29.jpg",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-peninsula-0.bin"
+  },
+  {
+    "id": "seaqueen",
+    "index": 0,
+    "source": "https://www.straitsquay.com/shops/sea-queen-restaurant/",
+    "url": "https://www.straitsquay.com/wp-content/uploads/2024/08/sea-queen-1.jpg",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-seaqueen-0.bin"
+  },
+  {
+    "id": "seaqueen",
+    "index": 1,
+    "source": "https://www.straitsquay.com/shops/sea-queen-restaurant/",
+    "url": "https://www.straitsquay.com/wp-content/uploads/2024/08/sea-queen-2.jpg",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-seaqueen-1.bin"
+  },
+  {
+    "id": "seaqueen",
+    "index": 2,
+    "source": "https://www.straitsquay.com/shops/sea-queen-restaurant/",
+    "url": "https://www.straitsquay.com/wp-content/uploads/2024/08/sea-queen-3-1030x773.jpg",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-seaqueen-2.bin"
+  },
+  {
+    "id": "maplepalace",
+    "index": 0,
+    "source": "https://www.maplepalace.com/",
+    "url": "https://i1.wp.com/www.maplepalace.com/wp-content/uploads/2018/12/mp_banner_3_1.jpg?fit=1348%2C657&ssl=1",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-maplepalace-0.bin"
+  },
+  {
+    "id": "maplepalace",
+    "index": 1,
+    "source": "https://www.maplepalace.com/",
+    "url": "https://i1.wp.com/beta.maplepalace.com/wp-content/uploads/2018/12/mp_banner_3_2.png?w=1060&#038;ssl=1",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-maplepalace-1.bin"
+  },
+  {
+    "id": "maplepalace",
+    "index": 2,
+    "source": "https://www.maplepalace.com/",
+    "url": "https://i2.wp.com/beta.maplepalace.com/wp-content/uploads/2018/12/mp_banner_3_3.png?w=1060&#038;ssl=1",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-maplepalace-2.bin"
+  },
+  {
+    "id": "starview",
+    "index": 0,
+    "source": "https://www.facebook.com/starviewrestaurant/",
+    "url": "https://scontent.fpen3-1.fna.fbcdn.net/v/t39.30808-1/308096098_512603320872973_4259020567073606716_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x2048&ctp=s720x720&_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=3ab345&_nc_ohc=AW1scdGW4bcQ7kNvwGki5eu&_nc_oc=AdrDhnyEQMmcZ0TNkufCAaJ8HK1S3OjuOwMPk3ksjeLy8OUkRK00a8teVx2YxBLV84g&_nc_zt=24&_nc_ht=scontent.fpen3-1.fna&_nc_gid=Tb15uMsmAoJI0wOkvZS3Fw&_nc_ss=7c20f&oh=00_AQPL7Xn0ZD38_YBZwl1LYyJUuLYc0SXQoXmhWWW-qclphw&oe=6AD649DC",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-starview-0.bin"
+  },
+  {
+    "id": "elitehouse",
+    "index": 0,
+    "source": "https://www.facebook.com/EliteHouseRestaurant/",
+    "url": "https://scontent.fpen3-1.fna.fbcdn.net/v/t39.30808-1/305215981_479493047520404_5324600468207541938_n.jpg?stp=dst-jpg_tt6&cstp=mx421x421&ctp=s421x421&_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=3ab345&_nc_ohc=GCNTI0lDuhsQ7kNvwFv5mLq&_nc_oc=AdraJJXspJewbdFEFWQroasEVFjgVTTxq-31CClE5E56IPr4tysF6lboy1RHht55WRQ&_nc_zt=24&_nc_ht=scontent.fpen3-1.fna&_nc_gid=rdTeabU9_RrB07KMBIA-iw&_nc_ss=7c20f&oh=00_AQMYGZIgU3r6UUYNKRP7FTjHJoXLEM5JHqcu-Uw6Xn4mgg&oe=6AD65D3E",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-elitehouse-0.bin"
+  },
+  {
+    "id": "zhonghua",
+    "index": 0,
+    "source": "https://www.cititelpenang.com/dining/zhonghua-gourmet-restaurant",
+    "url": "https://image-tc.galaxy.tf/wijpeg-8bpz125ymtrqw2yep2weqvtho/zhonghua-gourmet_standard.jpg?crop=121%2C0%2C524%2C393",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-zhonghua-0.bin"
+  },
+  {
+    "id": "wworld",
+    "index": 0,
+    "source": "https://wworld.com.my/private-dining-wedding/",
+    "url": "https://wworld.com.my/wp-content/uploads/2024/11/cropped-W-World.png",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-wworld-0.bin"
+  },
+  {
+    "id": "wworld",
+    "index": 1,
+    "source": "https://wworld.com.my/private-dining-wedding/",
+    "url": "https://wworld.com.my/wp-content/uploads/elementor/thumbs/PrivateDining-qye0q5ae2puj570fl8mpmmiyxsjtjtxxmi0e49lmxk.jpg",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-wworld-1.bin"
+  },
+  {
+    "id": "wworld",
+    "index": 2,
+    "source": "https://wworld.com.my/private-dining-wedding/",
+    "url": "https://wworld.com.my/wp-content/uploads/2025/05/7cbec637-1124-457a-9fc6-e028b68d8da2-300x300.jpg",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-wworld-2.bin"
+  },
+  {
+    "id": "xipalace",
+    "index": 0,
+    "source": "https://www.facebook.com/kimheebm.restaurant/",
+    "url": "https://scontent.fpen3-1.fna.fbcdn.net/v/t39.30808-1/461281600_963624732447128_5562946481498758028_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x2048&ctp=s720x720&_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=3ab345&_nc_ohc=HemZQ0K46ckQ7kNvwHpaIss&_nc_oc=AdpP422fnSvQkBBTGANt8koz6PELPuTBbDDl471btaVYUfDb4FzDh-6Dri11Rrkm7-8&_nc_zt=24&_nc_ht=scontent.fpen3-1.fna&_nc_gid=SSqgUKnstl038x8fejvNPw&_nc_ss=7c20f&oh=00_AQPqoyqRHyO7c9xds8FyYiGvkbCquCHY-FL-BJNd9hd3fw&oe=6AD65E89",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-xipalace-0.bin"
+  },
+  {
+    "id": "fuhouse",
+    "index": 0,
+    "source": "https://www.facebook.com/FuHouseRestaurant/",
+    "url": "https://scontent.fpen3-1.fna.fbcdn.net/v/t39.30808-1/298380510_436400521867737_5859685066765152435_n.jpg?stp=dst-jpg_tt6&cstp=mx1079x1079&ctp=s720x720&_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=3ab345&_nc_ohc=v6XdycHx3AsQ7kNvwF9rMsG&_nc_oc=AdpWqpz1p7iP6DOtkYDbAQJO5LMs_MY0KWwCfEYUWUZ16NDee77-NL3IXjAP_TACFEs&_nc_zt=24&_nc_ht=scontent.fpen3-1.fna&_nc_gid=z-BBcGeY3SVFj9EI9qwzNw&_nc_ss=7c20f&oh=00_AQOUTxKIvOvKAvXaC9SA86PDUnqyg_xm_VZWlyVa0fN3bg&oe=6AD65AC4",
+    "alt": "Embedded image",
+    "file": "output/venue-research/photo-fuhouse-0.bin"
+  },
+  {
+    "id": "suffolk",
+    "index": 10,
+    "url": "https://irp.cdn-website.com/f58de0fc/import/clib/suffolkhouse_com_my/dms3rep/multi/opt/10365952_746135588739943_1557766527560188542_n-960x720-1920w.jpg",
+    "source": "https://www.suffolkhouse.com.my/",
+    "file": "output/venue-research/photo-suffolk-10.bin"
+  },
+  {
+    "id": "suffolk",
+    "index": 11,
+    "url": "https://irp.cdn-website.com/f58de0fc/import/clib/suffolkhouse_com_my/dms3rep/multi/opt/384644_307683625918477_1123278770_n-720x480-1920w.jpg",
+    "source": "https://www.suffolkhouse.com.my/",
+    "file": "output/venue-research/photo-suffolk-11.bin"
+  },
+  {
+    "id": "suffolk",
+    "index": 12,
+    "url": "https://irp.cdn-website.com/f58de0fc/import/clib/suffolkhouse_com_my/dms3rep/multi/opt/20160925_172846-5312x2988-1920w.jpg",
+    "source": "https://www.suffolkhouse.com.my/",
+    "file": "output/venue-research/photo-suffolk-12.bin"
+  },
+  {
+    "id": "suffolk",
+    "index": 13,
+    "url": "https://irp.cdn-website.com/f58de0fc/import/clib/suffolkhouse_com_my/dms3rep/multi/10365952_746135588739943_1557766527560188542_n-960x720.jpg",
+    "source": "https://www.suffolkhouse.com.my/",
+    "file": "output/venue-research/photo-suffolk-13.bin"
+  },
+  {
+    "id": "suffolk",
+    "index": 14,
+    "url": "https://irp.cdn-website.com/f58de0fc/import/clib/suffolkhouse_com_my/dms3rep/multi/opt/10365952_746135588739943_1557766527560188542_n-960x720-640w.jpg",
+    "source": "https://www.suffolkhouse.com.my/",
+    "file": "output/venue-research/photo-suffolk-14.bin"
+  },
+  {
+    "id": "suffolk",
+    "index": 15,
+    "url": "https://irp.cdn-website.com/f58de0fc/import/clib/suffolkhouse_com_my/dms3rep/multi/384644_307683625918477_1123278770_n-720x480.jpg",
+    "source": "https://www.suffolkhouse.com.my/",
+    "file": "output/venue-research/photo-suffolk-15.bin"
+  },
+  {
+    "id": "suffolk",
+    "index": 16,
+    "url": "https://irp.cdn-website.com/f58de0fc/import/clib/suffolkhouse_com_my/dms3rep/multi/opt/384644_307683625918477_1123278770_n-720x480-640w.jpg",
+    "source": "https://www.suffolkhouse.com.my/",
+    "file": "output/venue-research/photo-suffolk-16.bin"
+  },
+  {
+    "id": "suffolk",
+    "index": 17,
+    "url": "https://irp.cdn-website.com/f58de0fc/import/clib/suffolkhouse_com_my/dms3rep/multi/20160925_172846-5312x2988.jpg",
+    "source": "https://www.suffolkhouse.com.my/",
+    "file": "output/venue-research/photo-suffolk-17.bin"
+  },
+  {
+    "id": "suffolk",
+    "index": 18,
+    "url": "https://irp.cdn-website.com/f58de0fc/import/clib/suffolkhouse_com_my/dms3rep/multi/opt/20160925_172846-5312x2988-640w.jpg",
+    "source": "https://www.suffolkhouse.com.my/",
+    "file": "output/venue-research/photo-suffolk-18.bin"
+  },
+  {
+    "id": "maplepalace",
+    "index": 10,
+    "url": "https://i0.wp.com/www.maplepalace.com/wp-content/uploads/2019/10/Home-1-1.jpg?fit=848%2C646&ssl=1",
+    "source": "https://www.maplepalace.com/",
+    "file": "output/venue-research/photo-maplepalace-10.bin"
+  },
+  {
+    "id": "maplepalace",
+    "index": 11,
+    "url": "https://i1.wp.com/www.maplepalace.com/wp-content/uploads/2019/10/Home-2-2.jpg?fit=848%2C646&ssl=1",
+    "source": "https://www.maplepalace.com/",
+    "file": "output/venue-research/photo-maplepalace-11.bin"
+  },
+  {
+    "id": "maplepalace",
+    "index": 12,
+    "url": "https://i2.wp.com/www.maplepalace.com/wp-content/uploads/2019/10/Home-3.jpg?fit=848%2C646&ssl=1",
+    "source": "https://www.maplepalace.com/",
+    "file": "output/venue-research/photo-maplepalace-12.bin"
+  },
+  {
+    "id": "maplepalace",
+    "index": 13,
+    "url": "https://i0.wp.com/www.maplepalace.com/wp-content/uploads/2019/10/Home-1-1.jpg?fit=300%2C229&ssl=1",
+    "source": "https://www.maplepalace.com/",
+    "file": "output/venue-research/photo-maplepalace-13.bin"
+  },
+  {
+    "id": "maplepalace",
+    "index": 14,
+    "url": "https://i0.wp.com/www.maplepalace.com/wp-content/uploads/2019/10/Home-1-1.jpg?w=848&ssl=1",
+    "source": "https://www.maplepalace.com/",
+    "file": "output/venue-research/photo-maplepalace-14.bin"
+  },
+  {
+    "id": "maplepalace",
+    "index": 15,
+    "url": "https://i0.wp.com/www.maplepalace.com/wp-content/uploads/2019/10/Home-1-1.jpg?fit=848%2C646&ssl=1&is-pending-load=1",
+    "source": "https://www.maplepalace.com/",
+    "file": "output/venue-research/photo-maplepalace-15.bin"
+  },
+  {
+    "id": "maplepalace",
+    "index": 16,
+    "url": "https://i1.wp.com/www.maplepalace.com/wp-content/uploads/2019/10/Home-2-2.jpg?fit=300%2C229&ssl=1",
+    "source": "https://www.maplepalace.com/",
+    "file": "output/venue-research/photo-maplepalace-16.bin"
+  },
+  {
+    "id": "maplepalace",
+    "index": 17,
+    "url": "https://i1.wp.com/www.maplepalace.com/wp-content/uploads/2019/10/Home-2-2.jpg?w=848&ssl=1",
+    "source": "https://www.maplepalace.com/",
+    "file": "output/venue-research/photo-maplepalace-17.bin"
+  },
+  {
+    "id": "maplepalace",
+    "index": 18,
+    "url": "https://i1.wp.com/www.maplepalace.com/wp-content/uploads/2019/10/Home-2-2.jpg?fit=848%2C646&ssl=1&is-pending-load=1",
+    "source": "https://www.maplepalace.com/",
+    "file": "output/venue-research/photo-maplepalace-18.bin"
+  },
+  {
+    "id": "maplepalace",
+    "index": 19,
+    "url": "https://i2.wp.com/www.maplepalace.com/wp-content/uploads/2019/10/Home-3.jpg?fit=300%2C229&ssl=1",
+    "source": "https://www.maplepalace.com/",
+    "file": "output/venue-research/photo-maplepalace-19.bin"
+  },
+  {
+    "id": "maplepalace",
+    "index": 20,
+    "url": "https://i2.wp.com/www.maplepalace.com/wp-content/uploads/2019/10/Home-3.jpg?w=848&ssl=1",
+    "source": "https://www.maplepalace.com/",
+    "file": "output/venue-research/photo-maplepalace-20.bin"
+  },
+  {
+    "id": "maplepalace",
+    "index": 21,
+    "url": "https://i2.wp.com/www.maplepalace.com/wp-content/uploads/2019/10/Home-3.jpg?fit=848%2C646&ssl=1&is-pending-load=1",
+    "source": "https://www.maplepalace.com/",
+    "file": "output/venue-research/photo-maplepalace-21.bin"
+  },
+  {
+    "id": "bluemansion",
+    "index": 10,
+    "url": "https://www.cheongfatttzemansion.com/wp-content/uploads/2017/06/boutique-hotel-penang-island-blue-mansion-architecture-03_as4upd-600x600.jpg",
+    "source": "https://www.cheongfatttzemansion.com/thebluemansion/discover/gallery/",
+    "file": "output/venue-research/photo-bluemansion-10.bin"
+  },
+  {
+    "id": "bluemansion",
+    "index": 11,
+    "url": "https://www.cheongfatttzemansion.com/wp-content/uploads/2017/06/boutique-hotel-penang-island-blue-mansion-architecture-04_vxnnbx-600x600.jpg",
+    "source": "https://www.cheongfatttzemansion.com/thebluemansion/discover/gallery/",
+    "file": "output/venue-research/photo-bluemansion-11.bin"
+  },
+  {
+    "id": "bluemansion",
+    "index": 12,
+    "url": "https://www.cheongfatttzemansion.com/wp-content/uploads/2017/06/boutique-hotel-penang-island-blue-mansion-architecture-05_yuo8eq-600x600.jpg",
+    "source": "https://www.cheongfatttzemansion.com/thebluemansion/discover/gallery/",
+    "file": "output/venue-research/photo-bluemansion-12.bin"
+  },
+  {
+    "id": "bluemansion",
+    "index": 13,
+    "url": "https://www.cheongfatttzemansion.com/wp-content/uploads/2017/06/boutique-hotel-penang-island-blue-mansion-architecture-03-1_tpforg-600x600.jpg",
+    "source": "https://www.cheongfatttzemansion.com/thebluemansion/discover/gallery/",
+    "file": "output/venue-research/photo-bluemansion-13.bin"
+  },
+  {
+    "id": "bluemansion",
+    "index": 14,
+    "url": "https://www.cheongfatttzemansion.com/wp-content/uploads/2017/06/boutique-hotel-penang-island-blue-mansion-architecture-04-1_gc5ngr-600x600.jpg",
+    "source": "https://www.cheongfatttzemansion.com/thebluemansion/discover/gallery/",
+    "file": "output/venue-research/photo-bluemansion-14.bin"
+  },
+  {
+    "id": "bluemansion",
+    "index": 15,
+    "url": "https://www.cheongfatttzemansion.com/wp-content/uploads/2017/06/boutique-hotel-penang-island-blue-mansion-architecture-05-1_giro7k-600x600.jpg",
+    "source": "https://www.cheongfatttzemansion.com/thebluemansion/discover/gallery/",
+    "file": "output/venue-research/photo-bluemansion-15.bin"
+  },
+  {
+    "id": "bluemansion",
+    "index": 16,
+    "url": "https://www.cheongfatttzemansion.com/wp-content/uploads/2017/06/boutique-hotel-penang-island-blue-mansion-architecture-03_as4upd.jpg",
+    "source": "https://www.cheongfatttzemansion.com/thebluemansion/discover/gallery/",
+    "file": "output/venue-research/photo-bluemansion-16.bin"
+  },
+  {
+    "id": "bluemansion",
+    "index": 17,
+    "url": "https://www.cheongfatttzemansion.com/wp-content/uploads/2017/06/boutique-hotel-penang-island-blue-mansion-architecture-04_vxnnbx.jpg",
+    "source": "https://www.cheongfatttzemansion.com/thebluemansion/discover/gallery/",
+    "file": "output/venue-research/photo-bluemansion-17.bin"
+  },
+  {
+    "id": "bluemansion",
+    "index": 18,
+    "url": "https://www.cheongfatttzemansion.com/wp-content/uploads/2017/06/boutique-hotel-penang-island-blue-mansion-architecture-05_yuo8eq.jpg",
+    "source": "https://www.cheongfatttzemansion.com/thebluemansion/discover/gallery/",
+    "file": "output/venue-research/photo-bluemansion-18.bin"
+  },
+  {
+    "id": "bluemansion",
+    "index": 19,
+    "url": "https://www.cheongfatttzemansion.com/wp-content/uploads/2017/06/boutique-hotel-penang-island-blue-mansion-architecture-03-1_tpforg-1024x683.jpg",
+    "source": "https://www.cheongfatttzemansion.com/thebluemansion/discover/gallery/",
+    "file": "output/venue-research/photo-bluemansion-19.bin"
+  },
+  {
+    "id": "bluemansion",
+    "index": 20,
+    "url": "https://www.cheongfatttzemansion.com/wp-content/uploads/2017/06/boutique-hotel-penang-island-blue-mansion-architecture-04-1_gc5ngr-1024x683.jpg",
+    "source": "https://www.cheongfatttzemansion.com/thebluemansion/discover/gallery/",
+    "file": "output/venue-research/photo-bluemansion-20.bin"
+  },
+  {
+    "id": "bluemansion",
+    "index": 21,
+    "url": "https://www.cheongfatttzemansion.com/wp-content/uploads/2017/06/boutique-hotel-penang-island-blue-mansion-architecture-05-1_giro7k-1024x683.jpg",
+    "source": "https://www.cheongfatttzemansion.com/thebluemansion/discover/gallery/",
+    "file": "output/venue-research/photo-bluemansion-21.bin"
+  },
+  {
+    "id": "peninsula",
+    "index": 10,
+    "url": "https://images.squarespace-cdn.com/content/v1/68a48c54f733054f565d6bde/eae99017-3351-4aaa-a20e-712fa3650dae/Peninsula_Space_55+%281%29.jpeg",
+    "source": "https://www.peninsula.house/",
+    "file": "output/venue-research/photo-peninsula-10.bin"
+  }
+]

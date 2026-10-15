@@ -1,0 +1,12 @@
+[
+  {
+    "database": "local-photos",
+    "photosUpdated": 24,
+    "otherContentPreserved": true
+  },
+  {
+    "database": "neon-photos",
+    "photosUpdated": 24,
+    "otherContentPreserved": true
+  }
+]

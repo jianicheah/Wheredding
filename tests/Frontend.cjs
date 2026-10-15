@@ -48,8 +48,8 @@ get('#giftvenue').value='ixora';get('#giftvenue').onchange();await settle();asse
 get('#giftvenue').value='olive';get('#giftvenue').onchange();await settle();assert.match(get('#giftcontext').innerHTML,/unconfirmed charges/);assert.match(get('#giftresult').innerHTML,/before unconfirmed charges/);
 get('#giftvenue').value='angsana';get('#giftvenue').onchange();await settle();assert.match(get('#giftcontext').innerHTML,/assumes 10/);
 console.log('PASS: Expired rates, incomplete charges and assumed seating shown clearly');
-get('#giftvenue').value='degarden';get('#giftvenue').onchange();await settle();assert.equal(get('#packagechoice').hidden,true);assert.match(get('#giftresult').innerHTML,/NOT YOUR HOTEL’S RATE/);assert.match(get('#giftresult').innerHTML,/PARKROYAL/);assert.doesNotMatch(get('#giftcontext').innerHTML,/2,000/);
-console.log('PASS: Missing hotel price still calculates a sourced other-hotel range');
+get('#giftvenue').value='degarden';get('#giftvenue').onchange();await settle();assert.equal(get('#packagechoice').hidden,true);assert.equal(get('#giftadjustments').open,true);assert.equal(get('#giftform').elements.tablePrice.value,'');assert.match(get('#giftcontext').textContent,/not verified\/confirmed/);assert.match(get('#giftresult').innerHTML,/fill in the table price manually/);assert.doesNotMatch(get('#giftresult').innerHTML,/2,188|2,888|PARKROYAL/);
+console.log('PASS: Missing venue price stays blank and opens manual Options');
 get('#giftform').elements.tablePrice.value='1000';get('#giftform').oninput({target:{name:'tablePrice'}});await settle();assert.match(get('#giftresult').innerHTML,/YOUR OWN AMOUNT/);assert.match(get('#giftresult').innerHTML,/200/);
 get('#giftvenue').value='manual';get('#giftvenue').onchange();assert.equal(get('#giftadjustments').open,true);assert.equal(get('#giftform').elements.tablePrice.value,'');
 get('#clear').onclick();assert.equal(get('#count').textContent,0);

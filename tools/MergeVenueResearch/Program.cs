@@ -14,6 +14,7 @@ try
     var connection = Environment.GetEnvironmentVariable("VENUE_MERGE_CONNECTION") ?? throw new InvalidOperationException("Database connection is not configured.");
     await using var c = new NpgsqlConnection(connection); await c.OpenAsync();
     var current = await RelationalContent.Read(c);
+    if(args.Contains("--photos-only")){await UpdatePhotos(c,current,label,apply,options,args.Contains("--external-photo-links"),args.Contains("--local-photo-links"));return;}
     var baseline = JsonNode.Parse(File.ReadAllText(".local-content/research-baseline.json"))!.AsArray();
     var desired = JsonNode.Parse(File.ReadAllText("Data/venues.json"))!.AsArray();
     var merged = (JsonArray)current.Venues.DeepClone();
@@ -115,4 +116,42 @@ static bool SameJson(JsonNode a, JsonNode b)
         if(x.ValueKind==JsonValueKind.Array)return x.GetArrayLength()==y.GetArrayLength() && x.EnumerateArray().Zip(y.EnumerateArray()).All(p=>Same(p.First,p.Second));
         return x.ValueKind==JsonValueKind.Number?x.GetDecimal()==y.GetDecimal():x.ToString()==y.ToString();
     }
+}
+
+static async Task UpdatePhotos(NpgsqlConnection c,ContentDocument current,string label,bool apply,JsonSerializerOptions options,bool external=false,bool local=false)
+{
+    var manifest=JsonNode.Parse(File.ReadAllText("output/venue-research/installed-photos.json"))!.AsArray();
+    var nextVenues=(JsonArray)current.Venues.DeepClone();
+    var updated=new List<string>();
+    var stamp=DateTime.UtcNow.ToString("yyyyMMdd-HHmmss");
+    var directory=".local-content/venue-photo-update";Directory.CreateDirectory(directory);
+    await File.WriteAllTextAsync(Path.Combine(directory,label+"-"+stamp+"-before.json"),JsonSerializer.Serialize(current,options));
+    foreach(var item in manifest)
+    {
+        var id=item!["id"]!.GetValue<string>();
+        var venue=nextVenues.Cast<JsonObject>().Single(v=>v["id"]!.GetValue<string>()==id);
+        var old=venue["photo"]?.GetValue<string>()??"";
+        var ourUpload=(external || local) && old.StartsWith("/images/hotels/uploads/",StringComparison.Ordinal) && venue["photoUrl"]?.GetValue<string>()==item["url"]!.GetValue<string>();
+        if(!ourUpload && !old.Contains("venue-placeholder",StringComparison.Ordinal) && !old.Contains("wheredding-seal",StringComparison.Ordinal))continue;
+        var bytes=await File.ReadAllBytesAsync(item["file"]!.GetValue<string>());
+        if(bytes.Length>1048576 || bytes.Length<12 || bytes[0]!=0xff || bytes[1]!=0xd8)throw new InvalidOperationException("Invalid installed image: "+id);
+        var imageId=Guid.NewGuid();
+        if(apply && !external && !local)
+        {
+            await using var cmd=c.CreateCommand();
+            cmd.CommandText="INSERT INTO public.HotelImages(Id,ContentType,ImageBytes) VALUES(@id,'image/jpeg',@bytes)";
+            cmd.Parameters.AddWithValue("id",imageId);cmd.Parameters.AddWithValue("bytes",NpgsqlTypes.NpgsqlDbType.Bytea,bytes);
+            await cmd.ExecuteNonQueryAsync();
+        }
+        venue["photo"]=local?"/images/hotels/"+id+".jpg":external?item["url"]!.GetValue<string>():"/images/hotels/uploads/"+imageId;
+        venue["photoPage"]=item["source"]!.DeepClone();venue["photoUrl"]=item["url"]!.DeepClone();
+        venue["photoCredit"]=item["credit"]!.DeepClone();venue["photoAlt"]=item["alt"]!.DeepClone();updated.Add(id);
+    }
+    var next=new ContentDocument(nextVenues,current.Contact,current.Revision+1);
+    var error=ContentValidation.Validate(next);if(error is not null)throw new InvalidOperationException(error);
+    if(apply && updated.Count>0 && !await RelationalContent.Save(c,next,current.Revision,"Venue-sourced photo update 2026-10-15"))throw new InvalidOperationException("Concurrent content change; photo update not published.");
+    var after=await RelationalContent.Read(c);
+    if(apply && updated.Count>0 && (!SameJson(after.Venues,next.Venues) || after.Contact!=current.Contact))throw new InvalidOperationException("Photo update requires verification.");
+    await File.WriteAllTextAsync(Path.Combine(directory,label+"-"+stamp+"-after.json"),JsonSerializer.Serialize(after,options));
+    Console.WriteLine(JsonSerializer.Serialize(new{label,applied=apply,updated,venues=after.Venues.Count,revision=after.Revision},options));
 }
