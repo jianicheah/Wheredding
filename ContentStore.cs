@@ -26,6 +26,24 @@ sealed class ContentStore(IConfiguration config, IWebHostEnvironment environment
         var c = new NpgsqlConnection(connection);
         try {await c.OpenAsync(); return c;}catch{await c.DisposeAsync();throw;}
     }
+    public bool ImageUploadsEnabled => !string.IsNullOrWhiteSpace(connection);
+    public async Task<Guid> SaveImage(byte[] bytes,string contentType)
+    {
+        await using var c=await Open();await using var cmd=c.CreateCommand();
+        var id=Guid.NewGuid();
+        cmd.CommandText="INSERT INTO public.HotelImages(Id,ContentType,ImageBytes) VALUES(@id,@type,@bytes)";
+        cmd.Parameters.AddWithValue("id",id);cmd.Parameters.AddWithValue("type",contentType);
+        cmd.Parameters.AddWithValue("bytes",NpgsqlDbType.Bytea,bytes);
+        await cmd.ExecuteNonQueryAsync();return id;
+    }
+    public async Task<(byte[] Bytes,string Type)?> ReadImage(Guid id)
+    {
+        if(!ImageUploadsEnabled)return null;
+        await using var c=await Open();await using var cmd=c.CreateCommand();
+        cmd.CommandText="SELECT ImageBytes,ContentType FROM public.HotelImages WHERE Id=@id";
+        cmd.Parameters.AddWithValue("id",id);await using var r=await cmd.ExecuteReaderAsync();
+        return await r.ReadAsync()?((byte[])r[0],r.GetString(1)):null;
+    }
     public async Task Initialize(string? importPath=null)
     {
         if(string.IsNullOrWhiteSpace(connection)) {if(importPath is not null)throw new InvalidOperationException("Configure PostgreSQL before importing.");return;}

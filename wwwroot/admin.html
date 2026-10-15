@@ -7,8 +7,8 @@
     <meta name="robots" content="noindex,nofollow">
     <title>Wheredding · Admin</title>
     <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="/admin.css?v=editor-tabs-2">
-    <script src="/admin.js?v=editor-tabs-2" defer></script>
+    <link rel="stylesheet" href="/admin.css?v=save-feedback-8">
+    <script src="/admin.js?v=save-feedback-8" defer></script>
 </head>
 
 <body class="admin-page">
@@ -31,12 +31,7 @@
                     <p id="revision"></p>
                     <a href="/" target="_blank" rel="noopener">View public website ↗</a>
                 </div>
-                <div><button class="button" id="publish">Save hotels &amp; packages</button></div>
             </div>
-            <p class="notice">Edits stay in this page until you save. Save hotels and packages using the button above;
-                Contact Us has its own save button below. Each button publishes only its own section without redeployment.
-                Check source evidence before publishing prices. Archiving removes a hotel from the
-                public guide; history lets you restore previous content.</p>
             <div class="admin-layout">
                 <section class="hotel-directory" aria-labelledby="hotels-heading">
                     <div class="hotel-table-toolbar">
@@ -62,13 +57,15 @@
                         </div>
                         <div id="editor-panel-general" role="tabpanel" aria-labelledby="editor-tab-general" data-editor-panel="general" tabindex="0">
                             <div id="hotel-fields" class="admin-fields"></div>
+                            <div class="hotel-save-actions"><button type="button" class="package-save" id="save-hotel-details">Save hotels &amp; packages</button><p id="hotel-save-status" class="hotel-save-status" role="status" aria-live="polite"></p></div>
                         </div>
                         <div id="hotel-actions" hidden>
                             <div id="editor-panel-packages" role="tabpanel" aria-labelledby="editor-tab-packages" data-editor-panel="packages" tabindex="0" hidden>
                             <h2>Banquet packages</h2>
                             <p>Published records require a source and checked date. Unknown charges and seating must
                                 remain labelled. Expired dates are automatically shown as historical references.</p>
-                            <div id="package-list"></div><button type="button" id="new-package">+ Add package</button>
+                            <div class="package-toolbar"><div id="package-tabs" class="package-tabs" role="tablist" aria-label="Banquet packages"></div><button type="button" id="new-package">+ Add banquet package</button></div>
+                            <div id="package-list"></div>
                             </div>
                             <div id="editor-panel-preview" role="tabpanel" aria-labelledby="editor-tab-preview" data-editor-panel="preview" tabindex="0" hidden>
                             <h2>Draft preview</h2>
@@ -93,6 +90,17 @@
             </section>
         </section>
     </main>
+<dialog id="delete-package-dialog" class="delete-package-dialog" aria-labelledby="delete-package-title" aria-describedby="delete-package-message">
+        <form method="dialog">
+            <h2 id="delete-package-title">Delete banquet package?</h2>
+            <p id="delete-package-message"></p>
+            <p>This removes the package from your draft. Save hotels &amp; packages to publish the deletion.</p>
+            <div class="delete-dialog-actions">
+                <button type="submit" value="cancel" autofocus>Cancel</button>
+                <button type="submit" value="delete" class="confirm-package-delete">Delete package</button>
+            </div>
+        </form>
+    </dialog>
 </body>
 
 </html>

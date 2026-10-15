@@ -96,10 +96,9 @@
     align-items: center
 }
 
-.admin-toolbar>div:last-child {
-    display: flex;
-    gap: .7rem;
-    flex-wrap: wrap
+.admin-toolbar>div:first-child {
+    display: block;
+    min-width: 0
 }
 
 .admin-layout {
@@ -125,38 +124,196 @@
     grid-column: 1/-1
 }
 
-.hotel-table-toolbar,.hotel-editor-heading {display:flex;justify-content:space-between;align-items:center;gap:1rem}
-.hotel-table-toolbar h2,.hotel-editor-heading h2 {margin:.25rem 0}
-.hotel-table-toolbar p {margin:.5rem 0}
-.hotel-table-search {max-width:420px}
-.hotel-table-scroll {overflow:auto;max-height:560px;border:1px solid #ccd2c5;border-radius:6px;background:#fff}
-.hotel-table {width:100%;min-width:760px;border-collapse:collapse;font-size:.95rem}
-.hotel-table th,.hotel-table td {padding:1rem;text-align:left;border-bottom:1px solid #e0e5dc;vertical-align:middle}
-.hotel-table thead th {position:sticky;top:0;z-index:1;background:#174a4c;color:white;font-weight:600;white-space:nowrap}
-.hotel-table tbody th {font-weight:600;min-width:190px}
-.hotel-table tbody tr:hover {background:#f5f7f0}
-.hotel-table .is-selected {background:#e8f1eb}
-.hotel-table .is-archived {color:#68746a}
-.hotel-actions-column {text-align:right!important}
-.hotel-row-actions>div {display:flex;justify-content:flex-end;gap:.5rem}
-.admin-main .hotel-row-actions button {padding:.45rem .8rem;font-size:.9rem;white-space:nowrap}
-.admin-main .hotel-row-actions .archive-action {color:#8b422e;border-color:#d2b4a9}
-.admin-main .hotel-row-actions .restore-action {color:#174a4c;border-color:#8eae99}
-.admin-main .hotel-row-actions button:hover {background:#e8efe7}
-.hotel-status {display:inline-block;padding:.25rem .6rem;border-radius:20px;font-size:.8rem;font-weight:600}
-.hotel-status.active {background:#e5f0e7;color:#215c3b}
-.hotel-status.archived {background:#eeece6;color:#666354}
-.hotel-empty {text-align:center!important;padding:2rem!important}
-.hotel-editor {padding:1.5rem;background:#fff;border:1px solid #ccd2c5;border-radius:8px}
-.hotel-editor-heading {margin-bottom:1rem}
-.editor-tabs {display:flex;flex-wrap:wrap;gap:.5rem;border-bottom:1px solid #ccd2c5;padding-bottom:.75rem;margin-bottom:1rem}
-.admin-main .editor-tabs [role=tab] {background:#f5f6ef;border-color:#ccd2c5;transition:background-color .15s,color .15s,border-color .15s}
-.admin-main .editor-tabs [role=tab]:hover {background:#dce9df;border-color:#8aa592;color:#143f44}
-.admin-main .editor-tabs [aria-selected=true] {background:#174a4c;border-color:#174a4c;color:#fff}
-.admin-main .editor-tabs [aria-selected=true]:hover {background:#236366;border-color:#236366;color:#fff}
-.hotel-editor [role=tabpanel]:focus-visible {outline:3px solid #bd8b45;outline-offset:4px}
-.visually-hidden {position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-.admin-main button:focus-visible,.hotel-table-scroll:focus-visible {outline:3px solid #bd8b45;outline-offset:3px}
+.hotel-table-toolbar,
+.hotel-editor-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem
+}
+
+.hotel-table-toolbar h2,
+.hotel-editor-heading h2 {
+    margin: .25rem 0
+}
+
+.hotel-table-toolbar p {
+    margin: .5rem 0
+}
+
+.hotel-table-search {
+    max-width: 420px
+}
+
+.hotel-table-scroll {
+    overflow: auto;
+    max-height: 560px;
+    border: 1px solid #ccd2c5;
+    border-radius: 6px;
+    background: #fff
+}
+
+.hotel-table {
+    width: 100%;
+    min-width: 760px;
+    border-collapse: collapse;
+    font-size: .95rem
+}
+
+.hotel-table th,
+.hotel-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e0e5dc;
+    vertical-align: middle
+}
+
+.hotel-table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: #174a4c;
+    color: white;
+    font-weight: 600;
+    white-space: nowrap
+}
+
+.hotel-table tbody th {
+    font-weight: 600;
+    min-width: 190px
+}
+
+.hotel-table tbody tr:hover {
+    background: #f5f7f0
+}
+
+.hotel-table .is-selected {
+    background: #e8f1eb
+}
+
+.hotel-table .is-archived {
+    color: #68746a
+}
+
+.hotel-actions-column {
+    text-align: right !important
+}
+
+.hotel-row-actions>div {
+    display: flex;
+    justify-content: flex-end;
+    gap: .5rem
+}
+
+.admin-main .hotel-row-actions button {
+    padding: .45rem .8rem;
+    font-size: .9rem;
+    white-space: nowrap
+}
+
+.admin-main .hotel-row-actions .archive-action {
+    color: #8b422e;
+    border-color: #d2b4a9
+}
+
+.admin-main .hotel-row-actions .restore-action {
+    color: #174a4c;
+    border-color: #8eae99
+}
+
+.admin-main .hotel-row-actions button:hover {
+    background: #e8efe7
+}
+
+.hotel-status {
+    display: inline-block;
+    padding: .25rem .6rem;
+    border-radius: 20px;
+    font-size: .8rem;
+    font-weight: 600
+}
+
+.hotel-status.active {
+    background: #e5f0e7;
+    color: #215c3b
+}
+
+.hotel-status.archived {
+    background: #eeece6;
+    color: #666354
+}
+
+.hotel-empty {
+    text-align: center !important;
+    padding: 2rem !important
+}
+
+.hotel-editor {
+    padding: 1.5rem;
+    background: #fff;
+    border: 1px solid #ccd2c5;
+    border-radius: 8px
+}
+
+.hotel-editor-heading {
+    margin-bottom: 1rem
+}
+
+.editor-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    border-bottom: 1px solid #ccd2c5;
+    padding-bottom: .75rem;
+    margin-bottom: 1rem
+}
+
+.admin-main .editor-tabs [role=tab] {
+    background: #f5f6ef;
+    border-color: #ccd2c5;
+    transition: background-color .15s, color .15s, border-color .15s
+}
+
+.admin-main .editor-tabs [role=tab]:hover {
+    background: #dce9df;
+    border-color: #8aa592;
+    color: #143f44
+}
+
+.admin-main .editor-tabs [aria-selected=true] {
+    background: #174a4c;
+    border-color: #174a4c;
+    color: #fff
+}
+
+.admin-main .editor-tabs [aria-selected=true]:hover {
+    background: #236366;
+    border-color: #236366;
+    color: #fff
+}
+
+.hotel-editor [role=tabpanel]:focus-visible {
+    outline: 3px solid #bd8b45;
+    outline-offset: 4px
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0
+}
+
+.admin-main button:focus-visible,
+.hotel-table-scroll:focus-visible {
+    outline: 3px solid #bd8b45;
+    outline-offset: 3px
+}
 
 .package-editor {
     background: #eef0e5;
@@ -212,9 +369,24 @@
 .admin-main [hidden] {
     display: none !important
 }
-.contact-save-actions {display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-top:1rem}
-#contact-save-status {margin:0;font-size:.9rem;color:#315d46}
-#contact-save-status.error {color:#8f2c20}
+
+.contact-save-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1rem
+}
+
+#contact-save-status {
+    margin: 0;
+    font-size: .9rem;
+    color: #315d46
+}
+
+#contact-save-status.error {
+    color: #8f2c20
+}
 
 .admin-header #logout {
     margin-left: auto;
@@ -231,7 +403,7 @@
 
 .admin-header #logout:hover {
     background: #bfe8eb;
-    color:black;
+    color: black;
 }
 
 .admin-header #logout:focus-visible {
@@ -260,8 +432,281 @@
         font-size: 2rem
     }
 
-    .hotel-table-toolbar {align-items:flex-start}
-    .hotel-table-scroll {max-height:450px}
-    .hotel-editor {padding:1rem}
-    .hotel-editor-heading {flex-wrap:wrap}
+    .hotel-table-toolbar {
+        align-items: flex-start
+    }
+
+    .hotel-table-scroll {
+        max-height: 450px
+    }
+
+    .hotel-editor {
+        padding: 1rem
+    }
+
+    .hotel-editor-heading {
+        flex-wrap: wrap
+    }
+}
+
+.package-toolbar {
+    display: flex;
+    align-items: flex-start;
+    gap: .75rem;
+    border-bottom: 1px solid #ccd2c5;
+    padding-bottom: .75rem
+}
+
+.package-tabs {
+    display: flex;
+    flex: 1;
+    min-width: 0;
+    gap: .5rem;
+    overflow-x: auto;
+    padding: .25rem .25rem .5rem
+}
+
+.admin-main .package-tabs [role=tab] {
+    flex-shrink: 0;
+    max-width: 260px;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    background: #f5f6ef;
+    border-color: #ccd2c5;
+    text-align: left
+}
+
+.admin-main .package-tabs [role=tab]:hover {
+    background: #dce9df;
+    border-color: #8aa592
+}
+
+.admin-main .package-tabs [aria-selected=true] {
+    background: #174a4c;
+    border-color: #174a4c;
+    color: #fff
+}
+
+.admin-main #new-package {
+    flex-shrink: 0;
+    margin-left: auto
+}
+
+
+@media(max-width:600px) {
+    .package-toolbar {
+        flex-wrap: wrap
+    }
+
+    .package-tabs {
+        flex-basis: 100%
+    }
+
+    .admin-main #new-package {
+        margin-left: auto
+    }
+}
+
+.package-save-bar {
+    position: sticky;
+    bottom: 0;
+    z-index: 2;
+    margin-top: 1rem;
+    padding: .85rem;
+    background: #eef0e5;
+    border-top: 1px solid #bfc9ba;
+    box-shadow: 0 -3px 10px #133e4512
+}
+
+.package-save-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .75rem
+}
+
+.admin-main .package-save {
+    background: #236b42;
+    border-color: #236b42;
+    color: white
+}
+
+.admin-main .package-save:hover {
+    background: #195332
+}
+
+.admin-main .package-delete {
+    background: #ae342e;
+    border-color: #ae342e;
+    color: white
+}
+
+.admin-main .package-delete:hover {
+    background: #892720
+}
+
+.package-save-status {
+    margin: .65rem 0 0;
+    font-size: .9rem;
+    overflow-wrap: anywhere
+}
+
+.package-save-status.error {
+    background: #fae8e3;
+    color: #8f2c20;
+    padding: .65rem;
+    border-radius: 4px
+}
+
+.delete-package-dialog {
+    width: min(460px, calc(100vw - 3rem));
+    box-sizing: border-box;
+    border: 1px solid #ccd2c5;
+    border-radius: 12px;
+    padding: 1.5rem;
+    background: #fff;
+    color: #133e45;
+    box-shadow: 0 16px 60px #0004;
+    font: inherit
+}
+
+.delete-package-dialog::backdrop {
+    background: #102e3370
+}
+
+.delete-package-dialog h2 {
+    margin: 0 0 1rem;
+    font-size: 1.5rem
+}
+
+.delete-package-dialog p {
+    line-height: 1.5;
+    overflow-wrap: anywhere
+}
+
+.delete-dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: .75rem;
+    margin-top: 1.5rem
+}
+
+.delete-dialog-actions button {
+    font: inherit;
+    padding: .7rem 1rem;
+    border: 1px solid #adb8aa;
+    border-radius: 5px;
+    background: white;
+    color: #143f44;
+    cursor: pointer
+}
+
+.delete-dialog-actions .confirm-package-delete {
+    background: #ae342e;
+    border-color: #ae342e;
+    color: white
+}
+
+.delete-dialog-actions .confirm-package-delete:hover {
+    background: #892720
+}
+
+.delete-dialog-actions button:focus-visible {
+    outline: 3px solid #bd8b45;
+    outline-offset: 3px
+}
+
+.admin-toolbar {
+    margin-bottom: 1.5rem
+}
+
+.package-editor {
+    padding-bottom: 1rem
+}
+
+.package-save-bar {
+    position: static;
+    transform: none;
+    width: auto;
+    margin-top: 1rem;
+    padding: 1rem 0 0;
+    background: transparent;
+    border: 0;
+    border-top: 1px solid #bfc9ba;
+    border-radius: 0;
+    box-shadow: none
+}
+
+.hotel-image-editor {
+    padding: 1rem;
+    background: #eef0e5;
+    border: 1px solid #ccd2c5;
+    border-radius: 8px;
+    margin: .75rem 0
+}
+
+.hotel-image-editor h3 {
+    margin: 0 0 .75rem
+}
+
+.hotel-current-image {
+    display: block;
+    width: 100%;
+    max-width: 420px;
+    max-height: 260px;
+    object-fit: contain;
+    background: #fff;
+    border-radius: 6px
+}
+
+.hotel-image-editor p {
+    font-size: .9rem;
+    line-height: 1.5
+}
+
+.hotel-image-editor .image-upload-status {
+    font-weight: 600
+}
+
+.hotel-save-actions {
+    margin-top: 1rem
+}
+
+.hotel-save-status {
+    margin: .75rem 0 0;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+    color: #236b42
+}
+
+.hotel-save-status:empty {
+    display: none
+}
+
+.hotel-save-status.error {
+    padding: .75rem;
+    background: #fae8e3;
+    color: #8f2c20;
+    border-radius: 5px
+}
+
+.admin-main button:disabled:hover {
+    filter: none
+}
+
+.admin-main .admin-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.admin-main .admin-section > h2 {
+    margin-top: 0;
+}
+
+.admin-main .admin-section + .admin-section {
+    margin-top: 0;
+}
+
+.admin-main .contact-save-actions > p {
+    margin-top: 0;
+    margin-bottom: 0;
 }

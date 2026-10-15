@@ -48,6 +48,19 @@ static class AdminEndpoints
             return await next(ctx);
         });
         admin.MapPost("/logout",async(HttpContext c)=>{await c.SignOutAsync();return Results.Ok(new{ok=true});});
+        admin.MapPost("/images",async(HotelImageInput input)=>{
+            if(!store.ImageUploadsEnabled)return Results.Json(new{error="Image uploads require PostgreSQL storage."},statusCode:503);
+            var image=HotelImageUpload.Decode(input.Base64);
+            if(image.Bytes is null || image.Type is null)return Results.BadRequest(new{error="Choose a JPEG, PNG or WebP image, up to 1 MB."});
+            var id=await store.SaveImage(image.Bytes,image.Type);
+            return Results.Ok(new{url="/images/hotels/uploads/"+id});
+        });
+        app.MapGet("/images/hotels/uploads/{id:guid}",async(Guid id,HttpContext c)=>{
+            var image=await store.ReadImage(id);if(image is null)return Results.NotFound();
+            c.Response.Headers.CacheControl="public,max-age=31536000,immutable";
+            c.Response.Headers["X-Content-Type-Options"]="nosniff";
+            return Results.Bytes(image.Value.Bytes,image.Value.Type);
+        });
         admin.MapGet("/content",async()=>Results.Ok(await store.Read()));
         admin.MapPut("/content",async(ContentDocument d,HttpContext c)=>{
             var error=ContentValidation.Validate(d);if(error is not null)return Results.BadRequest(new{error});

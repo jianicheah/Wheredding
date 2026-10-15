@@ -1,0 +1,14 @@
+Hotel image upload update
+
+1. Save any unsaved admin edits, stop debugging, and back up the project files you replace.
+2. Copy the CONTENTS of this folder into C:\Wheredding, preserving the wwwroot and Data\Sql subfolders. Replace matching files.
+3. Start your existing local PostgreSQL server, then rebuild and run Wheredding.
+4. On startup, the app adds public.hotelimages if absent. Existing hotels, packages and revisions remain in place.
+5. Refresh the admin page. Edit a hotel > General information. The current image appears above Choose a replacement image.
+6. Choose JPEG, PNG or WebP up to 1 MB. Wait for the upload, then Save hotels & packages to publish the replacement.
+
+Photos are stored as PostgreSQL bytea records, so both local PostgreSQL and Neon support them. Uploaded image URLs are public; upload only photos intended for public display. Existing local/HTTPS image paths continue to work. Old and unused uploads are retained so history restoration remains possible; they count toward database storage.
+
+This bundle includes the previous package-tab, save/delete dialog and layout changes, with normal scrolling save buttons. Back up any additional CSS edits before replacing wwwroot files.
+
+Validation: C# build passed; upload encoding/type/size checks passed; JavaScript syntax passed. Live database and browser testing remain to be performed after installation. No database was modified while preparing this bundle.

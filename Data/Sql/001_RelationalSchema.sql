@@ -69,3 +69,11 @@ CREATE TABLE IF NOT EXISTS public.AuditHistory (
     Actor varchar(200) NOT NULL,
     Document jsonb NOT NULL
 );
+
+-- Image records are retained so earlier content revisions can still show their photos.
+CREATE TABLE IF NOT EXISTS public.HotelImages (
+    Id uuid PRIMARY KEY,
+    ContentType varchar(20) NOT NULL CHECK(ContentType IN ('image/jpeg','image/png','image/webp')),
+    ImageBytes bytea NOT NULL CHECK(octet_length(ImageBytes) BETWEEN 12 AND 1048576),
+    CreatedAt timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
