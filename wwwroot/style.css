@@ -313,6 +313,23 @@ select {
     background: #e7ebdf
 }
 
+.venue-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+}
+.venue-pagination[hidden] { display: none; }
+.venue-pagination button { min-width: 2.75rem; min-height: 2.75rem; transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease; }
+.venue-pagination button:not(:disabled):hover { background: #e1e9df; border-color: #294e40; color: #294e40; }
+.venue-pagination button:focus-visible { outline: 3px solid #a78043; outline-offset: 3px; }
+.venue-pagination button[aria-current="page"],
+.venue-pagination button[aria-current="page"]:hover { background: #294e40; color: #fff; border-color: #294e40; opacity: 1; font-weight: 700; box-shadow: 0 0 0 2px #294e40; }
+.venue-pagination button:disabled:not([aria-current]) { opacity: 0.45; cursor: default; }
 .cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

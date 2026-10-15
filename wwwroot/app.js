@@ -1,5 +1,7 @@
 const $ = s => document.querySelector(s);
 let venues = [], selected = new Set(), giftBasis = null, giftRequest = 0, giftManual = false;
+const venuesPerPage = 10;
+let venuePage = 1;
 const money = n => new Intl.NumberFormat('en-MY', { style: 'currency', currency: 'MYR', minimumFractionDigits: 0, maximumFractionDigits: 2 }).format(n);
 const range = (a, b) => a === b ? money(a) : money(a) + '–' + money(b);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -40,7 +42,16 @@ function render() {
     const term = $('#search').value.toLowerCase(), area = $('#area').value, budget = Number($('#budget').value);
     const items = venues.filter(v => (!area || v.area === area || area === 'Butterworth' && v.district === 'Butterworth') && (!budget || browseLow(v) <= budget) && (v.name + ' ' + v.district + ' ' + v.style).toLowerCase().includes(term));
     items.sort((a, b) => $('#sort').value === 'price' ? browseLow(a) - browseLow(b) || a.name.localeCompare(b.name) : a.name.localeCompare(b.name));
-    $('#results').textContent = items.length + ' of ' + venues.length + ' venues' + (budget ? ' · published base references only; excludes expired or missing rates. Extra charges can exceed this budget.' : '');
+    const matchingCount = items.length, pages = Math.max(1, Math.ceil(matchingCount / venuesPerPage));
+    venuePage = Math.max(1, Math.min(venuePage, pages));
+    const start = (venuePage - 1) * venuesPerPage;
+    $('#results').textContent = (matchingCount ? 'Showing ' + (start + 1) + '–' + Math.min(start + venuesPerPage, matchingCount) : '0') + ' of ' + matchingCount + ' venues' + (matchingCount !== venues.length ? ' (' + venues.length + ' total)' : '') + (budget ? ' · published base references only; excludes expired or missing rates. Extra charges can exceed this budget.' : '');
+    const pager = $('#venue-pagination');
+    pager.hidden = pages <= 1;
+    pager.innerHTML = pages > 1 ? '<button type="button" class="quiet" data-page="' + (venuePage - 1) + '" ' + (venuePage === 1 ? 'disabled' : '') + '>← Previous</button>' + Array.from({length: pages}, (_, i) => '<button type="button" class="quiet" data-page="' + (i + 1) + '" aria-label="Page ' + (i + 1) + '" ' + (venuePage === i + 1 ? 'aria-current="page" disabled' : '') + '>' + (i + 1) + '</button>').join('') + '<button type="button" class="quiet" data-page="' + (venuePage + 1) + '" ' + (venuePage === pages ? 'disabled' : '') + '>Next →</button>' : '';
+    pager.querySelectorAll('[data-page]').forEach(button => button.onclick = () => { venuePage = Number(button.dataset.page); render(); $('#results').scrollIntoView?.({block: 'start', behavior: 'smooth'}); $('#results').focus?.({preventScroll: true}); });
+    items.splice(0, start);
+    items.splice(venuesPerPage);
     $('#cards').innerHTML = items.map(v => '<article class="card">' + photo(v) + '<div class="card-body"><p class="eyebrow">' + esc(v.district) + ' · ' + v.area + '</p><h3>' + esc(v.name) + '</h3><p>' + esc(v.style) + '</p>' + badge(v) + '<div class="price"><strong>' + price(v) + '</strong><small>' + priceNote(v) + '</small></div><div class="card-actions"><button data-detail="' + v.id + '" class="quiet">Details, packages & sources ↗</button><label><input type="checkbox" data-select="' + v.id + '" ' + (selected.has(v.id) ? 'checked' : '') + '> Compare</label></div></div></article>').join('') || '<p class="empty">No venues match. Try another location or budget.</p>';
     $('#cards').querySelectorAll('[data-detail]').forEach(b => b.onclick = () => details(b.dataset.detail));
     $('#cards').querySelectorAll('[data-select]').forEach(c => c.onchange = () => { if (c.checked && selected.size === 3) { c.checked = false; $('#results').textContent = 'Compare up to three venues. Remove one to add another.'; return; } c.checked ? selected.add(c.dataset.select) : selected.delete(c.dataset.select); compare(); }); compare();
@@ -92,7 +103,7 @@ async function calculateGift() {
         $('#giftresult').innerHTML = '<p class="eyebrow">' + label + '</p><h3>' + range(d.suggestedLow, d.suggestedHigh) + '</h3><p>For ' + input.guests + ' guest' + (input.guests === 1 ? '' : 's') + (p && !p.chargesComplete ? ' · before unconfirmed charges' : '') + '. Rounded up to the next RM 10.</p><dl><dt>' + (p ? 'Table price reference' : 'Your table total') + ' / ' + d.seats + ' guests</dt><dd>' + range(d.tableLow, d.tableHigh) + (p && !p.chargesComplete ? ' + charges' : '') + '</dd><dt>Meal reference per person</dt><dd>' + range(d.tableLow / d.seats, d.tableHigh / d.seats) + '</dd><dt>Your extra gift</dt><dd>' + money(input.extra) + '</dd></dl><p>' + (p ? basisText(p) : 'Uses your own amount, seating and charges. This is not a verified hotel price.') + '</p><p class="small">This helps you decide what feels comfortable; it is not the couple’s actual bill or a required angpao. The upper figure is the highest observed package in this selection, not a cap on wedding costs.</p>' + (!d.withinBudget ? '<p class="notice">Some or all of this reference exceeds your ' + money(input.budget) + ' budget. Giving within your budget is completely valid.</p>' : '') + (p ? sources(p) : '') + '<p class="small">Calculation: meal reference ÷ seats × your guests + extra; round each end up to RM 10. Published charges are included only when the source states them.</p>';
     } catch (err) { if (request === giftRequest) $('#giftresult').textContent = err.message || 'Server unavailable. Try again.'; }
 }
-$('#filters').oninput = render; $('#filters').onsubmit = e => e.preventDefault(); $('#filters').onreset = () => setTimeout(render, 0);
+$('#filters').oninput = () => { venuePage = 1; render(); }; $('#filters').onsubmit = e => e.preventDefault(); $('#filters').onreset = () => setTimeout(() => { venuePage = 1; render(); }, 0);
 $('#clear').onclick = () => { selected.clear(); render(); }; $('.close').onclick = () => $('#detail').close(); $('#detail').onclick = e => { if (e.target === $('#detail')) $('#detail').close(); };
 $('#giftvenue').onchange = chooseGiftVenue; $('#giftpackage').onchange = chooseGiftPackage;
 $('#giftform').oninput = e => { if (['giftvenue', 'giftpackage'].includes(e.target.id)) return; if (['tablePrice', 'seats', 'servicePercent', 'taxPercent'].includes(e.target.name)) giftManual = true; calculateGift(); };

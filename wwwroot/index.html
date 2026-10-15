@@ -8,7 +8,7 @@
         content="Explore Penang wedding venues, compare sourced banquet package prices and calculate a transparent wedding angpao reference.">
     <title>Wheredding — A beautiful beginning in Penang</title>
     <link rel="icon" type="image/png" href="/images/brand/wheredding-seal.png?v=2">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/style.css?v=pagination-2">
     <script src="/app.js" defer></script>
 </head>
 
@@ -65,8 +65,9 @@
                         <option value="name">Venue name</option>
                         <option value="price">Lowest published reference</option>
                     </select></label><button type="reset" class="quiet">Reset</button></form>
-            <p id="results" aria-live="polite"></p>
+            <p id="results" aria-live="polite" tabindex="-1"></p>
             <div id="cards" class="cards"></div>
+            <nav id="venue-pagination" class="venue-pagination" aria-label="Venue results pages" hidden></nav>
         </section>
         <section id="compare" class="tinted">
             <div class="section-head">
