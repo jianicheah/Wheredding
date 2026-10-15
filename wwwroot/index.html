@@ -46,12 +46,12 @@
                 </div>
                 <p>Island charm or mainland convenience.<br>Make room for what matters to you.</p>
             </div>
-            <div class="notice"><strong>Know where the price comes from.</strong> Published references link to the hotel’s
+            <div class="notice"><strong>Know where the price comes from.</strong> Published references link to the venue’s
                 own package. Expired packages and unknown charges are marked. A published price is not a booking quote
                 or the couple’s actual bill. Price sources checked 12 October 2026.</div>
             <p id="coverage" aria-live="polite"></p>
-            <form id="filters" class="filters"><label>Search hotels<input id="search" type="search"
-                        placeholder="Hotel, town or style…"></label><label>Location<select id="area">
+            <form id="filters" class="filters"><label>Search venues<input id="search" type="search"
+                        placeholder="Venue, town or style…"></label><label>Location<select id="area">
                         <option value="">All of Penang</option>
                         <option value="Island">Penang Island</option>
                         <option value="Mainland">Mainland</option>
@@ -62,7 +62,7 @@
                         <option value="2000">Up to RM 2,000</option>
                         <option value="2500">Up to RM 2,500</option>
                     </select></label><label>Sort by<select id="sort">
-                        <option value="name">Hotel name</option>
+                        <option value="name">Venue name</option>
                         <option value="price">Lowest published reference</option>
                     </select></label><button type="reset" class="quiet">Reset</button></form>
             <p id="results" aria-live="polite"></p>
@@ -75,7 +75,7 @@
                     <h2>A banquet worth comparing</h2>
                 </div><button id="clear" class="quiet">Clear selection</button>
             </div>
-            <p>Select up to three hotels. Compare each package’s source, dates, menu summary and charges. References
+            <p>Select up to three venues. Compare each package’s source, dates, menu summary and charges. References
                 are shown for 10 guests; assumptions and missing charges are marked. View the original package for
                 detailed dishes.</p>
             <div id="comparison" aria-live="polite"></div>
@@ -107,18 +107,18 @@
                 than a number.</p>
             <div class="calc-layout">
                 <form id="giftform">
- <label for="giftvenue">Which hotel is the wedding at?</label><select id="giftvenue" required><option value="">Choose the wedding hotel…</option></select>
+ <label for="giftvenue">Which venue is the wedding at?</label><select id="giftvenue" required><option value="">Choose the wedding venue…</option></select>
  <div id="packagechoice" hidden><label for="giftpackage">Know the package? (Optional)</label><select id="giftpackage"><option value="">I’m not sure — use the available price range</option></select><p class="small">You do not need to know the couple’s package. Leave “I’m not sure” selected to compare the published options.</p></div>
- <div id="giftcontext" class="guest-estimate" aria-live="polite">Choose your hotel. We’ll show a published price or explain the comparison reference.</div>
+ <div id="giftcontext" class="guest-estimate" aria-live="polite">Choose your venue. We’ll show a published price or explain the comparison reference.</div>
  <div class="field-grid">
   <label>How many guests does your angpao cover?<input name="guests" type="number" min="1" max="100" value="1" required></label>
   <label>Extra gift, total (RM)<input name="extra" type="number" min="0" max="100000" step="0.01" value="0" required></label>
   <label>Your total budget (RM; 0 = unset)<input name="budget" type="number" min="0" max="100000" step="0.01" value="0" required></label>
  </div>
  <details id="giftadjustments" class="gift-adjustments"><summary>Optional: use your own amount or charges</summary>
- <p class="small">Changing these switches to “Your own amount”. Published references include charges when stated; do not add them twice. Reselect the hotel or package to restore the sourced reference.</p>
+ <p class="small">Changing these switches to “Your own amount”. Published references include charges when stated; do not add them twice. Reselect the venue or package to restore the sourced reference.</p>
  <div class="field-grid">
-  <label>Reference table price (RM)<input name="tablePrice" type="number" min="1" max="100000" step="0.01" placeholder="Choose a hotel above" required></label>
+  <label>Reference table price (RM)<input name="tablePrice" type="number" min="1" max="100000" step="0.01" placeholder="Choose a venue above" required></label>
   <label>Seats per table<input name="seats" type="number" min="1" max="30" value="10" required></label>
   <label>Service charge (%)<input name="servicePercent" type="number" min="0" max="30" step="0.01" value="0" required></label>
   <label>Tax (%)<input name="taxPercent" type="number" min="0" max="30" step="0.01" value="0" required></label>
@@ -128,7 +128,7 @@
 </form>
                 <div id="giftresult" class="gift-result" aria-live="polite"><span>囍</span>
                     <h3>A thoughtful gift,<br>on your terms.</h3>
-                    <p>Select a hotel to see a meal-cost reference. Your gift is always your choice.</p>
+                    <p>Select a venue to see a meal-cost reference. Your gift is always your choice.</p>
                 </div>
             </div>
         </section>
@@ -138,14 +138,14 @@
             <div class="method-grid">
                 <div>
                     <h3>Verified venue facts</h3>
-                    <p>Checked against official hotel pages. The venue badge verifies venue facts, not availability,
-                        the latest price or the couple’s booking.</p>
+                    <p>Verified badges refer to official venue evidence. Directory and guide references are attributed
+                        separately and need confirmation. Neither promises availability or the latest price.</p>
                 </div>
                 <div>
                     <h3>Prices you can trace</h3>
-                    <p>Published prices link to official packages, with check dates and validity. Historical prices are
-                        labelled. Where a hotel has no price, the calculator explains its comparison with other hotels,
-                        without presenting it as the selected hotel’s rate.</p>
+                    <p>Calculator prices link to official packages, with check dates and validity. Directory package
+                        references appear separately in venue details. Ceremony, rental and buyout costs are not meal
+                        prices. Missing banquet prices use a clearly labelled comparison with other hotels.</p>
                 </div>
                 <div>
                     <h3>Before you book</h3>
@@ -165,7 +165,7 @@
             </div>
         </div>
     </footer>
-    <dialog id="detail"><button class="close" aria-label="Close hotel details">×</button>
+    <dialog id="detail"><button class="close" aria-label="Close venue details">×</button>
         <div id="detailbody"></div>
     </dialog>
 </body>

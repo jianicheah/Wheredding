@@ -19,9 +19,18 @@ const context=vm.createContext({document:{querySelector:get,querySelectorAll:s=>
 vm.runInContext(fs.readFileSync('wwwroot/app.js','utf8'),context);
 async function settle(){for(let n=0;n<200;n++){await new Promise(r=>setTimeout(r,10));if(!get('#giftresult').innerHTML.includes('Calculating'))return;}throw Error('Calculator did not finish');}
 await new Promise(r=>setImmediate(r));
-assert.equal((get('#cards').innerHTML.match(/<article /g)||[]).length,25);
-assert.equal((get('#giftvenue').innerHTML.match(/<option value="[^"]+"/g)||[]).length,26);
-console.log('PASS: All 25 hotels remain in browsing and calculator');
+const seed=JSON.parse(fs.readFileSync('Data/venues.json','utf8'));
+assert.deepEqual(data.map(v=>v.id).sort(),seed.filter(v=>!v.archived).map(v=>v.id).sort());
+assert.equal((get('#cards').innerHTML.match(/<article /g)||[]).length,data.length);
+assert.equal((get('#giftvenue').innerHTML.match(/<option value="[^"]+"/g)||[]).length,data.length+1);
+console.log('PASS: Complete venue catalogue remains in browsing and calculator');
+vm.runInContext("details('doubletree')",context);
+assert.match(get('#detailbody').innerHTML,/Directory package & menu references/);
+assert.match(get('#detailbody').innerHTML,/Classic Wedding Package RM1,488/);
+assert.match(get('#detailbody').innerHTML,/excluded from the calculator/);
+vm.runInContext("details('xipalace')",context);
+assert.match(get('#detailbody').innerHTML,/Mainland|Alma/);
+console.log('PASS: New venues display sourced directory references separately from calculator prices');
 for(const v of data){assert.ok(fs.existsSync('wwwroot'+v.photo));assert.ok(v.photoPage);assert.equal(v.guestEstimate,undefined);assert.equal(v.courses,undefined);}
 console.log('PASS: Local photos retained; invented price ranges and menus removed');
 get('#area').value='Butterworth';get('#filters').oninput();assert.equal((get('#cards').innerHTML.match(/<article /g)||[]).length,3);

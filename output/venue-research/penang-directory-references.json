@@ -1,0 +1,327 @@
+[
+  {
+    "id": "parkroyal",
+    "name": "PARKROYAL Penang Resort",
+    "source": "https://theweddingnotebook.com/catalog/venues/parkroyal-penang-resort",
+    "checkedAt": "2026-10-15",
+    "packageReferences": [
+      "Garden Wedding Ceremony RM10,888 flat",
+      "Eternity Love Wedding Package RM2,188 flat",
+      "Ultimate Love Wedding Package RM2,388 flat",
+      "Everlasting Love Wedding Package RM2,888 flat",
+      "Chinese 8 Course Menu · Seated Dinner RM2,188 /table"
+    ],
+    "notes": "",
+    "calculatorImported": false
+  },
+  {
+    "id": "angsana",
+    "name": "Angsana Teluk Bahang, Penang",
+    "source": "https://theweddingnotebook.com/catalog/venues/angsana-teluk-bahang",
+    "checkedAt": "2026-10-15",
+    "packageReferences": [
+      "Perfect Catch RM238 /person",
+      "Bloom in the Moment RM12,995 flat",
+      "Timeless Tide RM9,999 flat"
+    ],
+    "notes": "",
+    "calculatorImported": false
+  },
+  {
+    "id": "rasa",
+    "name": "Shangri-La Rasa Sayang, Penang",
+    "source": "https://theweddingnotebook.com/catalog/venues/rasa-sayang-penang",
+    "checkedAt": "2026-10-15",
+    "packageReferences": [
+      "Rasa Begonia Wedding Package RM2,988 /table",
+      "Rasa Lily Wedding Package RM2,788 /table",
+      "Wedding Ceremony Package (Garden) RM14,288 flat"
+    ],
+    "notes": "",
+    "calculatorImported": false
+  },
+  {
+    "id": "eo",
+    "name": "Eastern & Oriental Hotel",
+    "source": "https://theweddingnotebook.com/catalog/venues/eo-hotel-penang",
+    "checkedAt": "2026-10-15",
+    "packageReferences": [
+      "Duchess - Chinese Set Menu RM2,488 /table",
+      "Imperial - Chinese Set Menu RM2,988 /table",
+      "Opulence - Chinese Set Menu RM348 /person",
+      "Elegance - Western Set Menu RM308 /person",
+      "Duchess - International Buffet Menu RM248 /person",
+      "Duchess - Hidang Style Menu RM2,088 /table",
+      "Wedding Vow Garden Rental RM12,000 flat"
+    ],
+    "notes": "",
+    "calculatorImported": false
+  },
+  {
+    "id": "iconic",
+    "name": "Iconic Hotel",
+    "source": "https://theweddingnotebook.com/catalog/venues/iconic-hotel-penang",
+    "checkedAt": "2026-10-15",
+    "packageReferences": [
+      "Splendid (Chinese Course) RM1,299 /table",
+      "Significant (Chinese Course) RM1,599 /table",
+      "International Buffet RM130 – RM160 /person",
+      "Chinese 8 Course Wedding Menu · wedding dinner banquet RM1,299 – RM1,599 /table"
+    ],
+    "notes": "",
+    "calculatorImported": false
+  },
+  {
+    "id": "marriott",
+    "name": "Penang Marriott Hotel",
+    "source": "https://theweddingnotebook.com/catalog/venues/penang-marriott-hotel-mul27zxd",
+    "checkedAt": "2026-10-15",
+    "packageReferences": [
+      "Star Sapphire Wedding Package - Penang Marriott Hotel RM2,488++ /table",
+      "Infinity Diamond Wedding Package - Penang Marriott Hotel RM2,888++ /table",
+      "Eternal Love Wedding Package - Penang Marriott Hotel RM3,288++ /table",
+      "Chinese Wedding Set Menu · Seated Dinner RM2,488 – RM3,288++ /table"
+    ],
+    "notes": "",
+    "calculatorImported": false
+  },
+  {
+    "id": "ixora",
+    "name": "Ixora Hotel",
+    "source": "https://theweddingnotebook.com/catalog/venues/ixora-hotel-penang",
+    "checkedAt": "2026-10-15",
+    "packageReferences": [
+      "Destiny Package (Chinese — Baba & Nyonya Hall) RM1,088 /table",
+      "Forever Package (Chinese — Baba & Nyonya Hall) RM1,288 /table",
+      "Eternity Package (Chinese — Baba & Nyonya Hall) RM1,588 /table",
+      "Destiny Package (Chinese — The Grand Ballroom) RM1,088 /table",
+      "Forever Package (Chinese — The Grand Ballroom) RM1,288 /table",
+      "Eternity Package (Chinese — The Grand Ballroom) RM1,588 /table",
+      "Juita Package (Malay — The Grand Ballroom) RM950 /table",
+      "Asmaradana Package (Malay — The Grand Ballroom) RM1,200 /table",
+      "Shaadi Package (Indian Wedding) RM998 /table",
+      "Tumhaara Package (Indian Wedding) RM1,288 /table"
+    ],
+    "notes": "",
+    "calculatorImported": false
+  },
+  {
+    "id": "hardrock",
+    "name": "Hard Rock Hotel Penang",
+    "source": "https://theweddingnotebook.com/catalog/venues/hard-rock-penang",
+    "checkedAt": "2026-10-15",
+    "packageReferences": [
+      "Wedding Ceremony (Sunset Stage) RM8,200 flat",
+      "Blissful Union Wedding Reception (Sun-Thu / non-peak) RM1,588 /table",
+      "Blissful Union Wedding Reception (Fri/Sat/Eve of PH & selected Public Holidays) RM1,788 /table",
+      "Eternal Bliss Wedding Reception (Sun-Thu / non-peak) RM1,788 /table",
+      "Eternal Bliss Wedding Reception (Fri/Sat/Eve of PH & selected Public Holidays) RM1,988 /table"
+    ],
+    "notes": "",
+    "calculatorImported": false
+  },
+  {
+    "id": "gurney",
+    "name": "G Hotel Gurney",
+    "source": "https://theweddingnotebook.com/catalog/venues/g-hotel-gurney",
+    "checkedAt": "2026-10-15",
+    "packageReferences": [
+      "Love Wedding Package RM2,588 /table",
+      "Happiness Wedding Package RM2,588 /table",
+      "Eternal Wedding Package RM3,488 /table",
+      "Dome Set Package RM2,388 /table",
+      "Western Set Package RM258 /person",
+      "International Buffet Package RM238 /person"
+    ],
+    "notes": "",
+    "calculatorImported": false
+  },
+  {
+    "id": "olive",
+    "name": "Olive Tree Hotel",
+    "source": "https://theweddingnotebook.com/catalog/venues/olive-tree-penang",
+    "checkedAt": "2026-10-15",
+    "packageReferences": [
+      "Wedding at The Olive RM1,299 /table",
+      "Beautiful Beginning RM1,399 /table",
+      "Just Divine RM1,499 /table",
+      "Always and Forever RM1,799 /table",
+      "Dua Hati Bersatu - Malay Wedding Buffet RM75 – RM85 /person",
+      "Dua Hati Bersatu - Malay Wedding Set Dome RM900 /table",
+      "Registration of Marriage RM9,999 flat",
+      "8-Course Chinese Set Dinner · Seated Dinner RM1,299 – RM1,799 /table",
+      "Malay Wedding Buffet · Buffet dinner RM75 – RM85 /person"
+    ],
+    "notes": "",
+    "calculatorImported": false
+  },
+  {
+    "id": "doubletree",
+    "name": "DoubleTree Resort by Hilton Penang",
+    "source": "https://theweddingnotebook.com/catalog/venues/doubletree-penang",
+    "checkedAt": "2026-10-15",
+    "packageReferences": [
+      "Classic Wedding Package RM1,488 /table",
+      "Deluxe Wedding Package RM1,688 /table",
+      "Premium Wedding Package RM2,188 /table"
+    ],
+    "notes": "Esplanade Ballroom receptions; directory states a minimum of 15 tables of 10.",
+    "calculatorImported": false
+  },
+  {
+    "id": "lonepine",
+    "name": "Lone Pine, Penang, a Tribute Portfolio Resort",
+    "source": "https://theweddingnotebook.com/catalog/venues/lone-pine-penang-a-tribute-portfolio-resort-msy4rrrm",
+    "checkedAt": "2026-10-15",
+    "packageReferences": [
+      "Package 1 RM12,088 flat"
+    ],
+    "notes": "Directory lists an intimate resort ceremony package; the lump sum is not a banquet table price.",
+    "calculatorImported": false
+  },
+  {
+    "id": "prestige",
+    "name": "The Prestige Hotel Penang",
+    "source": "https://theweddingnotebook.com/catalog/venues/prestige-hotel-penang",
+    "checkedAt": "2026-10-15",
+    "packageReferences": [
+      "International Buffet (Lunch or Dinner) RM289.44 /person",
+      "ROM Package (Registration of Marriage / Solemnisation) RM9,599 flat"
+    ],
+    "notes": "Directory lists a 50-72 guest ballroom, poolside solemnisation and a buffet option. Listed totals and FAQ base prices differ; confirm charges.",
+    "calculatorImported": false
+  },
+  {
+    "id": "granite",
+    "name": "The Granite Luxury Hotel Penang",
+    "source": "https://theweddingnotebook.com/catalog/venues/granite-hotel-penang",
+    "checkedAt": "2026-10-15",
+    "packageReferences": [
+      "Skye Essential 1 (Essential Package - Half Hall) RM12,888 flat",
+      "Skye Essential 2 (Essential Package - Half Hall) RM13,888 flat",
+      "Skye Ultimate (Ultimate Package) RM15,888 flat"
+    ],
+    "notes": "The Skye event space is listed for 50-180 guests. Essential and Ultimate are event packages, not table prices.",
+    "calculatorImported": false
+  },
+  {
+    "id": "kelawai",
+    "name": "G Hotel Kelawai",
+    "source": "https://theweddingnotebook.com/catalog/venues/g-hotel-kelawai",
+    "checkedAt": "2026-10-15",
+    "packageReferences": [
+      "Happiness Wedding Package RM2,588 /table",
+      "Love Wedding Package RM2,588 /table",
+      "Weddings On The Horizon (Beyond Gravity Level 25 Rooftop Ceremony) RM7,000 flat",
+      "Happiness / Love 8-Course Chinese Set Menu · set menu RM2,588 /table"
+    ],
+    "notes": "Directory lists Chinese banquet options and a separate rooftop ceremony.",
+    "calculatorImported": false
+  },
+  {
+    "id": "seventerraces",
+    "name": "Seven Terraces",
+    "source": "https://theweddingnotebook.com/catalog/venues/seven-terraces",
+    "checkedAt": "2026-10-15",
+    "packageReferences": [
+      "Wedding Option #1 — Kebaya Buyout RM400 /person",
+      "Wedding Option #2 — Full Hotel Buyout RM33,508 – RM38,744 flat"
+    ],
+    "notes": "Kebaya restaurant buyouts are listed for 50-100 guests; full hotel buyouts and Library tea ceremonies are separate. FAQ states RM400++ per adult minimum spend.",
+    "calculatorImported": false
+  },
+  {
+    "id": "fourhands",
+    "name": "Four Hands",
+    "source": "https://theweddingnotebook.com/catalog/venues/four-hands-penang",
+    "checkedAt": "2026-10-15",
+    "packageReferences": [
+      "ROM at Glasshouse Four Hands RM3,888 flat",
+      "Eternal Menu · 8-course Chinese wedding banquet RM2,388 /table"
+    ],
+    "notes": "Glasshouse ceremonies and Chinese banquet dining are listed separately. The 20-person figure refers to the glasshouse, not a confirmed whole-restaurant maximum.",
+    "calculatorImported": false
+  },
+  {
+    "id": "jazz",
+    "name": "Jazz Hotel Penang",
+    "source": "https://theweddingnotebook.com/catalog/venues/jazz-hotel-penang",
+    "checkedAt": "2026-10-15",
+    "packageReferences": [],
+    "notes": "Directory lists wedding events for up to 130 guests; package prices are on request.",
+    "calculatorImported": false
+  },
+  {
+    "id": "eastin",
+    "name": "Eastin Hotel Penang",
+    "source": "https://theweddingnotebook.com/catalog/venues/eastin-penang",
+    "checkedAt": "2026-10-15",
+    "packageReferences": [],
+    "notes": "Directory lists receptions for 200-550 guests; package prices are on request.",
+    "calculatorImported": false
+  },
+  {
+    "id": "mercure",
+    "name": "Hotel Mercure Penang Beach",
+    "source": "https://theweddingnotebook.com/catalog/venues/mercure-penang",
+    "checkedAt": "2026-10-15",
+    "packageReferences": [
+      "Silver Wedding Package (Chinese) RM1,588 /table",
+      "Gold Wedding Package (Chinese) RM1,988 /table",
+      "Platinum Wedding Package (Chinese) RM2,588 /table",
+      "Malay Wedding Package RM148.80 /person",
+      "Indian Wedding Package RM148.80 /person",
+      "ROM / Solemnisation Ceremony Package RM10,888 flat",
+      "Silver Chinese Set Dinner · 8-course Chinese set dinner RM1,588 /table",
+      "Gold Chinese Set Dinner · 8-course Chinese set dinner RM1,988 /table",
+      "Platinum Chinese Set Dinner · 8-course Chinese set dinner RM2,588 /table",
+      "Malay Wedding Menu · Buffet or dome set menu RM148.80 /person",
+      "Indian Wedding Menu · Buffet or dome set menu RM148.80 /person"
+    ],
+    "notes": "Directory lists Chinese banquet tiers, Malay and Indian dining, and a separate solemnisation package.",
+    "calculatorImported": false
+  },
+  {
+    "id": "suffolk",
+    "name": "Suffolk House",
+    "source": "https://theweddingnotebook.com/catalog/venues/suffolk-house",
+    "checkedAt": "2026-10-15",
+    "packageReferences": [
+      "Ballroom — venue hire RM3,000 – RM4,000 flat",
+      "Marble Hall — venue hire RM4,000 – RM5,000 flat",
+      "Garden View Rooms — venue hire RM600 – RM700 flat",
+      "North Garden — venue hire RM3,000 flat",
+      "West Garden — venue hire RM4,000 flat",
+      "Entire Garden — venue hire RM6,000 flat",
+      "Exclusive Closure — Whole House RM18,000 – RM28,000 flat",
+      "Exclusive Closure — Ground Floor RM14,000 – RM20,000 flat",
+      "Exclusive Closure — Marble Hall Only RM10,000 – RM12,000 flat",
+      "Exclusive Closure — First Floor RM14,000 – RM20,000 flat",
+      "Exclusive Closure — Ballroom Only RM10,000 – RM12,000 flat",
+      "ROM All-in-One Package (50 guests) RM6,800 flat",
+      "Set Meal A · Individual Plates RM130 – RM165 /person",
+      "Set Meal B · Individual Plates RM155 – RM200 /person",
+      "Set Meal C · Individual Plates RM205 – RM240 /person",
+      "Buffet · Buffet dinner RM140 – RM165 /person"
+    ],
+    "notes": "Directory separates the 90-seat ballroom, 70-seat Marble Hall and 300-seat West Lawn. Rental, food and exclusive use have separate costs.",
+    "calculatorImported": false
+  },
+  {
+    "id": "bluemansion",
+    "name": "Cheong Fatt Tze - The Blue Mansion",
+    "source": "https://theweddingnotebook.com/catalog/venues/blue-mansion",
+    "checkedAt": "2026-10-15",
+    "packageReferences": [
+      "Full Mansion Buyout — 3 days / 2 nights RM116,000 – RM123,000 flat",
+      "Full Mansion Buyout — 2 days / 1 night RM83,000 – RM94,000 flat",
+      "Half Mansion Buyout — 2 days / 1 night RM48,000 – RM50,000 flat",
+      "Celebration Aesthetic & Enhancement RM22,800 flat",
+      "Western Degustation · Degustation set menu RM325 /person",
+      "Peranakan Degustation · Degustation set menu RM325 /person",
+      "Vegetarian Degustation · Degustation set menu RM325 /person"
+    ],
+    "notes": "Directory lists 45-100 guest celebrations, mansion buyouts and separately priced dining. Confirm which spaces and nights are included.",
+    "calculatorImported": false
+  }
+]

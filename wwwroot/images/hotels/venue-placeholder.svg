@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+ <rect width="800" height="450" fill="#f3efe7"/>
+ <g stroke="#496457" stroke-width="4" fill="none"><path d="M335 245V160l65-40 65 40v85M320 245h160M375 245v-55h50v55M352 172h12m72 0h12M352 195h12m72 0h12"/><path d="M300 260h200"/></g>
+ <text x="400" y="312" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#496457">Venue photo coming soon</text>
+</svg>

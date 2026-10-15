@@ -110,6 +110,28 @@ retiring SQL Server. Keep the original backup for recovery.
 
 ## Storage and consistency
 
+### Penang research merge, 15 October 2026
+
+The researched catalogue was merged into both existing databases: hosted Neon
+has 49 venues at revision 4; local PostgreSQL has 50 at revision 5, retaining its
+one additional existing record. Each received 24 new venues and research updates
+for 10 existing listings. Existing contacts, archived records, administrator
+fields and calculator package pricing were preserved. There are 19 saved package
+records in each database; seed catalogue counts may differ from saved admin data.
+
+Private pre-merge snapshots and reports are in
+`.local-content/venue-research-merge/`. The merge helper at
+`tools/MergeVenueResearch` reads its connection from `VENUE_MERGE_CONNECTION`,
+compares existing values against `.local-content/research-baseline.json`, and
+defaults to a preview. `--apply` writes through the application's revision-checked
+save and audit history. Do not regenerate the baseline from a newer revision and
+blindly rerun it; inspect the preview for admin conflicts first.
+
+The new hosted records use the site's existing branded logo as an explicitly
+labelled photo placeholder, since the new SVG placeholder has not been deployed.
+Local records use the new local SVG. The live API was verified to return all 24
+new venue IDs. No code deployment was performed by this database update.
+
 | Table | Purpose |
 | --- | --- |
 | hotels | One typed row per hotel, including photo paths/URLs |

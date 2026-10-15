@@ -1,0 +1,20 @@
+[
+  {
+    "database": "local",
+    "venues": 50,
+    "added": 24,
+    "calculatorPackages": 19,
+    "contactsPreserved": true,
+    "existingPricingPreserved": true,
+    "verifiedRevision": 5
+  },
+  {
+    "database": "neon",
+    "venues": 49,
+    "added": 24,
+    "calculatorPackages": 19,
+    "contactsPreserved": true,
+    "existingPricingPreserved": true,
+    "verifiedRevision": 4
+  }
+]

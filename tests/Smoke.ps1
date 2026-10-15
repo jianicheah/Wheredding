@@ -4,7 +4,8 @@ function Assert($condition, $message) { if (-not $condition) { throw $message };
 $page = Invoke-WebRequest "$BaseUrl/" -UseBasicParsing
 Assert ($page.StatusCode -eq 200 -and $page.Content.Contains('Wheredding')) 'Homepage served'
 $v = Invoke-RestMethod "$BaseUrl/api/venues"
-Assert ($v.Count -eq 25) 'Full 25-hotel catalogue loaded'
+$seed = Get-Content (Join-Path $PSScriptRoot '../Data/venues.json') -Raw | ConvertFrom-Json
+Assert ($v.Count -eq ($seed | Where-Object { -not $_.archived }).Count) 'Full venue catalogue loaded'
 Assert (($v | Where-Object area -eq Island).Count -ge 8) 'Island coverage'
 Assert (($v | Where-Object district -eq Butterworth).Count -ge 3) 'Butterworth coverage'
 Assert (($v | Where-Object area -eq Mainland).Count -ge 8) 'Mainland coverage'

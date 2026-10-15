@@ -8,6 +8,10 @@ obj/
 .validation-build/
 scripts/*.html
 scripts/photo-review.jpg
+output/venue-research/*.html
+output/venue-research/*.html.txt
+output/venue-research/rasa-reception*.pdf
+output/venue-research/rasa-reception*.png
 
 # Local secrets and certificates
 .env

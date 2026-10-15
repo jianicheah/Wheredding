@@ -22,7 +22,13 @@ Open http://127.0.0.1:5299 and stop with Ctrl+C.
 
 ## Features
 
-- 25 hotel listings: 17 island and 8 mainland, including 3 in Butterworth.
+- 49 venue listings: 39 island and 10 mainland, including 3 in Butterworth.
+- Hotels, heritage houses, restaurants, gardens and event spaces; 24 additional
+  venues researched from The Wedding Notebook on 15 October 2026. All 22 entries
+  in its current Penang directory were reviewed, with 107 package/menu references
+  saved separately from the independently verified banquet calculator records.
+- New venue photographs use an explicitly labelled local placeholder until
+  appropriate venue images are available. Directory-only facts remain unverified.
 - Search, location and published-price filters; photos, contacts and map links.
 - Compare up to three hotels, including price basis, source and menu summaries.
 - Automatic guest angpao reference with optional package selection.
@@ -56,6 +62,7 @@ With the local server running:
 $env:BASE_URL='http://127.0.0.1:5299'
 node tests/Frontend.cjs
 dotnet run --project tests/Pricing/PricingChecks.csproj
+node tests/VenueResearch.cjs
 python tests/HtmlOptions.py
 ./tests/Security.ps1 -BaseUrl http://127.0.0.1:5299
 ```
