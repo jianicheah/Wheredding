@@ -26,7 +26,8 @@ static class RelationalContent
         if(schema is not null)
         {
             if(transfer is not null)throw new InvalidOperationException("Import requires an empty PostgreSQL database; existing content was not changed.");
-            if(Convert.ToInt32(schema)!=1)throw new InvalidOperationException("Unsupported content schema version.");
+            if(Convert.ToInt32(schema)==1){cmd.CommandText=Sql("005_ChargeStatus.sql");await cmd.ExecuteNonQueryAsync();}
+            else if(Convert.ToInt32(schema)!=2)throw new InvalidOperationException("Unsupported content schema version.");
             await tx.CommitAsync();return;
         }
         cmd.CommandText="SELECT (SELECT COUNT(*) FROM public.Hotels)+(SELECT COUNT(*) FROM public.Packages)+(SELECT COUNT(*) FROM public.SiteContact)+(SELECT COUNT(*) FROM public.AuditHistory)";
@@ -43,7 +44,7 @@ static class RelationalContent
                 throw new InvalidOperationException("Invalid imported history.");
         }
         await Write(c,tx,document);
-        cmd.CommandText="INSERT INTO public.ContentState(Id,Revision,SchemaVersion) VALUES(1,@revision,1)";
+        cmd.CommandText="INSERT INTO public.ContentState(Id,Revision,SchemaVersion) VALUES(1,@revision,2)";
         cmd.Parameters.AddWithValue("revision",document.Revision);await cmd.ExecuteNonQueryAsync();
         foreach(var item in history)
         {

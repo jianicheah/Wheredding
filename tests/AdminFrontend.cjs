@@ -1,12 +1,12 @@
 const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
 class Element {
  constructor(){this.value='';this.textContent='';this.innerHTML='';this.className='';this.hidden=false;this.disabled=false;this.valid=true;}
- setAttribute(name,value){this[name]=value;} querySelector(){return this.invalidElement||null;} querySelectorAll(){return [];} checkValidity(){return this.valid;} reportValidity(){return this.valid;} focus(){this.focused=true;} reset(){}
+ setAttribute(name,value){this[name]=value;} append(){} querySelector(s){if(s.includes(':invalid'))return this.invalidElement||null;this.children??=new Map();if(!this.children.has(s))this.children.set(s,new Element());return this.children.get(s);} querySelectorAll(){return [];} checkValidity(){return this.valid;} reportValidity(){return this.valid;} focus(){this.focused=true;} reset(){}
 }
 (async()=>{
  const elements=new Map(),get=s=>{if(s==='#reload')return null;if(!elements.has(s))elements.set(s,new Element());return elements.get(s);};
  let submitted=[],missingRoute=false,sessionReply={enabled:false};
- const context=vm.createContext({document:{querySelector:get},window:{addEventListener(){}},Intl,Date,console,confirm:()=>true,location:{reload(){}},fetch:async(url,options={})=>{
+ const context=vm.createContext({document:{querySelector:get,querySelectorAll:()=>[],createElement:()=>new Element()},window:{addEventListener(){}},Intl,Date,console,confirm:()=>true,location:{reload(){}},fetch:async(url,options={})=>{
   if(url==='/api/admin/session')return{ok:true,json:async()=>sessionReply};
   if(missingRoute)return{ok:false,status:405,json:async()=>{throw Error('Non-JSON server response');}};
   const body=JSON.parse(options.body);submitted.push({url,body});return{ok:true,json:async()=>({revision:body.expectedRevision+1})};
@@ -24,7 +24,7 @@ class Element {
  console.log('PASS: Contact save ignores invalid hotel draft, sends only contact and preserves hotel changes');
  vm.runInContext(`doc.contact.message='Another unsaved contact edit';changed('contact');`,context);
  get('#hotel-form').valid=true;get('#contact-form').valid=false;
- await get('#publish').onclick();
+ await get('#save-hotel-details').onclick();
  assert.equal(submitted[1].url,'/api/admin/hotels');assert.equal(submitted[1].body.contact,undefined);
  assert.equal(submitted[1].body.expectedRevision,2);
  assert.equal(vm.runInContext('!hotelsDirty && contactDirty && dirty && doc.revision===3',context),true);
@@ -64,13 +64,11 @@ class Element {
  get('#editor-tab-general').onkeydown({key:'ArrowLeft',preventDefault(){}});
  assert.equal(get('#editor-panel-preview').hidden,false);
  console.log('PASS: Keyboard arrows wrap tabs; Home and End select first and last');
- const details={open:false};
  get('#hotel-form').valid=false;
- get('#hotel-form').invalidElement={closest(selector){return selector==='details'?details:{dataset:{editorPanel:'packages'}};}};
+ get('#hotel-form').invalidElement={validationMessage:'Invalid package',closest(selector){return selector==='[data-editor-panel]'?{dataset:{editorPanel:'packages'}}:null;},focus(){},scrollIntoView(){},reportValidity(){}};
  const requestCount=submitted.length;
- await get('#publish').onclick();
+ await get('#save-hotel-details').onclick();
  assert.equal(get('#editor-panel-packages').hidden,false);
- assert.equal(details.open,true);
  assert.equal(submitted.length,requestCount);
  get('#hotel-form').valid=true;
  get('#hotel-form').invalidElement=null;

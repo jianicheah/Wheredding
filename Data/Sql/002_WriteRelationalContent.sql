@@ -16,11 +16,11 @@ FROM jsonb_array_elements(@document->'venues') WITH ORDINALITY AS hotels(v,posit
 
 INSERT INTO public.Packages
     (HotelId,PackageId,Name,TablePrice,Seats,SeatsConfirmed,ChargeLabel,ServicePercent,
-     TaxPercent,ChargesComplete,SourceUrl,CheckedAt,ValidUntil,Validity,Conditions,
+     TaxPercent,ChargeStatus,SourceUrl,CheckedAt,ValidUntil,Validity,Conditions,
      MenuSummary,IsChinese,SortOrder)
 SELECT v->>'id',p->>'id',p->>'name',(p->>'amount')::numeric,(p->>'seats')::integer,
     (p->>'seatsConfirmed')::boolean,p->>'chargeLabel',(p->>'servicePercent')::numeric,
-    (p->>'taxPercent')::numeric,(p->>'chargesComplete')::boolean,p->>'source',
+    (p->>'taxPercent')::numeric,p->>'chargeStatus',p->>'source',
     (p->>'checkedAt')::date,(p->>'validUntil')::date,p->>'validity',p->>'conditions',
     p->>'menuSummary',(p->>'chinese')::boolean,position::integer
 FROM jsonb_array_elements(@document->'venues') AS hotels(v)

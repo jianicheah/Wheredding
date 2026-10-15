@@ -1,0 +1,11 @@
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
+const elements=new Map();const get=id=>{if(!elements.has(id))elements.set(id,{label:{},closest(){return this.label;}});return elements.get(id);};
+const source=fs.readFileSync('wwwroot/admin.js','utf8');
+const body=source.slice(source.indexOf('function syncChargeFields('),source.indexOf('function renderPackages('));
+const context=vm.createContext({$:get});vm.runInContext(body,context);
+const p={chargeStatus:'included',servicePercent:10,taxPercent:8};context.p=p;
+vm.runInContext("syncChargeFields(p,'pkg',true)",context);assert.equal(p.servicePercent,0);assert.equal(p.taxPercent,0);assert.equal(p.chargeLabel,'nett');assert.equal(get('#pkg-taxPercent').disabled,true);assert.equal(get('#pkg-taxPercent').label.hidden,true);
+p.chargeStatus='unconfirmed';vm.runInContext("syncChargeFields(p,'pkg',true)",context);assert.equal(p.servicePercent,null);assert.equal(get('#pkg-taxPercent').value,'');assert.equal(get('#pkg-taxPercent').required,false);
+p.chargeStatus='additional';vm.runInContext("syncChargeFields(p,'pkg',true)",context);assert.equal(get('#pkg-taxPercent').required,true);assert.equal(get('#pkg-taxPercent').disabled,false);
+assert.ok(!source.includes('All compulsory charges accounted for'));
+console.log('PASS: Included hides zero extra charges; additional requires percentages; unconfirmed permits blanks.');

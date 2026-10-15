@@ -69,9 +69,8 @@
         "seats": 10,
         "seatsConfirmed": true,
         "chargeLabel": "+",
-        "servicePercent": 0,
-        "taxPercent": 0,
-        "chargesComplete": false,
+        "servicePercent": null,
+        "taxPercent": null,
         "source": "https://www.olivetree.my/wp-content/uploads/sites/21/2026/08/Two-of-Us-wedding-package.pdf",
         "checkedAt": "2026-10-12",
         "validUntil": null,
@@ -79,7 +78,8 @@
         "conditions": "8–15 tables. A 10% table surcharge applies on public-holiday eves and public holidays. Confirm what + includes.",
         "menuSummary": "Chinese dinner with eight courses, cordial drinks and tea. Corkage benefits vary by tier.",
         "chinese": true,
-        "hotelName": "Olive Tree Hotel"
+        "hotelName": "Olive Tree Hotel",
+        "chargeStatus": "unconfirmed"
       },
       {
         "id": "beginning",
@@ -88,9 +88,8 @@
         "seats": 10,
         "seatsConfirmed": true,
         "chargeLabel": "+",
-        "servicePercent": 0,
-        "taxPercent": 0,
-        "chargesComplete": false,
+        "servicePercent": null,
+        "taxPercent": null,
         "source": "https://www.olivetree.my/wp-content/uploads/sites/21/2026/08/Two-of-Us-wedding-package.pdf",
         "checkedAt": "2026-10-12",
         "validUntil": null,
@@ -98,7 +97,8 @@
         "conditions": "35–60 tables; MYR200+ per table surcharge below 35. A 10% table surcharge applies on public-holiday eves and public holidays. Confirm what + includes.",
         "menuSummary": "Chinese dinner with eight courses, cordial drinks and tea. Corkage benefits vary by tier.",
         "chinese": true,
-        "hotelName": "Olive Tree Hotel"
+        "hotelName": "Olive Tree Hotel",
+        "chargeStatus": "unconfirmed"
       },
       {
         "id": "divine",
@@ -107,9 +107,8 @@
         "seats": 10,
         "seatsConfirmed": true,
         "chargeLabel": "+",
-        "servicePercent": 0,
-        "taxPercent": 0,
-        "chargesComplete": false,
+        "servicePercent": null,
+        "taxPercent": null,
         "source": "https://www.olivetree.my/wp-content/uploads/sites/21/2026/08/Two-of-Us-wedding-package.pdf",
         "checkedAt": "2026-10-12",
         "validUntil": null,
@@ -117,7 +116,8 @@
         "conditions": "30–60 tables; MYR200+ per table surcharge below 30. A 10% table surcharge applies on public-holiday eves and public holidays. Confirm what + includes.",
         "menuSummary": "Chinese dinner with eight courses, cordial drinks and tea. Corkage benefits vary by tier.",
         "chinese": true,
-        "hotelName": "Olive Tree Hotel"
+        "hotelName": "Olive Tree Hotel",
+        "chargeStatus": "unconfirmed"
       },
       {
         "id": "forever",
@@ -126,9 +126,8 @@
         "seats": 10,
         "seatsConfirmed": true,
         "chargeLabel": "+",
-        "servicePercent": 0,
-        "taxPercent": 0,
-        "chargesComplete": false,
+        "servicePercent": null,
+        "taxPercent": null,
         "source": "https://www.olivetree.my/wp-content/uploads/sites/21/2026/08/Two-of-Us-wedding-package.pdf",
         "checkedAt": "2026-10-12",
         "validUntil": null,
@@ -136,7 +135,8 @@
         "conditions": "30–60 tables. A 10% table surcharge applies on public-holiday eves and public holidays. Confirm what + includes.",
         "menuSummary": "Chinese dinner with eight courses, cordial drinks and tea. Corkage benefits vary by tier.",
         "chinese": true,
-        "hotelName": "Olive Tree Hotel"
+        "hotelName": "Olive Tree Hotel",
+        "chargeStatus": "unconfirmed"
       }
     ],
     "weddingSource": "https://theweddingnotebook.com/catalog/venues/olive-tree-penang"
@@ -168,9 +168,8 @@
         "seats": 10,
         "seatsConfirmed": true,
         "chargeLabel": "+",
-        "servicePercent": 0,
-        "taxPercent": 0,
-        "chargesComplete": false,
+        "servicePercent": null,
+        "taxPercent": null,
         "source": "https://iconichotel.com.my/cn/wp-content/uploads/2024/12/wedding-package.pdf",
         "checkedAt": "2026-10-12",
         "validUntil": null,
@@ -178,7 +177,8 @@
         "conditions": "Minimum 20 tables; prevailing government tax is extra, percentage not stated.",
         "menuSummary": "Chinese dinner with eight courses, soft drinks and tea. Tasting and wine benefits vary by tier.",
         "chinese": true,
-        "hotelName": "Iconic Hotel"
+        "hotelName": "Iconic Hotel",
+        "chargeStatus": "unconfirmed"
       },
       {
         "id": "significant",
@@ -187,9 +187,8 @@
         "seats": 10,
         "seatsConfirmed": true,
         "chargeLabel": "+",
-        "servicePercent": 0,
-        "taxPercent": 0,
-        "chargesComplete": false,
+        "servicePercent": null,
+        "taxPercent": null,
         "source": "https://iconichotel.com.my/cn/wp-content/uploads/2024/12/wedding-package.pdf",
         "checkedAt": "2026-10-12",
         "validUntil": null,
@@ -197,7 +196,8 @@
         "conditions": "Minimum 20 tables; prevailing government tax is extra, percentage not stated.",
         "menuSummary": "Chinese dinner with eight courses, soft drinks and tea. Tasting and wine benefits vary by tier.",
         "chinese": true,
-        "hotelName": "Iconic Hotel"
+        "hotelName": "Iconic Hotel",
+        "chargeStatus": "unconfirmed"
       }
     ],
     "weddingSource": "https://theweddingnotebook.com/catalog/venues/iconic-hotel-penang"
@@ -273,7 +273,6 @@
         "chargeLabel": "nett",
         "servicePercent": 0,
         "taxPercent": 0,
-        "chargesComplete": true,
         "source": "https://ghotel.com.my/hotels/g-hotel-gurney/offers/wedding-dome-set/",
         "checkedAt": "2026-10-12",
         "validUntil": null,
@@ -281,7 +280,8 @@
         "conditions": "Minimum 20 tables; public-holiday eve and holiday surcharge amount is not published.",
         "menuSummary": "Dome set banquet with fruit punch. The flyer does not specify Chinese dishes; confirm cuisine with the hotel.",
         "chinese": false,
-        "hotelName": "G Hotel Gurney"
+        "hotelName": "G Hotel Gurney",
+        "chargeStatus": "included"
       }
     ],
     "weddingSource": "https://theweddingnotebook.com/catalog/venues/g-hotel-gurney"
@@ -336,7 +336,6 @@
         "chargeLabel": "+",
         "servicePercent": 0,
         "taxPercent": 8,
-        "chargesComplete": true,
         "source": "https://www.ixorahotel.com/wp-content/uploads/2025/05/chi_wedding_tgb_apr2025.pdf",
         "checkedAt": "2026-10-12",
         "validUntil": "2025-12-31",
@@ -344,7 +343,8 @@
         "conditions": "Minimum 40 tables; festive surcharges apply. Monday–Thursday discount is not applied here.",
         "menuSummary": "Eight-course Chinese menu with choices across starter, soup, poultry, prawns, vegetables, fish, rice/noodles and dessert. See the original brochure for dishes.",
         "chinese": true,
-        "hotelName": "Ixora Hotel"
+        "hotelName": "Ixora Hotel",
+        "chargeStatus": "additional"
       },
       {
         "id": "forever",
@@ -355,7 +355,6 @@
         "chargeLabel": "+",
         "servicePercent": 0,
         "taxPercent": 8,
-        "chargesComplete": true,
         "source": "https://www.ixorahotel.com/wp-content/uploads/2025/05/chi_wedding_tgb_apr2025.pdf",
         "checkedAt": "2026-10-12",
         "validUntil": "2025-12-31",
@@ -363,7 +362,8 @@
         "conditions": "Minimum 40 tables; festive surcharges apply. Monday–Thursday discount is not applied here.",
         "menuSummary": "Eight-course Chinese menu with choices across starter, soup, poultry, prawns, vegetables, fish, rice/noodles and dessert. See the original brochure for dishes.",
         "chinese": true,
-        "hotelName": "Ixora Hotel"
+        "hotelName": "Ixora Hotel",
+        "chargeStatus": "additional"
       },
       {
         "id": "eternity",
@@ -374,7 +374,6 @@
         "chargeLabel": "+",
         "servicePercent": 0,
         "taxPercent": 8,
-        "chargesComplete": true,
         "source": "https://www.ixorahotel.com/wp-content/uploads/2025/05/chi_wedding_tgb_apr2025.pdf",
         "checkedAt": "2026-10-12",
         "validUntil": "2025-12-31",
@@ -382,7 +381,8 @@
         "conditions": "Minimum 40 tables; festive surcharges apply. Monday–Thursday discount is not applied here.",
         "menuSummary": "Eight-course Chinese menu with choices across starter, soup, poultry, prawns, vegetables, fish, rice/noodles and dessert. See the original brochure for dishes.",
         "chinese": true,
-        "hotelName": "Ixora Hotel"
+        "hotelName": "Ixora Hotel",
+        "chargeStatus": "additional"
       }
     ],
     "weddingSource": "https://theweddingnotebook.com/catalog/venues/ixora-hotel-penang"
@@ -544,7 +544,6 @@
         "chargeLabel": "nett",
         "servicePercent": 0,
         "taxPercent": 0,
-        "chargesComplete": true,
         "source": "https://www.panpacific.com/content/dam/pphg-revamp/en/prpen/pr2-0/celebrate/prpen-wedding-package.pdf",
         "checkedAt": "2026-10-15",
         "validUntil": "2026-12-31",
@@ -552,7 +551,8 @@
         "conditions": "20–30 tables (200–300 guests). Ceremony and other extras are separate.",
         "menuSummary": "Eight-course Chinese meal, tea and orange drink; LED/PA use, table flowers, one-night Premier Seaview room with breakfast, tea-ceremony foyer use and couple spa treatment. Tasting is half price.",
         "chinese": true,
-        "hotelName": "PARKROYAL Penang Resort"
+        "hotelName": "PARKROYAL Penang Resort",
+        "chargeStatus": "included"
       },
       {
         "id": "ultimate",
@@ -563,7 +563,6 @@
         "chargeLabel": "nett",
         "servicePercent": 0,
         "taxPercent": 0,
-        "chargesComplete": true,
         "source": "https://www.panpacific.com/content/dam/pphg-revamp/en/prpen/pr2-0/celebrate/prpen-wedding-package.pdf",
         "checkedAt": "2026-10-15",
         "validUntil": "2026-12-31",
@@ -571,7 +570,8 @@
         "conditions": "20–30 tables (200–300 guests). Ceremony and other extras are separate.",
         "menuSummary": "Eight-course Chinese meal, drinks, pre-dinner refreshments, favours and floral styling; LED/PA use, a Lanai Suite night, anniversary stay voucher, tea-ceremony foyer use and spa treatment. Tasting is half price.",
         "chinese": true,
-        "hotelName": "PARKROYAL Penang Resort"
+        "hotelName": "PARKROYAL Penang Resort",
+        "chargeStatus": "included"
       },
       {
         "id": "everlasting",
@@ -582,7 +582,6 @@
         "chargeLabel": "nett",
         "servicePercent": 0,
         "taxPercent": 0,
-        "chargesComplete": true,
         "source": "https://www.panpacific.com/content/dam/pphg-revamp/en/prpen/pr2-0/celebrate/prpen-wedding-package.pdf",
         "checkedAt": "2026-10-15",
         "validUntil": "2026-12-31",
@@ -590,7 +589,8 @@
         "conditions": "20–30 tables (200–300 guests). Ceremony and other extras are separate.",
         "menuSummary": "Eight-course Chinese meal with lobster, drinks, pre-dinner refreshments, favours and floral styling; complimentary tasting, Premier Seaview Suite night, anniversary stay voucher and spa treatment.",
         "chinese": true,
-        "hotelName": "PARKROYAL Penang Resort"
+        "hotelName": "PARKROYAL Penang Resort",
+        "chargeStatus": "included"
       }
     ],
     "weddingSource": "https://theweddingnotebook.com/catalog/venues/parkroyal-penang-resort"
@@ -624,7 +624,6 @@
         "chargeLabel": "nett",
         "servicePercent": 0,
         "taxPercent": 0,
-        "chargesComplete": true,
         "source": "https://www.angsana.com/malaysia/penang/wedding-packages",
         "checkedAt": "2026-10-12",
         "validUntil": null,
@@ -632,7 +631,8 @@
         "conditions": "15–25 tables. The page does not specify seats per table; calculator assumes 10.",
         "menuSummary": "Chinese dinner with eight courses and a choice of fruit punch or tea. Request the detailed menu.",
         "chinese": true,
-        "hotelName": "Angsana Teluk Bahang, Penang"
+        "hotelName": "Angsana Teluk Bahang, Penang",
+        "chargeStatus": "included"
       }
     ],
     "weddingSource": "https://theweddingnotebook.com/catalog/venues/angsana-teluk-bahang"
@@ -666,7 +666,6 @@
         "chargeLabel": "nett",
         "servicePercent": 0,
         "taxPercent": 0,
-        "chargesComplete": true,
         "source": "https://www.amari.com/penang/wedding-packages/blissful-love-wedding-package",
         "checkedAt": "2026-10-12",
         "validUntil": "2026-12-31",
@@ -674,7 +673,8 @@
         "conditions": "Published terms state 100–130 guests. Prices may change.",
         "menuSummary": "Chinese dinner with eight courses; drinks included. Request the chosen dishes.",
         "chinese": true,
-        "hotelName": "Amari SPICE Penang"
+        "hotelName": "Amari SPICE Penang",
+        "chargeStatus": "included"
       },
       {
         "id": "hearts",
@@ -685,7 +685,6 @@
         "chargeLabel": "nett",
         "servicePercent": 0,
         "taxPercent": 0,
-        "chargesComplete": true,
         "source": "https://www.amari.com/penang/wedding-packages/enchanting-hearts-wedding-package",
         "checkedAt": "2026-10-12",
         "validUntil": "2026-12-31",
@@ -693,7 +692,8 @@
         "conditions": "Published terms state 100–130 guests. Prices may change.",
         "menuSummary": "Chinese dinner with eight courses; drinks included. Request the chosen dishes.",
         "chinese": true,
-        "hotelName": "Amari SPICE Penang"
+        "hotelName": "Amari SPICE Penang",
+        "chargeStatus": "included"
       },
       {
         "id": "majestic",
@@ -704,7 +704,6 @@
         "chargeLabel": "nett",
         "servicePercent": 0,
         "taxPercent": 0,
-        "chargesComplete": true,
         "source": "https://www.amari.com/penang/wedding-packages/majestic-elegance-wedding-package",
         "checkedAt": "2026-10-12",
         "validUntil": "2026-12-31",
@@ -712,7 +711,8 @@
         "conditions": "Published terms state 100–130 guests. Prices may change.",
         "menuSummary": "Chinese dinner with eight courses; drinks included. Request the chosen dishes.",
         "chinese": true,
-        "hotelName": "Amari SPICE Penang"
+        "hotelName": "Amari SPICE Penang",
+        "chargeStatus": "included"
       }
     ]
   },
@@ -745,7 +745,6 @@
         "chargeLabel": "nett",
         "servicePercent": 0,
         "taxPercent": 0,
-        "chargesComplete": true,
         "source": "https://wifi.berjayahotel.com/wp-content/uploads/2024/10/BPH_Wedding_Package.pdf",
         "checkedAt": "2026-10-12",
         "validUntil": null,
@@ -753,7 +752,8 @@
         "conditions": "Advertised from-price; minimum tables and validity are not specified.",
         "menuSummary": "Chinese wedding package advertised; individual dishes are not shown.",
         "chinese": true,
-        "hotelName": "Berjaya Penang Hotel"
+        "hotelName": "Berjaya Penang Hotel",
+        "chargeStatus": "included"
       }
     ]
   },

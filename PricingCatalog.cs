@@ -12,6 +12,7 @@ sealed class PricingCatalog
     public PricingCatalog(JsonArray data)
     {
         venues = new JsonArray(data.Where(v=>v?["archived"]?.GetValue<bool>()!=true).Select(v=>v!.DeepClone()).ToArray());
+        ChargeRules.Normalize(venues);
         packages = venues.ToDictionary(v => v!["id"]!.GetValue<string>(),
             v => v!["packages"]!.Deserialize<PublishedPackage[]>(Json)!, StringComparer.Ordinal);
     }
@@ -35,7 +36,7 @@ sealed class PricingCatalog
     static PriceProfile Profile(PublishedPackage[] list, string kind, DateOnly today)
     {
         // Normalise to ten seats before comparing; the API also returns that basis.
-        var amounts = list.Select(p => p.Amount * (1+p.ServicePercent/100) * (1+p.TaxPercent/100) / p.Seats * 10).ToArray();
+        var amounts = list.Select(p => p.Amount * (p.ChargesComplete?(1+(p.ServicePercent??0)/100)*(1+(p.TaxPercent??0)/100):1) / p.Seats * 10).ToArray();
         return new(amounts.Min(), amounts.Max(), 10, kind, list.All(p=>p.ChargesComplete),
             list.Any(p=>!p.SeatsConfirmed), list.Any(p=>Stale(p,today)), list.Any(p=>p.ValidUntil is null), today.ToString("yyyy-MM-dd"), list);
     }
@@ -53,8 +54,26 @@ sealed class PricingCatalog
     }
 }
 record PublishedPackage(string Id, string Name, decimal Amount, int Seats, bool SeatsConfirmed,
-    string ChargeLabel, decimal ServicePercent, decimal TaxPercent, bool ChargesComplete,
+    string ChargeLabel, decimal? ServicePercent, decimal? TaxPercent, string ChargeStatus,
     string Source, string CheckedAt, string? ValidUntil, string Validity, string Conditions,
-    string MenuSummary, bool Chinese, string HotelName);
+    string MenuSummary, bool Chinese, string HotelName)
+{
+    public bool ChargesComplete => ChargeStatus is "included" or "additional";
+}
+
+static class ChargeRules
+{
+    public static void Normalize(JsonArray venues)
+    {
+        foreach(var v in venues)foreach(var p in v!["packages"]!.AsArray())
+        {
+            var legacy=p!["chargeStatus"] is null;
+            if(legacy)p["chargeStatus"]=p["chargeLabel"]?.GetValue<string>()=="nett"?"included":p["chargesComplete"]?.GetValue<bool>()==true?"additional":"unconfirmed";
+            p.AsObject().Remove("chargesComplete");
+            if(legacy && p["chargeStatus"]!.GetValue<string>()=="unconfirmed")
+                foreach(var field in new[]{"servicePercent","taxPercent"})if(p[field]?.GetValue<decimal>()==0)p[field]=null;
+        }
+    }
+}
 record PriceProfile(decimal Low, decimal High, int Seats, string Kind, bool ChargesComplete,
     bool SeatsAssumed, bool Stale, bool ValidityUnconfirmed, string AsOf, PublishedPackage[] Sources);

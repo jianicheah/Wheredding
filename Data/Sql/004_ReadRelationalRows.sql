@@ -9,7 +9,7 @@ SELECT HotelId AS "id",Name AS "name",Area AS "area",District AS "district",Styl
 FROM public.Hotels ORDER BY SortOrder,HotelId;
 SELECT HotelId AS "hotelId",PackageId AS "id",Name AS "name",TablePrice AS "amount",Seats AS "seats",
     SeatsConfirmed AS "seatsConfirmed",ChargeLabel AS "chargeLabel",ServicePercent AS "servicePercent",
-    TaxPercent AS "taxPercent",ChargesComplete AS "chargesComplete",SourceUrl AS "source",
+    TaxPercent AS "taxPercent",ChargeStatus AS "chargeStatus",SourceUrl AS "source",
     CheckedAt AS "checkedAt",ValidUntil AS "validUntil",Validity AS "validity",Conditions AS "conditions",
     MenuSummary AS "menuSummary",IsChinese AS "chinese"
 FROM public.Packages ORDER BY HotelId,SortOrder,PackageId;

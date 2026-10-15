@@ -39,9 +39,9 @@ CREATE TABLE IF NOT EXISTS public.Hotels (
         Seats int NOT NULL CONSTRAINT CK_Packages_Seats CHECK(Seats BETWEEN 1 AND 30),
         SeatsConfirmed boolean NOT NULL,
         ChargeLabel varchar(4) NOT NULL CONSTRAINT CK_Packages_ChargeLabel CHECK(ChargeLabel IN ('nett','+','++')),
-        ServicePercent decimal(9,4) NOT NULL CONSTRAINT CK_Packages_Service CHECK(ServicePercent BETWEEN 0 AND 30),
-        TaxPercent decimal(9,4) NOT NULL CONSTRAINT CK_Packages_Tax CHECK(TaxPercent BETWEEN 0 AND 30),
-        ChargesComplete boolean NOT NULL,
+        ServicePercent decimal(9,4) NULL CONSTRAINT CK_Packages_Service CHECK(ServicePercent BETWEEN 0 AND 30),
+        TaxPercent decimal(9,4) NULL CONSTRAINT CK_Packages_Tax CHECK(TaxPercent BETWEEN 0 AND 30),
+        ChargeStatus varchar(20) NOT NULL,
         SourceUrl varchar(2000) NOT NULL,
         CheckedAt date NOT NULL,
         ValidUntil date NULL,
@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS public.Hotels (
         SortOrder int NOT NULL,
         CONSTRAINT PK_Packages PRIMARY KEY(HotelId,PackageId),
         CONSTRAINT FK_Packages_Hotels FOREIGN KEY(HotelId) REFERENCES public.Hotels(HotelId),
-        CONSTRAINT CK_Packages_Nett CHECK(ChargeLabel<>'nett' OR (ChargesComplete=true AND ServicePercent=0 AND TaxPercent=0))
+        CONSTRAINT CK_Packages_ChargeStatus CHECK((ChargeStatus='included' AND ChargeLabel='nett' AND ServicePercent IS NOT NULL AND ServicePercent=0 AND TaxPercent IS NOT NULL AND TaxPercent=0) OR (ChargeStatus='additional' AND ChargeLabel<>'nett' AND ServicePercent IS NOT NULL AND TaxPercent IS NOT NULL) OR (ChargeStatus='unconfirmed' AND ChargeLabel<>'nett'))
     );
 
 CREATE TABLE IF NOT EXISTS public.SiteContact (

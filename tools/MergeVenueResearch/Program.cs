@@ -13,6 +13,51 @@ try
     var apply = args.Contains("--apply");
     var connection = Environment.GetEnvironmentVariable("VENUE_MERGE_CONNECTION") ?? throw new InvalidOperationException("Database connection is not configured.");
     await using var c = new NpgsqlConnection(connection); await c.OpenAsync();
+    if(args.Contains("--test-charge-migration"))
+    {
+        var cb=new NpgsqlConnectionStringBuilder(connection);
+        if(cb.Host is not ("127.0.0.1" or "localhost"))throw new InvalidOperationException("Migration tests require local PostgreSQL.");
+        var name="whereddingtest_charges_"+Guid.NewGuid().ToString("N");
+        await using(var create=c.CreateCommand()){create.CommandText="CREATE DATABASE "+name;await create.ExecuteNonQueryAsync();}
+        cb.Database=name;await using var test=new NpgsqlConnection(cb.ConnectionString);await test.OpenAsync();
+        var migrationBackup=Directory.GetFiles(".local-content/charge-status-migration","local-*.json").Order().Last();
+        await using(var command=test.CreateCommand())
+        {
+            command.CommandText=File.ReadAllText(".local-content/charge-status-legacy-schema.sql");await command.ExecuteNonQueryAsync();
+            command.CommandText="INSERT INTO public.Hotels SELECT * FROM jsonb_populate_recordset(NULL::public.Hotels,@data->'hotels');INSERT INTO public.Packages SELECT * FROM jsonb_populate_recordset(NULL::public.Packages,@data->'packages');INSERT INTO public.SiteContact SELECT * FROM jsonb_populate_recordset(NULL::public.SiteContact,@data->'contact');INSERT INTO public.ContentState SELECT * FROM jsonb_populate_recordset(NULL::public.ContentState,@data->'state');";
+            command.Parameters.AddWithValue("data",NpgsqlTypes.NpgsqlDbType.Jsonb,await File.ReadAllTextAsync(migrationBackup));await command.ExecuteNonQueryAsync();
+        }
+        var seed=new ContentDocument(JsonNode.Parse(File.ReadAllText("Data/venues.json"))!.AsArray(),new());
+        await RelationalContent.Initialize(test,seed);var upgraded=await RelationalContent.Read(test);
+        if(upgraded.Venues.Count!=50 || upgraded.Venues.Sum(v=>v!["packages"]!.AsArray().Count)!=19)throw new InvalidOperationException("Migration lost records.");
+        await using(var command=test.CreateCommand())
+        {
+            command.CommandText="SELECT COUNT(*) FROM information_schema.columns WHERE table_schema='public' AND table_name='packages' AND column_name='chargescomplete'";
+            if(Convert.ToInt32(await command.ExecuteScalarAsync())!=0)throw new InvalidOperationException("Legacy column remains.");
+        }
+        var p=upgraded.Venues.First(v=>v!["id"]!.GetValue<string>()=="amari")!["packages"]![0]!;
+        p["chargeStatus"]="additional";p["chargeLabel"]="++";p["servicePercent"]=10;p["taxPercent"]=8;
+        var migrationNext=upgraded with{Revision=upgraded.Revision+1};
+        var validation=ContentValidation.Validate(migrationNext);if(validation is not null)throw new InvalidOperationException(validation);
+        if(!await RelationalContent.Save(test,migrationNext,upgraded.Revision,"Charge status migration test"))throw new InvalidOperationException("Round-trip save failed.");
+        var saved=await RelationalContent.Read(test);if(!SameJson(saved.Venues,migrationNext.Venues))throw new InvalidOperationException("Round-trip data mismatch.");
+        await RelationalContent.Initialize(test,seed);
+        Console.WriteLine("PASS: schema 1 to 2 migration retained 50 venues and 19 packages, dropped chargesComplete, supported nullable charges, and round-tripped the new status. Test database: "+name);return;
+    }
+    if(args.Contains("--stage-charge-status"))
+    {
+        var privateDir=".local-content/charge-status-migration";Directory.CreateDirectory(privateDir);
+        // Capture a complete relational JSON snapshot with the old deployed SQL.
+        await using(var backupCommand=c.CreateCommand())
+        {
+            backupCommand.CommandText="SELECT jsonb_build_object('hotels',(SELECT jsonb_agg(h) FROM public.Hotels h),'packages',(SELECT jsonb_agg(p) FROM public.Packages p),'contact',(SELECT jsonb_agg(s) FROM public.SiteContact s),'state',(SELECT jsonb_agg(s) FROM public.ContentState s))::text";
+            var snapshot=(string)(await backupCommand.ExecuteScalarAsync())!;
+            await File.WriteAllTextAsync(Path.Combine(privateDir,label+"-"+DateTime.UtcNow.ToString("yyyyMMdd-HHmmss")+".json"),snapshot);
+        }
+        await using var tx=await c.BeginTransactionAsync();await using var command=c.CreateCommand();command.Transaction=tx;
+        command.CommandText=File.ReadAllText("Data/Sql/006_StageChargeStatus.sql");await command.ExecuteNonQueryAsync();
+        await tx.CommitAsync();Console.WriteLine(label+": chargeStatus populated; legacy app compatibility preserved until deployment.");return;
+    }
     var current = await RelationalContent.Read(c);
     if(args.Contains("--photos-only")){await UpdatePhotos(c,current,label,apply,options,args.Contains("--external-photo-links"),args.Contains("--local-photo-links"));return;}
     var baseline = JsonNode.Parse(File.ReadAllText(".local-content/research-baseline.json"))!.AsArray();

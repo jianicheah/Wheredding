@@ -110,6 +110,26 @@ retiring SQL Server. Keep the original backup for recovery.
 
 ## Storage and consistency
 
+### Service charge and tax options
+
+The package editor now uses `chargeStatus`: `included`, `additional`, or
+`unconfirmed`. Included means nett with zero additional percentages; the editor
+hides those fields. Additional requires both percentages (explicit zero allowed).
+Unconfirmed permits null percentages and requires a visitor-supplied confirmed
+total in the calculator. Null means unknown; zero means no additional charge.
+
+The compatibility stage (`006_StageChargeStatus.sql`) has populated ChargeStatus
+in both existing databases while keeping the previous app compatible. Deploy
+the updated app to finish: its startup runs `005_ChargeStatus.sql` transactionally,
+migrates the latest legacy values, permits nullable rates, drops ChargesComplete,
+and changes SchemaVersion to 2. Fresh databases start directly at version 2.
+Do not manually drop the column while the previous app is still running.
+Backups are in `.local-content/charge-status-migration/`.
+
+Historical JSON revisions are normalized when validated/restored. The public
+price profile retains a derived `chargesComplete` response property for display
+compatibility; it is not a persisted package field in schema 2.
+
 ### Penang research merge, 15 October 2026
 
 The researched catalogue was merged into both existing databases: hosted Neon

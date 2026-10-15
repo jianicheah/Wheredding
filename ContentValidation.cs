@@ -7,6 +7,7 @@ static class ContentValidation
     public static string? Validate(ContentDocument d)
     {
         try {
+            ChargeRules.Normalize(d.Venues);
             if(d.Venues.Count>500) return "Maximum 500 hotels.";
             var ids=new HashSet<string>();
             foreach(var node in d.Venues) {
@@ -32,7 +33,11 @@ static class ContentValidation
                     if(!Regex.IsMatch(x.Id??"","^[a-z0-9][a-z0-9-]{0,79}$") || !packageIds.Add(x.Id!))return "Package IDs must be unique within their hotel.";
                     if(string.IsNullOrWhiteSpace(x.Name) || x.Name.Length>200 || x.Amount<=0 || x.Amount>100000 || x.Seats<1 || x.Seats>30)return "Package name, positive price and 1–30 seats are required.";
                     if(x.ServicePercent<0 || x.ServicePercent>30 || x.TaxPercent<0 || x.TaxPercent>30)return "Charges must be between 0% and 30%.";
-                    if(new[]{x.Amount,x.ServicePercent,x.TaxPercent}.Any(n=>decimal.Round(n,4)!=n))return "Prices and charge percentages support up to four decimal places.";
+                    if(new decimal?[]{x.Amount,x.ServicePercent,x.TaxPercent}.Any(n=>n.HasValue && decimal.Round(n.Value,4)!=n.Value))return "Prices and charge percentages support up to four decimal places.";
+                    if(x.ChargeStatus is not ("included" or "additional" or "unconfirmed"))return "Choose included, additional or unconfirmed charges.";
+                    if(x.ChargeStatus=="additional" && (x.ServicePercent is null || x.TaxPercent is null))return "Enter both additional percentages; use 0 when a charge does not apply.";
+                    if(x.ChargeStatus=="included" && (x.ChargeLabel!="nett" || x.ServicePercent!=0 || x.TaxPercent!=0))return "Included charges require nett pricing and 0% additional charges.";
+                    if(x.ChargeStatus!="included" && x.ChargeLabel=="nett")return "Only included charges can use nett notation.";
                     if(x.Source?.Length>2000)return "Package source URL is too long.";
                     if(!Url(x.Source,false))return "Every published price requires an https source URL.";
                     if(!DateOnly.TryParse(x.CheckedAt,out var day) || day>DateOnly.FromDateTime(DateTime.UtcNow.AddHours(8)))return "Every price requires a valid checked date, not a future date.";

@@ -15,3 +15,13 @@ Check(catalogue.Resolve("amari",null,new DateOnly(2027,1,1))!.Kind=="historical"
 Check(catalogue.Resolve("degarden",null,new DateOnly(2027,1,1)) is null,"No fabricated fallback after all dated sources expire");
 Check(catalogue.Resolve("gurney",null,new DateOnly(2027,2,1))!.Stale,"References older than 90 days are flagged");
 Console.WriteLine("All pricing checks passed.");
+var chargeData=System.Text.Json.Nodes.JsonNode.Parse(File.ReadAllText("Data/venues.json"))!.AsArray();
+var chargePackage=chargeData.First(v=>v!["id"]!.GetValue<string>()=="amari")!["packages"]![0]!;
+chargePackage["amount"]=2488;chargePackage["chargeStatus"]="additional";chargePackage["chargeLabel"]="++";chargePackage["servicePercent"]=10;chargePackage["taxPercent"]=8;
+var additional=new PricingCatalog(chargeData).Resolve("amari",chargePackage["id"]!.GetValue<string>(),today)!;
+Check(additional.Low==2955.744m && additional.ChargesComplete,"Additional charges apply once, with tax after service charge");
+chargePackage["chargeStatus"]="unconfirmed";chargePackage["servicePercent"]=null;
+var unknown=new PricingCatalog(chargeData).Resolve("amari",chargePackage["id"]!.GetValue<string>(),today)!;
+Check(unknown.Low==2488 && !unknown.ChargesComplete,"Unconfirmed charges display only the base amount");
+chargePackage["chargeStatus"]="included";chargePackage["chargeLabel"]="nett";chargePackage["servicePercent"]=0;chargePackage["taxPercent"]=0;
+Check(new PricingCatalog(chargeData).Resolve("amari",chargePackage["id"]!.GetValue<string>(),today)!.Low==2488,"Included charges are never applied twice");
