@@ -710,3 +710,6 @@
     margin-top: 0;
     margin-bottom: 0;
 }
+.hotel-pagination { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 16px; }
+.hotel-pagination[hidden] { display: none; }
+.hotel-pagination button[aria-current="page"] { background: #194e50; color: white; opacity: 1; }

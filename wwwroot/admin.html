@@ -13,7 +13,7 @@
 </head>
 
 <body class="admin-page">
-    <header class="admin-header"><a class="brand" href="/">Wheredding<span>囍</span></a><strong>CMS</strong><button id="logout" hidden>Sign out</button></header>
+    <header class="admin-header"><a class="brand" href="/admin.html" aria-label="Reload Wheredding admin">Wheredding<span>囍</span></a><strong>CMS</strong><button id="logout" hidden>Sign out</button></header>
     <main class="admin-main">
         <p id="status" role="status" aria-live="polite">Checking your session…</p>
         <section id="login-panel" hidden>
@@ -36,7 +36,7 @@
             <div class="admin-layout">
                 <section class="hotel-directory" aria-labelledby="hotels-heading">
                     <div class="hotel-table-toolbar">
-                        <div><h2 id="hotels-heading">Hotels</h2><p id="hotel-count" class="small" aria-live="polite"></p></div>
+                        <div><h2 id="hotels-heading">Hotels</h2><p id="hotel-count" class="small" aria-live="polite" tabindex="-1"></p></div>
                         <button id="new-hotel" class="button" type="button">+ Add hotel</button>
                     </div>
                     <label class="hotel-table-search" for="hotel-search">Find a hotel<input id="hotel-search" placeholder="Name or town"></label>
@@ -47,6 +47,7 @@
                             <tbody id="hotel-list"></tbody>
                         </table>
                     </div>
+                    <nav id="hotel-pagination" class="hotel-pagination" aria-label="Hotel pages" hidden></nav>
                 </section>
                 <section id="hotel-editor" class="hotel-editor" hidden aria-labelledby="hotel-title">
                     <form id="hotel-form">

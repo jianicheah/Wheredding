@@ -1,6 +1,6 @@
 const $ = s => document.querySelector(s);
 let venues = [], selected = new Set(), giftBasis = null, giftRequest = 0, giftManual = false;
-const venuesPerPage = 10;
+const venuesPerPage = 9;
 let venuePage = 1;
 const money = n => new Intl.NumberFormat('en-MY', { style: 'currency', currency: 'MYR', minimumFractionDigits: 0, maximumFractionDigits: 2 }).format(n);
 const range = (a, b) => a === b ? money(a) : money(a) + '–' + money(b);
