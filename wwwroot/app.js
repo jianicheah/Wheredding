@@ -29,8 +29,41 @@ async function init() {
     try {
         const r = await fetch('/api/venues'); if (!r.ok) throw Error(); venues = await r.json(); render(); renderGiftOptions();
         $('#coverage').textContent = venues.length + ' venues · ' + venues.filter(v => v.area === 'Island').length + ' island · ' + venues.filter(v => v.area === 'Mainland').length + ' mainland · ' + venues.filter(v => v.packages.length).length + ' with sourced published or historical package prices. Confirm date availability with the venue.';
-        $('#maplinks').innerHTML = venues.map(v => '<div class="map-row"><strong>' + esc(v.name) + '</strong><small>' + esc(v.district) + '</small>' + link(maps(v), 'Open map & directions') + '</div>').join('');
+        initVenueMap();
     } catch { $('#cards').textContent = 'Venue data could not load. Please refresh or check your connection.'; }
+}
+function initVenueMap() {
+    const list = $('#maplinks');
+    list.innerHTML = venues.map((v, i) => '<div class="map-row" data-map-index="' + i + '"><button type="button" class="map-select" aria-pressed="false"><strong>' + esc(v.name) + '</strong><small>' + esc(v.district) + '</small></button>' + link(maps(v), 'Open map & directions') + '</div>').join('');
+    let active = -1, pending;
+    const select = index => {
+        clearTimeout(pending);
+        if (index === active) return;
+        active = index;
+        const venue = venues[index];
+        list.querySelectorAll('[data-map-index]').forEach(row => {
+            const chosen = Number(row.dataset.mapIndex) === index;
+            row.classList.toggle('is-active', chosen);
+            row.querySelector('button').setAttribute('aria-pressed', String(chosen));
+        });
+        $('#venue-map').title = venue.name + ' — Google Maps';
+        $('#venue-map').src = 'https://www.google.com/maps?q=' + encodeURIComponent(venue.name + ' ' + venue.district + ' Penang Malaysia') + '&output=embed';
+        $('#map-name').textContent = venue.name;
+        $('#map-directions').href = maps(venue);
+        $('#map-directions').hidden = false;
+    };
+    list.querySelectorAll('[data-map-index]').forEach(row => {
+        const index = Number(row.dataset.mapIndex);
+        row.addEventListener('pointerenter', event => {
+            if (event.pointerType === 'touch') return;
+            clearTimeout(pending);
+            pending = setTimeout(() => select(index), 250);
+        });
+        row.addEventListener('pointerleave', () => clearTimeout(pending));
+        row.addEventListener('focusin', () => select(index));
+        row.querySelector('button').addEventListener('click', () => select(index));
+    });
+    if (venues.length) select(0);
 }
 function renderGiftOptions() {
     const current = $('#giftvenue').value, list = [...venues].sort((a, b) => a.name.localeCompare(b.name));

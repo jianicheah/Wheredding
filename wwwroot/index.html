@@ -84,15 +84,12 @@
         <section id="map">
             <p class="eyebrow">TWO SHORES. SO MANY POSSIBILITIES.</p>
             <h2>Get your bearings</h2>
-            <p>Use a venue's map link for a searchable street map and directions. The local overview is schematic, not a
-                navigation map.</p>
+            <p>Hover over a hotel to find it on the map, or tap to select it. Open directions to plan your journey.</p>
             <div class="map-layout">
-                <div class="local-map">
-                    <div class="island">PENANG<br>ISLAND<span>George Town ●</span><span>Bayan Lepas ●</span></div>
-                    <div class="strait">PENANG STRAIT</div>
-                    <div class="mainland">MAINLAND<span>● Butterworth</span><span>● Seberang Jaya</span><span>● Bukit
-                            Mertajam</span></div>
-                    <div class="bridge">Penang Bridge</div>
+                <div class="venue-map-panel">
+                    <iframe id="venue-map" title="Hotel location on Google Maps" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <div class="map-caption"><strong id="map-name" aria-live="polite">Choose a hotel</strong><a id="map-directions" target="_blank" rel="noopener noreferrer" hidden>Open directions ↗</a></div>
+                    <p class="small">Map unavailable? Use the directions link. Confirm the event entrance with the hotel.</p>
                 </div>
                 <div id="maplinks"></div>
             </div>

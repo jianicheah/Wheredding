@@ -1094,3 +1094,18 @@ dialog::backdrop {
 #packagechoice {
     margin-top: 18px
 }
+
+/* Hotel map and linked venue selection. */
+.venue-map-panel { min-width: 0; background: #f0f3ee; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+#venue-map { display: block; width: 100%; height: 380px; border: 0; background: #dbe7e5; }
+.map-caption { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 15px; }
+.map-caption a { font-size: 12px; }
+.venue-map-panel > p { padding: 0 15px 12px; margin: 0; }
+.map-select { text-align: left; background: transparent; color: inherit; border: 0; border-radius: 3px; padding: 6px 10px; cursor: pointer; min-width: 0; }
+.map-select strong, .map-select small { display: block; }
+.map-select small { margin-top: 4px; }
+.map-row { gap: 8px; padding: 7px 0; }
+.map-row.is-active { background: #e5ece2; border-radius: 4px; }
+.map-row .map-select:hover { background: #edf1e9; }
+.map-select:focus-visible { outline: 2px solid #345b50; outline-offset: -2px; }
+@media(max-width:700px) { #venue-map { height: 300px; } #maplinks { max-height: 320px; } .map-caption { flex-wrap: wrap; } }
